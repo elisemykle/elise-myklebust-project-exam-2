@@ -22,9 +22,9 @@ Visitor Side
 - The admin can create a new establishment
 
 ## Recommended Process
-Week 1 and 2:  Planning and Design
-Week 3 to 6: Coding
-Week 7: Bug Fixing
+- Week 1 and 2:  Planning and Design
+- Week 3 to 6: Coding
+- Week 7: Bug Fixing
 
 ## Level 1 Process
 - Start by planning out the project. Develop a Gantt chart and a functional specification.
