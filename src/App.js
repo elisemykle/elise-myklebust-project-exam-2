@@ -34,10 +34,10 @@ function App() {
            <Navbar.Toggle className="custom-toggler" aria-controls="basic__navbar-nav" />
            <Navbar.Collapse className="custom-collapse" id="basic__navbar-nav">
              <Nav className="ml-auto">
-               <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link">HOME</NavLink>
-               <NavLink to="/About" exact activeClassName="nav__link--active" className="nav__link">ABOUT</NavLink>
-               <NavLink to="/Cv" exact activeClassName="nav__link--active" className="nav__link">CV</NavLink>
-               <NavLink to="/Contact" exact activeClassName="nav__link--active" className="nav__link">CONTACT</NavLink>
+               <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link">Home</NavLink>
+               <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link">Hotels</NavLink>
+               <NavLink to="/Enstablishment" exact activeClassName="nav__link--active" className="nav__link">enstablishment</NavLink>
+               <NavLink to="/Login" exact activeClassName="nav__link--active" className="nav__link">Login</NavLink>
              </Nav>
            </Navbar.Collapse>
          </Navbar>
@@ -47,13 +47,13 @@ function App() {
                  <Home />
                </Route>
                <Route exact path="/Hotels">
-                 <About />
+                 <Hotels />
                </Route>
                <Route exact path="/Enstablishment">
-                 <Contact/>
+               <Enstablishment/>
                </Route>
                <Route exact path="/Login">
-                 <Cv/>
+                 <Login/>
                </Route>
              </Switch>
          </Container>
