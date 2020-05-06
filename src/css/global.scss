@@ -1,0 +1,28 @@
+$fontfamily: 'helvetica';
+$headerstyle: 'bold';
+$subheadingstyle: 'normal';
+$primarycolor: #759AB3;
+$secondarycolor: #6d2717;
+
+body{
+    margin: 0;
+    background-color: $primarycolor;
+}
+
+/* ---------- HOMEPAGE ---------- */
+/* Changes the color of the links in navbar when it's active */
+
+.nav__link{
+    font-family: $fontfamily;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: white;
+}
+
+.nav__container{
+    background: url("../image/heroimg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+}

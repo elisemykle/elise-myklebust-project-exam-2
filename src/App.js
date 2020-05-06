@@ -15,7 +15,6 @@ import Hotelspesific from "./components/visitor/hotelspesific/Hotelspesific.js";
 import Enstablishment from "./components/admin/enstablishment/Enstablishment.js";
 import Login from "./components/admin/login/Login.js";
 import Message from "./components/admin/message/Message.js";
-import logo from "./image/heroimg.png"
 
 
 function App() {
@@ -23,10 +22,10 @@ function App() {
       <div className="home__page">
          <Router className="home__layout">
          <div className="nav__container">
-             <NavLink to="/"><img src={logo} className="hero_img" alt="hero img"/></NavLink>
+           <Navbar.Brand>HOLIDAZE tourism agency</Navbar.Brand>
              <div className="hero__heading">
                  <h1>Stop paying more than other hotel guests</h1>
-                 <h4>Find the best hotels, b&b’s and guesthouses in Bergen City.</h4>
+                 <h4 className="hero__subheading">Find the best hotels, b&b’s and guesthouses in Bergen City.</h4>
              </div>
          </div>
          <Navbar className="nav__bar" bg="transparent" variant="light" expand="lg">
