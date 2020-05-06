@@ -1,4 +1,22 @@
-# Option 2: Hotel Booking Website
+# Project Exam 2
+INFO
+
+## Goal
+To take the skills learned over the last two years and take on an extensive project where the finished product should reflect the candidate's general development capabilities, in addition to visual and technical skills.
+
+## Brief
+For this assignment you have the choice between getting a real world client that you will manage and build a website for, or a case study to make a hotel booking website.
+Whatever project you choose, the final submission must have the following:
+
+- A Gantt chart planning the project
+- A style guide
+- An Adobe XD prototype
+- Use a CSS Pre-processor
+- Use a JavaScript Framework (Vue.js, React.js, or Angular.js)
+Follow BEM
+- A fully working website that fulfils the brief
+ 
+## Option 2: Hotel Booking Website
 A local tourism agency in Bergen is launching a new website called ‘Holidaze’ for visitors to the area to be able to find hotels, B&Bs and guesthouses, and for the accommodation owners to receive enquiries.
 
 The project requires you to create the visitor side of the website where users can search accommodation and make enquiries, as well as the administration side where properties can be added and enquiries managed.
