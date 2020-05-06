@@ -15,6 +15,7 @@ import Hotelspesific from "./components/visitor/hotelspesific/Hotelspesific.js";
 import Enstablishment from "./components/admin/enstablishment/Enstablishment.js";
 import Login from "./components/admin/login/Login.js";
 import Message from "./components/admin/message/Message.js";
+import logo from "./image/heroimg.png"
 
 
 function App() {
@@ -22,12 +23,10 @@ function App() {
       <div className="home__page">
          <Router className="home__layout">
          <div className="nav__container">
+             <NavLink to="/"><img src={logo} className="hero_img" alt="hero img"/></NavLink>
              <div className="hero__heading">
-                 <h1>Elise Myklebust</h1>
-                 <h2>Portfolio</h2>
-                 <div className="heading__scrolldown">
-                     <a href="#content">Scroll down</a>
-                 </div>
+                 <h1>Stop paying more than other hotel guests</h1>
+                 <h4>Find the best hotels, b&b’s and guesthouses in Bergen City.</h4>
              </div>
          </div>
          <Navbar className="nav__bar" bg="transparent" variant="light" expand="lg">
@@ -36,7 +35,7 @@ function App() {
              <Nav className="ml-auto">
                <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link">Home</NavLink>
                <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link">Hotels</NavLink>
-               <NavLink to="/Enstablishment" exact activeClassName="nav__link--active" className="nav__link">enstablishment</NavLink>
+               <NavLink to="/Contact" exact activeClassName="nav__link--active" className="nav__link">Contact</NavLink>
                <NavLink to="/Login" exact activeClassName="nav__link--active" className="nav__link">Login</NavLink>
              </Nav>
            </Navbar.Collapse>
@@ -49,8 +48,8 @@ function App() {
                <Route exact path="/Hotels">
                  <Hotels />
                </Route>
-               <Route exact path="/Enstablishment">
-               <Enstablishment/>
+               <Route exact path="/Contact">
+               <Contact/>
                </Route>
                <Route exact path="/Login">
                  <Login/>
