@@ -1,20 +1,52 @@
-$fontfamily: 'Helvetica, sans-serif';
+$fontfamily: 'Helvetica';
 $primarycolor: #759AB3;
-$secondarycolor: #6d2717;
+$secondarycolor: #193C6E;
+$elementcolor: #6E2619;
+$navlinkcolor: #FFFFFF;
 
 body{
     margin: 0;
     background-color: $primarycolor;
 }
 
-/* ---------- HOMEPAGE ---------- */
-/* Changes the color of the links in navbar when it's active */
+/* ---------- HOME ---------- */
+.nav__bar{
+    background-color: $secondarycolor;
+    padding: 15px;
+}
+
+.nav--link{
+    font-family: $fontfamily;
+    font-style: normal;
+    color: $navlinkcolor;
+    text-decoration: none;
+    padding: 10px;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.nav--link:hover{
+    color: $primarycolor;
+}
 
 
+.nav--link__active{
+    font-weight: bold;
+    color: $primarycolor;
+    border-bottom: 3px solid $primarycolor;
+}
 
-.nav__container{
+.nav--container{
     background: url("../image/heroimg.png");
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
+}
+
+
+.hero--heading{
+    text-align: center;
+    padding-top: 50px;
+    font-family: $fontfamily;
+    color: $navlinkcolor;
 }

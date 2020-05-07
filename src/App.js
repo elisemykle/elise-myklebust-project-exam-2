@@ -20,20 +20,25 @@ import Message from "./components/admin/message/Message.js";
 function App() {
   return (
       <Router className="App">
-          <Navbar bg="dark" variant="dark" expand="lg">
+           <Navbar className="nav__bar" bg="transparent" variant="light" expand="lg">
               <NavLink to="/" exact>
-                  <Navbar.Brand>Holidaze - tourism agency</Navbar.Brand>
               </NavLink>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="mr-auto">
-                      <NavLink to="/" exact className="nav-link">Home</NavLink>
-                      <NavLink to="/Hotels" className="nav-link">Hotels</NavLink>
-                          <NavLink to="/Contact" exact className="nav-link">Contact</NavLink>
-                          <NavLink to="/Login" className="nav-link">Login</NavLink>
+              <Navbar.Toggle className="custom--toggler" aria-controls="basic--navbar-nav" />
+              <Navbar.Collapse className="custom--collapse" id="basic--navbar-nav">
+                  <Nav className="ml-auto">
+                      <NavLink to="/" exact activeClassName="nav--link__active" className="nav--link">Home</NavLink>
+                      <NavLink to="/Hotels" exact exact activeClassName="nav--link__active" className="nav--link">Hotels</NavLink>
+                      <NavLink to="/Contact" exact exact activeClassName="nav--link__active" className="nav--link">Contact</NavLink>
+                      <NavLink to="/Login" exact exact activeClassName="nav--link__active" className="nav--link">Login</NavLink>
                   </Nav>
               </Navbar.Collapse>
           </Navbar>
+          <div className="nav--container">
+                <div className="hero--heading">
+                    <h1>Stop paying more than other hotel guests</h1>
+                    <p className="hero--subheading">Find the best hotels, b&b’s and guesthouses in Bergen City.</p>
+                </div>
+          </div>
           <Container>
               <Switch>
                   <Route path="/" exact component={Home}>
