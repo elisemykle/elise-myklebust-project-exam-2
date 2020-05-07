@@ -12,7 +12,7 @@ body{
 /* ---------- HOME ---------- */
 .nav__bar{
     background-color: $secondarycolor;
-    padding: 15px;
+    height: 40px;
 }
 
 .nav--link{
@@ -49,4 +49,13 @@ body{
     padding-top: 50px;
     font-family: $fontfamily;
     color: $navlinkcolor;
+}
+
+.nav__menuToggler{
+    display: none;
+}
+
+.nav__right{
+    float: right;
+    padding: 12px;
 }
