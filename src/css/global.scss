@@ -10,12 +10,12 @@ body{
 }
 
 /* ---------- HOME ---------- */
-.nav__bar{
+.nav{
     background-color: $secondarycolor;
     height: 40px;
 }
 
-.nav--link{
+.nav__link{
     font-family: $fontfamily;
     font-style: normal;
     color: $navlinkcolor;
@@ -25,18 +25,18 @@ body{
     font-size: 14px;
 }
 
-.nav--link:hover{
+.nav__link:hover{
     color: $primarycolor;
 }
 
 
-.nav--link__active{
+.nav__link--active{
     font-weight: bold;
     color: $primarycolor;
     border-bottom: 3px solid $primarycolor;
 }
 
-.nav--container{
+.hero{
     background: url("../image/heroimg.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -44,7 +44,7 @@ body{
 }
 
 
-.hero--heading{
+.hero__heading{
     text-align: center;
     padding-top: 50px;
     font-family: $fontfamily;
