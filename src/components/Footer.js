@@ -2,6 +2,8 @@ import React from 'react';
 
 export default function Footer(props) {
     return (
-        <h1 className="home--h1">Footer</h1>
+        <div className="footer">
+            <p className="footer__logo">© 2020 HOLIDAZE |  Copyright. All rights reserved.</p>
+        </div>
     )
 }
