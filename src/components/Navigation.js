@@ -11,9 +11,9 @@ export default function Navigation(props) {
                <button className="nav__menuToggler--mobile" onClick={() => setHamburger(false)}/>
                <div className="nav__right--mobile">
                    <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link--mobile">Home</NavLink>
-                   <NavLink to="/Hotels" exact exact activeClassName="nav__link--active" className="nav__link--mobile">Hotels</NavLink>
-                   <NavLink to="/Contact" exact exact activeClassName="nav__link--active" className="nav__link--mobile">Contact</NavLink>
-                   <NavLink to="/Login" exact exact activeClassName="nav__link--active" className="nav__link--mobile">Login</NavLink>
+                   <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link--mobile">Hotels</NavLink>
+                   <NavLink to="/Contact" exact activeClassName="nav__link--active" className="nav__link--mobile">Contact</NavLink>
+                   <NavLink to="/Login" exact activeClassName="nav__link--active" className="nav__link--mobile">Login</NavLink>
                </div>
             </nav>
         )
@@ -25,9 +25,9 @@ export default function Navigation(props) {
                <button className="nav__menuToggler" onClick={() => setHamburger(true)}/>
                <div className="nav__right">
                    <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link">Home</NavLink>
-                   <NavLink to="/Hotels" exact exact activeClassName="nav__link--active" className="nav__link">Hotels</NavLink>
-                   <NavLink to="/Contact" exact exact activeClassName="nav__link--active" className="nav__link">Contact</NavLink>
-                   <NavLink to="/Login" exact exact activeClassName="nav__link--active" className="nav__link">Login</NavLink>
+                   <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link">Hotels</NavLink>
+                   <NavLink to="/Contact" exact activeClassName="nav__link--active" className="nav__link">Contact</NavLink>
+                   <NavLink to="/Login" exact activeClassName="nav__link--active" className="nav__link">Login</NavLink>
                </div>
            </nav>
         )
