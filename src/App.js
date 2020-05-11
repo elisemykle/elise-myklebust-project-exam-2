@@ -22,12 +22,6 @@ function App() {
   return (
       <Router className="App">
            <Navigation />
-          <div className="hero">
-                <div className="hero__heading">
-                    <h1>Stop paying more than other hotel guests</h1>
-                    <p className="hero__subheading">Find the best hotels, b&b’s and guesthouses in Bergen City.</p>
-                </div>
-          </div>
           <Switch>
               <Route path="/" exact component={Home}>
               </Route>

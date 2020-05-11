@@ -41,8 +41,22 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
-}
 
+    &--contact{
+        background: url("../image/aboutbergen.png");
+        background-size: cover;
+    }
+
+    &--login{
+        background: url("../image/aboutbergen.png");
+        background-size: cover;
+    }
+
+    &--hotels{
+        background: url("../image/aboutbergen.png");
+        background-size: cover;
+    }
+}
 
 .hero__heading{
     text-align: center;
