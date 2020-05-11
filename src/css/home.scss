@@ -1,15 +1,14 @@
-.home--h1{
+.page {
+    min-height: 100vh
+}
+
+.home__h1{
     color: $elementcolor;
     text-align: center;
 }
 
-.aboutbergen--text{
+.aboutbergen__text{
 font-size: 16px;
 line-height: 1.6;
 font-family: $fontfamily;
-}
-
-
-.page {
-    min-height: 100vh
 }

@@ -16,6 +16,7 @@ import Enstablishment from "./components/admin/enstablishment/Enstablishment.js"
 import Login from "./components/admin/login/Login.js";
 import Message from "./components/admin/message/Message.js";
 import Footer from "./components/Footer.js";
+import SearchHotels from "./components/SearchHotels.js";
 
 function App() {
   return (
