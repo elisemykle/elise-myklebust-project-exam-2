@@ -3,6 +3,7 @@ import { Col, Row, Image, Container} from 'react-bootstrap';
 import aboutbergenImg from "../../../image/aboutbergen.png"
 import Hero from "../../Hero.js";
 
+{/* link til listen av hoteller og innhold */}
 const API_URL = "http://localhost:8888/get-establishments.php";
 
     function Home() {
