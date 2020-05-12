@@ -2,21 +2,15 @@ import React from 'react';
 import './css/style.scss';
 import {
   BrowserRouter as Router,
-  NavLink,
   Route,
   Switch
 } from "react-router-dom";
 import Navigation from './components/Navigation.js';
 import Home from "./components/visitor/home/Home.js";
 import Contact from "./components/visitor/contact/Contact.js";
-import Enquiry from "./components/visitor/enquiry/Enquiry.js";
 import Hotels from "./components/visitor/hotels/Hotels.js";
-import Hotelspesific from "./components/visitor/hotelspesific/Hotelspesific.js";
-import Enstablishment from "./components/admin/enstablishment/Enstablishment.js";
 import Login from "./components/admin/login/Login.js";
-import Message from "./components/admin/message/Message.js";
 import Footer from "./components/Footer.js";
-import SearchHotels from "./components/SearchHotels.js";
 
 function App() {
   return (
