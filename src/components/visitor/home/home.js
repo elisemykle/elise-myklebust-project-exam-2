@@ -3,7 +3,7 @@ import { Col, Row, Image, Container} from 'react-bootstrap';
 import aboutbergenImg from "../../../image/aboutbergen.png"
 import Hero from "../../Hero.js";
 
-{/* link til listen av hoteller og innhold */}
+/* link til listen av hoteller og innhold */
 const API_URL = "http://localhost:8888/get-establishments.php";
 
     function Home() {
@@ -21,6 +21,7 @@ const API_URL = "http://localhost:8888/get-establishments.php";
             .catch(error => console.log(error));
         }, []);
 
+        /* En funksjon som filtrerer at man kan skrive med minuskler og blokkbokstaver.*/
         const searchHotels = function(){
             const searchText = searchValue.toLowerCase();
             const filterArray = hotels.filter((hotel) => {
@@ -38,13 +39,12 @@ const API_URL = "http://localhost:8888/get-establishments.php";
         return (
             <div className="home">
                 <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero" />
-                <h1>Home</h1>
-                <input type="text" onChange={(e) => {
+                <input className="search--box" type="text" placeholder="Search for hotels here..." onChange={(e) => {
                         updateSearchValue(e.target.value);
                         searchHotels();
                     }
                 }/>
-                <button onClick={() => searchHotels()}>test</button>
+            <button className="search--button" onClick={() => searchHotels()}>Search</button>
                 {
                     filterHotels.map((hotel, index) =>
                         <div key={index}>
