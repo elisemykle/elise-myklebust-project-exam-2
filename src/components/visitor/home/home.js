@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Row, Image, Container} from 'react-bootstrap';
-import aboutbergenImg from "../../../image/aboutbergen.png"
 import Hero from "../../Hero.js";
 
 /* link til listen av hoteller og innhold */

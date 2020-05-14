@@ -11,17 +11,18 @@ import Contact from "./components/visitor/contact/Contact.js";
 import Hotels from "./components/visitor/hotels/Hotels.js";
 import Login from "./components/admin/login/Login.js";
 import Footer from "./components/Footer.js";
+import Hotelspesific from "./components/visitor/hotelspesific/Hotelspesific.js";
 
 function App() {
   return (
       <Router className="App">
            <Navigation />
           <Switch>
-              <Route path="/" exact component={Home}>
-              </Route>
+              <Route path="/" exact component={Home}/>
               <Route path="/Hotels" component={Hotels}/>
               <Route path="/Contact" component={Contact}/>
               <Route path="/Login" component={Login}/>
+              <Route path="/Hotelspesific/:id" component={Hotelspesific}/>
           </Switch>
         <Footer />
       </Router>
