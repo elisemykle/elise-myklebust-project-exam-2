@@ -1,3 +1,45 @@
 .page {
     min-height: 100vh
 }
+
+.hotels--establishmentName{
+    color: $secondarycolor;
+    font-family: $fontfamily;
+}
+
+.hotels--image{
+    width: 350px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.hotels--description{
+    font-family: $fontfamily;
+    font-size: 16px;
+}
+
+.hotels--button{
+    background-color: $elementcolor;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: $fontfamily;
+}
+
+.hotels--button:hover{
+    background-color: $secondarycolor;
+}
+
+.hotels--readmore{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: $fontfamily;
+    color: $secondarycolor;
+
+}
