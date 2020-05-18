@@ -1,19 +1,27 @@
-.page {
-    min-height: 100vh;
-}
-
 
 .contact--h1{
-    color: white;
+    color: $secondarycolor;
     padding-bottom: 20px;
     font-family: $fontfamily;
-    font-style: bold;
+    font-weight: bold;
 }
 
-.error--message{
+.form--label{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: $fontfamily;
     color: $secondarycolor;
 }
 
+.form--input {
+    width: 100%;
+    padding: 10px;
+}
+
+.message--form{
+    width: 100%;
+    padding: 50px;
+}
 
 .contact--button{
     background-color: $elementcolor;
@@ -31,4 +39,8 @@
 .contact--button:hover{
     background-color: $secondarycolor;
     color: white;
+}
+
+.error--message{
+    color: $secondarycolor;
 }

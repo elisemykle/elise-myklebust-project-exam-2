@@ -9,6 +9,10 @@ body{
     background-color: $primarycolor;
 }
 
+.page {
+    min-height: 100vh
+}
+
 /* ---------- HOME ---------- */
 .nav{
     background-color: $secondarycolor;

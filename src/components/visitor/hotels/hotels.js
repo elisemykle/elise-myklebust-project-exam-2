@@ -24,8 +24,8 @@ const API_URL = "http://localhost:8888/get-establishments.php";
                         {
                             hotels.map((hotel, index) =>
                                 <div key={index}>
-                                    <img src={hotel.imageUrl} className="hotels--image" alt="hotels"/>
                                     <h1 className="hotels--establishmentName">{hotel.establishmentName}</h1>
+                                    <img src={hotel.imageUrl} className="hotels--image" alt="hotels"/>
                                     <p className="hotels--description">{hotel.description}</p>
                                     <Link to={"/Hotelspesific/" + hotel.id} className="hotels--readmore">read more</Link>
                                     <Link to={"/Hotelspesific/" + hotel.id} className="hotels--button">Book now</Link>

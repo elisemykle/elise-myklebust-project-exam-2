@@ -15,6 +15,7 @@ import Hotelspesific from "./components/visitor/hotelspesific/Hotelspesific.js";
 
 function App() {
   return (
+      <div className="page">
       <Router className="App">
            <Navigation />
           <Switch>
@@ -26,6 +27,7 @@ function App() {
           </Switch>
         <Footer />
       </Router>
+      </div>
       );
     }
 

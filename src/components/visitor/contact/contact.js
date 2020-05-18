@@ -31,29 +31,29 @@ const schema = yup.object().shape({
     function onSubmit() {
     }
     return(
-        <Form className="page" onSubmit={handleSubmit(onSubmit)}>
+        <Form className="contact--form" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group>
                 <Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
                 <div className="contact__contact--page">
                     <h1 className="contact--h1">Any questions ?</h1>
                 </div>
-                <Form.Label className="form__label">First name</Form.Label>
-                <Form.Control name="firstname" placeholder="Enter your first name" ref={register}/>
+                <Form.Label className="form--label">First name</Form.Label>
+                <Form.Control className="form--input" name="firstname" placeholder="Enter your first name" ref={register}/>
                 {errors.firstname && <p className="error--message">Please enter minimum 2 characters.</p>}
             </Form.Group>
             <Form.Group>
-                <Form.Label className="form__label">Last name</Form.Label>
-                <Form.Control name="lastname" placeholder="Enter your last name" ref={register}/>
+                <Form.Label className="form--label">Last name</Form.Label>
+                <Form.Control className="form--input" name="lastname" placeholder="Enter your last name" ref={register}/>
                 {errors.lastname && <p className="error--message">Please enter minimum 2 characters.</p>}
             </Form.Group>
 			<Form.Group>
-                <Form.Label className="form__label">Email adress</Form.Label>
-                <Form.Control name="emailadress" placeholder="Enter your email" ref={register}/>
+                <Form.Label className="form--label">Email adress</Form.Label>
+                <Form.Control className="form--input" name="emailadress" placeholder="Enter your email" ref={register}/>
                 {errors.emailadress && <p className="error--message">Please enter in a valid email format.</p>}
             </Form.Group>
 			<Form.Group>
-				<Form.Label className="form__label">Message</Form.Label>
-				<Form.Control className="message__form" as="textarea" name="message" placeholder="Please enter your message here..." ref={register}/>
+				<Form.Label className="form--label">Message</Form.Label>
+				<Form.Control className="message--form" as="textarea" name="message" placeholder="Please enter your message here..." ref={register}/>
 				{errors.message && <p className="error--message">Please enter in minimum 10 characters.</p>}
 			</Form.Group>
             <Button className="contact--button" type="submit">Send</Button>
