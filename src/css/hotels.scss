@@ -7,7 +7,6 @@
     width: 350px;
     height: 250px;
     margin: 0 auto;
-    margin-top: 30px;
     object-fit: cover;
 }
 
@@ -42,4 +41,73 @@
 
 .hotels--readmore:hover{
     color: $elementcolor;
+}
+
+
+
+
+
+
+
+
+
+
+
+.card{
+    width: 350px;
+    border-radius: 1px;
+    background-color: #EAE7E7;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    &__image{
+        display: block;
+        width: 350px;
+        height: 250px;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    &__body{
+        display: block;
+        padding: 10px;
+
+    }
+
+    &__title{
+        margin: 20px;
+        color: $secondarycolor;
+        font-family: $fontfamily;
+    }
+
+    &__line{
+        border: 1.5px solid $secondarycolor;
+        margin: 20px;
+    }
+
+    &__description{
+        font-family: $fontfamily;
+        font-size: 16px;
+        margin: 20px;
+    }
+
+    &__readmore{
+        margin: 20px;
+        font-weight: bold;
+        color: $secondarycolor;
+        font-family: $fontfamily;
+        text-decoration: underline;
+    }
+
+    &__button{
+        background-color: $elementcolor;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 14px;
+        font-family: $fontfamily;
+    }
 }
