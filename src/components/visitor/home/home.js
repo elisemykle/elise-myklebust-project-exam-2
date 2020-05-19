@@ -46,7 +46,6 @@ const API_URL = "http://localhost:8888/get-establishments.php";
                 {
                     filterHotels.map((hotel, index) =>
                         <div key={index}>
-                            <img src={hotel.imageUrl} alt="hotels" style={{width: "100px", height: "100px"}}/>
                             <h1>{hotel.establishmentName}</h1>
                         </div>
                     )
