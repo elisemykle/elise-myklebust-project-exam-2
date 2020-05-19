@@ -4,6 +4,10 @@ $secondarycolor: #193C6E;
 $elementcolor: #6E2619;
 $navlinkcolor: #FFFFFF;
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body{
     margin: 0;
     background-color: $primarycolor;

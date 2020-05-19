@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const API_URL = "http://localhost:8888/get-establishment.php?id=";
 
@@ -17,9 +18,10 @@ export default function Hotelspesific(props) {
     }, [id]);
     return (
         <div className="hotelspesific">
-            <img src={hotel.imageUrl} alt="hotels" style={{width: "100px", height: "100px"}}/>
-            <h1 className="hotels--establishmentName">{hotel.establishmentName}</h1>
-            <p className="hotels--description">{hotel.description}</p>
+            <h1 className="hotelspesific__establishmentName">{hotel.establishmentName}</h1>
+            <img src={hotel.imageUrl} className="hotelspesific__image" alt="hotel" />
+            <p className="hotelspesific__description">{hotel.description}</p>
+            <Link to={"/Enquiry/" + hotel.id} className="hotelspesific__button">Make an enquiry</Link>
         </div>
     )
 }

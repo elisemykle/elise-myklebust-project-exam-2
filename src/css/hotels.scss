@@ -2,7 +2,7 @@
     width: 350px;
     border-radius: 1px;
     background-color: #EAE7E7;
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     &__image{
         display: block;
@@ -14,8 +14,6 @@
 
     &__body{
         display: block;
-        padding: 10px;
-
     }
 
     &__title{
@@ -43,16 +41,26 @@
         text-decoration: underline;
     }
 
+    &__readmore:hover{
+        color: $elementcolor;
+    }
+
     &__button{
         background-color: $elementcolor;
         border: none;
         color: white;
-        padding: 10px 15px;
+        width: 100%;
+        height: 30px;
+        margin-top: 15px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-weight: bold;
         font-size: 14px;
         font-family: $fontfamily;
+    }
+
+    &__button:hover{
+        background-color: $secondarycolor;
     }
 }

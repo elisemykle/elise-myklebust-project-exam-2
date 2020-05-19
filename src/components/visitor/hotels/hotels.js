@@ -21,23 +21,26 @@ const API_URL = "http://localhost:8888/get-establishments.php";
                     <div className="hotels">
                         <Hero title="The Hotels" text="Choose between your hotels, b&b’s and guesthouses to stay at." classes="hero" />
 
+                        <div className="row">
                         {
-                            hotels.map((hotel, index) =>
-                                <div key={index}>
-                                    <div className="card">
-                                        <img src={hotel.imageUrl} className="card__image" alt="hotels"/>
-                                            <div className="card__body">
-                                                <h2 className="card__title">{hotel.establishmentName}</h2>
-                                                <hr className="card__line"/>
-                                                <p className="card__description">{hotel.description}</p>
-                                                <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">Read more</Link>
-                                            </div>
-                                    </div>
-                                    <Link to={"/Hotelspesific/" + hotel.id} className="card__button">Book now</Link>
-                                </div>
-
+                        hotels.map((hotel, index) =>
+                            <div key={index}>
+                                <div className="col-6">
+                                        <div className="card">
+                                            <img src={hotel.imageUrl} className="card__image" alt="hotels"/>
+                                                <div className="card__body">
+                                                    <h2 className="card__title">{hotel.establishmentName}</h2>
+                                                    <hr className="card__line"/>
+                                                    <p className="card__description">{hotel.description}</p>
+                                                    <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">read more</Link>
+                                                    <Link to={"/Hotelspesific/" + hotel.id} className="card__button">Book now</Link>
+                                                </div>
+                                        </div>
+                            </div>
+                            </div>
                             )
                         }
+                        </div>
                     </div>
                 );
             }
