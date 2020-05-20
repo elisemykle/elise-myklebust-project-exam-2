@@ -33,9 +33,9 @@ const API_URL = "http://localhost:8888/get-establishments.php";
                                                     <hr className="card__line"/>
                                                     <p className="card__description">{hotel.description}</p>
                                                     <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">read more</Link>
-                                                    <Link to={"/Hotelspesific/" + hotel.id} className="card__button">Book now</Link>
                                                 </div>
                                         </div>
+                                        <Link to={"/Hotelspesific/" + hotel.id} className="card__button">Book now</Link>
                             </div>
                             </div>
                             )
