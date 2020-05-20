@@ -1,3 +1,49 @@
 .page {
     min-height: 100vh
 }
+
+.login--h1{
+    color: $elementcolor;
+    font-family: $fontfamily;
+    text-align: center;
+}
+
+.form__label{
+    color: $secondarycolor;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: $fontfamily;
+}
+
+.form__control{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+
+label, input {
+    font-size: 16px;
+}
+
+.login__button{
+    background-color: $elementcolor;
+    border: none;
+    color: white;
+    padding: 10px 100px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: $fontfamily;
+}
+
+.login__button:hover{
+    background-color: $secondarycolor;
+}

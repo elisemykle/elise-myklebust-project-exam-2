@@ -35,19 +35,19 @@ const schema = yup.object().shape({
             <Form.Group>
                 <Hero title="Login" text="" classes="hero hero--login" showSearch={false}/>
                 <div className="login__form--page">
-                    <h1 className="login--h1">Welcome back, Elise.</h1>
+                	<h1 className="login--h1">Login</h1>
                 </div>
                 <Form.Label className="form__label">Email address</Form.Label>
-                <Form.Control name="emailaddress" placeholder="Example@example.com" ref={register}/>
+                <Form.Control className="form__control" name="emailaddress" placeholder="Example@example.com" ref={register}/>
                 {errors.firstname && <p className="error--message">Please enter minimum 2 characters.</p>}
             </Form.Group>
 
             <Form.Group>
                 <Form.Label className="form__label">Password</Form.Label>
-                <Form.Control name="lastname" placeholder="Please enter your password" ref={register}/>
+                <Form.Control className="form__control" name="lastname" placeholder="Please enter your password" ref={register}/>
                 {errors.lastname && <p className="error--message">Please enter minimum 2 characters.</p>}
-            </Form.Group>
-            <Button className="contact--button" type="submit">Login</Button>
-        </Form>
+            	</Form.Group>
+            	<Button className="login__button" type="submit">Login</Button>
+        	</Form>
         )
 }

@@ -36,6 +36,8 @@ const schema = yup.object().shape({
                 <Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
                 <div className="contact__contact--page">
                     <h1 className="contact--h1">Any questions ?</h1>
+					<p className="contact--text">Get in touch with our turist agency by completing the form down below. Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.
+					</p>
                 </div>
                 <Form.Label className="form--label">First name</Form.Label>
                 <Form.Control className="form--input" name="firstname" placeholder="Enter your first name" ref={register}/>

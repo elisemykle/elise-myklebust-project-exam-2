@@ -21,6 +21,7 @@ export default function Hotelspesific(props) {
             <h1 className="hotelspesific__establishmentName">{hotel.establishmentName}</h1>
             <img src={hotel.imageUrl} className="hotelspesific__image" alt="hotel" />
             <p className="hotelspesific__description">{hotel.description}</p>
+            <a href="mailto:{this.props.email}" className="hotelspesific__email">{hotel.establishmentEmail}</a>
             <Link to={"/Enquiry/" + hotel.id} className="hotelspesific__button">Make an enquiry</Link>
         </div>
     )
