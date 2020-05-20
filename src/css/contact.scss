@@ -6,6 +6,12 @@
     font-weight: bold;
 }
 
+.contact__text{
+    color: $secondarycolor;
+    padding-bottom: 20px;
+    font-family: $fontfamily;
+}
+
 .form--label{
     font-size: 16px;
     font-weight: bold;
@@ -18,9 +24,10 @@
     padding: 10px;
 }
 
-.message--form{
+.message--input{
     width: 100%;
-    padding: 50px;
+    font-size: 16px;
+    font-family: $fontfamily;
 }
 
 .contact--button{
@@ -41,6 +48,9 @@
     color: white;
 }
 
-.error--message{
+.error__message{
     color: $secondarycolor;
+    font-size: 16px;
+    font-style: italic;
+    font-family: $fontfamily;
 }
