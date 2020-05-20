@@ -39,13 +39,13 @@ const schema = yup.object().shape({
                 </div>
                 <Form.Label className="form__label">Email address</Form.Label>
                 <Form.Control className="form__control" name="emailaddress" placeholder="Example@example.com" ref={register}/>
-                {errors.firstname && <p className="error--message">Please enter minimum 2 characters.</p>}
+                {errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
             </Form.Group>
 
             <Form.Group>
                 <Form.Label className="form__label">Password</Form.Label>
                 <Form.Control className="form__control" name="lastname" placeholder="Please enter your password" ref={register}/>
-                {errors.lastname && <p className="error--message">Please enter minimum 2 characters.</p>}
+                {errors.lastname && <p className="error__message">Please enter minimum 2 characters.</p>}
             	</Form.Group>
             	<Button className="login__button" type="submit">Login</Button>
         	</Form>

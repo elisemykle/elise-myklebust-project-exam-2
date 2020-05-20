@@ -31,6 +31,14 @@ label, input {
     font-size: 16px;
 }
 
+.error__message{
+    color: $secondarycolor;
+    font-size: 16px;
+    font-style: italic;
+    font-family: $fontfamily;
+}
+
+
 .login__button{
     background-color: $elementcolor;
     border: none;
