@@ -64,11 +64,16 @@ body{
         background: url("../image/heroimg2.png");
         background-size: cover;
     }
+
+    &--enquiry{
+        background: url("../image/heroimg2.png");
+        background-size: cover;
+    }
 }
 
 .hero__heading{
     text-align: center;
-    padding-top: 50px;
+    padding-top: 90px;
     font-family: $fontfamily;
     color: $navlinkcolor;
 }

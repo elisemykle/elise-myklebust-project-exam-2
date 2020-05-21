@@ -18,7 +18,7 @@ const API_URL = "http://localhost:8888/get-establishments.php";
         }, []);
 
                 return (
-                    <div className="hotels">
+                    <div className="hotels__hero">
                         <Hero title="The Hotels" text="Choose between your hotels, b&b’s and guesthouses to stay at." classes="hero" />
 
                         <div className="row">
@@ -35,7 +35,7 @@ const API_URL = "http://localhost:8888/get-establishments.php";
                                                     <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">read more</Link>
                                                 </div>
                                         </div>
-                                                    <Link to={"/Hotelspesific/" + hotel.id} className="card__button">Book now</Link>
+                                                    <Link to={"/Enquiry/" + hotel.id} className="card__button">Book now</Link>
                             </div>
                             </div>
                             )
