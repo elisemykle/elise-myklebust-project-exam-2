@@ -58,7 +58,7 @@ const schema = yup.object().shape({
 				<Form.Control className="message--input" as="textarea" name="message" placeholder="Please enter your message here..." ref={register}/>
 				{errors.message && <p className="error__message">Please enter in minimum 10 characters.</p>}
 			</Form.Group>
-            <Button className="contact--button" type="submit">Send</Button>
+            <Button className="contact--button" type="submit">Submit</Button>
         </Form>
         )
 }

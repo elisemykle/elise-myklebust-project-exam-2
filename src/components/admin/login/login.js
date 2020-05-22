@@ -44,8 +44,8 @@ const schema = yup.object().shape({
 
             <Form.Group>
                 <Form.Label className="form__label">Password</Form.Label>
-                <Form.Control className="form__control" name="lastname" placeholder="Please enter your password" ref={register}/>
-                {errors.lastname && <p className="error__message">Please enter a valid password</p>}
+					<Form.Control className="form--input" type="password" name="pwd" placeholder="Please enter your password" ref={register}/>
+					{errors.emailadress && <p className="error__message">Please enter a valid password</p>}
             	</Form.Group>
             	<Button className="login__button" type="submit">Login</Button>
         	</Form>

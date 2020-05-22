@@ -54,13 +54,13 @@ export default function Enquiry(props){
             </Form.Group>
             <Form.Group>
                 <Form.Label className="form--label">Check-in:</Form.Label>
-                <Form.Control className="form--input" name="emailadress" placeholder="dd.mm.åååå" ref={register}/>
-                {errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				<Form.Control className="form--input" type="date" name="date" ref={register}/>
+				{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
             </Form.Group>
             <Form.Group>
                 <Form.Label className="form--label">Check-out:</Form.Label>
-                <Form.Control className="form--input" name="emailadress" placeholder="dd.mm.åååå" ref={register}/>
-                {errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				<Form.Control className="form--input" type="date" name="date" ref={register}/>
+				{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
             </Form.Group>
             <Button className="contact--button" type="submit">Send</Button>
         </Form>

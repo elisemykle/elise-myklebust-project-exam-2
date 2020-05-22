@@ -1,4 +1,3 @@
-
 .contact--h1{
     color: $secondarycolor;
     padding-bottom: 20px;
@@ -20,8 +19,8 @@
 }
 
 .form--input {
+    display: block;
     width: 100%;
-    padding: 10px;
 }
 
 .message--input{
