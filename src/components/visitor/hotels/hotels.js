@@ -28,15 +28,15 @@ const API_URL = "http://localhost:8888/get-establishments.php";
                                 <div className="col-6">
                                         <div className="card">
                                             <img src={hotel.imageUrl} className="card__image" alt="hotels"/>
-                                                <div className="card__body">
-                                                    <h2 className="card__title">{hotel.establishmentName}</h2>
-                                                    <hr className="card__line"/>
-                                                    <p className="card__description">{hotel.description}</p>
-                                                    <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">read more</Link>
-                                                </div>
+                                            <div className="card__body">
+                                                <h2 className="card__title">{hotel.establishmentName}</h2>
+                                                <hr className="card__line"/>
+                                                <p className="card__description">{hotel.description}</p>
+                                                <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">read more</Link>
+                                            </div>
                                         </div>
-                                                    <Link to={"/Enquiry/" + hotel.id} className="card__button">Book now</Link>
-                            </div>
+                                        <Link to={"/Enquiry/" + hotel.id} className="card__button">Book now</Link>
+                                    </div>
                             </div>
                             )
                         }

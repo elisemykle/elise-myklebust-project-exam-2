@@ -16,8 +16,8 @@ import Enquiry from "./components/visitor/enquiry/Enquiry.js";
 
 function App() {
   return (
-      <div className="page">
       <Router className="App">
+          <div className="page">
            <Navigation />
           <Switch>
               <Route path="/" exact component={Home}/>
@@ -28,8 +28,8 @@ function App() {
               <Route path="/Enquiry" component={Enquiry}/>
           </Switch>
         <Footer />
+        </div>
       </Router>
-      </div>
       );
     }
 

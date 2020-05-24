@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Hero from "../../Hero.js";
 
 /* link til listen av hoteller og innhold */
@@ -14,17 +15,20 @@ const API_URL = "http://localhost:8888/get-establishments.php";
             .then(response => response.json())
             .then((json) => {
                 updateHotels(json);
-                updateFilterHotels(json);
+                //updateFilterHotels(json);
             })
             .catch(error => console.log(error));
         }, []);
 
-        /* En funksjon som filtrerer at man kan skrive med minuskler og blokkbokstaver.*/
         const searchHotels = function(){
             const searchText = searchValue.toLowerCase();
+            if(searchText === "") {
+                updateFilterHotels([]);
+                return;
+            }
             const filterArray = hotels.filter((hotel) => {
                 const lowerCaseName = hotel.establishmentName.toLowerCase();
-                if(lowerCaseName.includes(searchText)){
+                if(lowerCaseName.indexOf(searchText)){
                     return true;
                 }
                 else {
@@ -46,7 +50,9 @@ const API_URL = "http://localhost:8888/get-establishments.php";
                 {
                     filterHotels.map((hotel, index) =>
                         <div key={index}>
+                            <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">
                             <h1>{hotel.establishmentName}</h1>
+                            </Link>
                         </div>
                     )
                 }

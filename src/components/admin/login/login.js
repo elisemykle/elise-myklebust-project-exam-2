@@ -1,53 +1,28 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import * as yup from "yup";
 import Hero from "../../Hero.js";
 
-const schema = yup.object().shape({
-	firstname: yup
-        .string()
-		.required()
-		.min(2, "Required, minimum 2 characters"),
-	lastname: yup
-        .string()
-		.required()
-		.min(2, "Required, minimum 2 characters"),
-	emailadress: yup
-		.string()
-		.required()
-		.min("Required, must be in a valid email format"),
-	message: yup
-		.string()
-		.required()
-		.min(10, "Required, minimum 10 characters"),
-});
-
  export default function Login(props){
-    const { register, handleSubmit, errors } = useForm({
-        validationSchema: schema
-    });
     function onSubmit() {
     }
     return(
-        <Form className="page" onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group>
-                <Hero title="Login" text="" classes="hero hero--login" showSearch={false}/>
-                <div className="login__form--page">
-                	<h1 className="login--h1">Login</h1>
-                </div>
-                <Form.Label className="form__label">Email address</Form.Label>
-                <Form.Control className="form__control" name="emailaddress" placeholder="Example@example.com" ref={register}/>
-                {errors.firstname && <p className="error__message">Please enter in a valid email format.</p>}
-            </Form.Group>
+		<div className="page">
+			<Hero title="Login" text="" classes="hero hero--login" showSearch={false}/>
+				<div className="login__form--page">
+					<h1 className="login--h1">Login</h1>
+				</div>
+        <form onSubmit={() => onSubmit}>
+            <div className="login__form-group">
+                <label className="form__label">Username</label>
+                <input className="form__control" name="emailaddress" placeholder="Please enter your username" />
+            </div>
 
-            <Form.Group>
-                <Form.Label className="form__label">Password</Form.Label>
-					<Form.Control className="form--input" type="password" name="pwd" placeholder="Please enter your password" ref={register}/>
-					{errors.emailadress && <p className="error__message">Please enter a valid password</p>}
-            	</Form.Group>
-            	<Button className="login__button" type="submit">Login</Button>
-        	</Form>
+            <div className="login__form-group">
+                <label className="form__label">Password</label>
+					<input className="form--input" type="password" name="pwd" placeholder="Please enter your password" />
+            	</div>
+            	<button className="login__button" type="submit">Login</button>
+				</form>
+        	</div>
         )
 }

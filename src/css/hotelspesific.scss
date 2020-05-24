@@ -1,47 +1,55 @@
-.hotelspesific__image{
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-    align-items: center;
-    object-fit: cover;
-}
+.hotelspesific{
+    &__image{
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        align-items: center;
+        object-fit: cover;
+    }
 
-.hotelspesific__establishmentName{
-    text-align: center;
-    margin: 20px;
-    color: $secondarycolor;
-    font-family: $fontfamily;
-}
+    &__establishmentName{
+        text-align: center;
+        margin: 20px;
+        color: $secondarycolor;
+        font-family: $fontfamily;
+    }
 
-.hotelspesific__description{
-    text-align: center;
-    font-family: $fontfamily;
-    font-size: 16px;
-    margin: 20px;
-}
+    &__description{
+        text-align: center;
+        font-family: $fontfamily;
+        font-size: 16px;
+        margin: 20px;
+    }
 
-.hotelspesific__email{
-    text-align: center;
-    font-family: $fontfamily;
-    color: $secondarycolor;
-    text-decoration: underline;
-    font-size: 16px;
-    margin: 20px;
-}
+    &__email{
+        text-align: center;
+        font-family: $fontfamily;
+        color: $secondarycolor;
+        text-decoration: underline;
+        font-size: 16px;
+        margin: 20px;
+    }
 
-.hotelspesific__button{
-    background-color: $elementcolor;
-    border: none;
-    font-weight: bold;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: $fontfamily;
-}
+    &__button{
+        background-color: $elementcolor;
+        border: none;
+        font-weight: bold;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-family: $fontfamily;
 
-.hotelspesific__button:hover{
-    background-color: $secondarycolor;
+        &:hover{
+        background-color: $secondarycolor;
+        }
+        &--blue{
+            background-color: blue;
+            &:hover{
+                background-color: yellow;
+            }
+        }
+    }
 }
