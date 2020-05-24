@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import * as yup from "yup";
 import Hero from "../../Hero.js";
+import { useHistory } from 'react-router-dom';
 
 const schema = yup.object().shape({
 	firstname: yup
@@ -17,7 +18,7 @@ const schema = yup.object().shape({
 	emailadress: yup
 		.string()
 		.required()
-		.min("Required, must be in a valid email format"),
+		.min(5, "Required, must be in a valid email format"),
 	message: yup
 		.string()
 		.required()
@@ -25,10 +26,12 @@ const schema = yup.object().shape({
 });
 
  export default function Contact(props){
+	 const history = useHistory();
     const { register, handleSubmit, errors } = useForm({
         validationSchema: schema
     });
     function onSubmit() {
+			history.push("/Hotels");
     }
     return(
         <Form className="contact--form" onSubmit={handleSubmit(onSubmit)}>
