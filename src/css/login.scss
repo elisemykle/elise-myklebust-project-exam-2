@@ -1,4 +1,4 @@
-.login--h1{
+.login__h1{
     color: $elementcolor;
     font-family: $fontfamily;
     text-align: center;
@@ -38,7 +38,6 @@ label, input {
     font-family: $fontfamily;
 }
 
-
 .login__button{
     background-color: $elementcolor;
     border: none;
@@ -54,4 +53,11 @@ label, input {
 
 .login__button:hover{
     background-color: $secondarycolor;
+}
+
+.login__error{
+    font-size: 14px;
+    font-family: $fontfamily;
+    font-weight: bolder;
+    color: $elementcolor;
 }

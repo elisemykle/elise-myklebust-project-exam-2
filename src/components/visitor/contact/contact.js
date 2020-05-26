@@ -1,7 +1,5 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import * as yup from "yup";
 import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
@@ -31,37 +29,37 @@ const schema = yup.object().shape({
         validationSchema: schema
     });
     function onSubmit() {
-			history.push("/Hotels");
+			history.push("/Success");
     }
     return(
-        <Form className="contact--form" onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group>
+        <div className="contact__form" onSubmit={handleSubmit(onSubmit)}>
+            <div className="contact__page">
                 <Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
                 <div className="contact__contact--page">
-                    <h1 className="contact--h1">Any questions ?</h1>
+                    <h1 className="contact__h1">Any questions ?</h1>
 					<p className="contact__text">Get in touch with our turist agency by completing the form down below. Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.
 					</p>
                 </div>
-                <Form.Label className="form--label">First name</Form.Label>
-                <Form.Control className="form--input" name="firstname" placeholder="Enter your first name" ref={register}/>
+                <label className="form__label">First name</label>
+                <input className="form__input" name="firstname" placeholder="Enter your first name" ref={register}/>
                 {errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
-            </Form.Group>
-            <Form.Group>
-                <Form.Label className="form--label">Last name</Form.Label>
-                <Form.Control className="form--input" name="lastname" placeholder="Enter your last name" ref={register}/>
+            </div>
+            <div className="contact__page">
+                <label className="form__label">Last name</label>
+                <input className="form__input" name="lastname" placeholder="Enter your last name" ref={register}/>
                 {errors.lastname && <p className="error__message">Please enter minimum 2 characters.</p>}
-            </Form.Group>
-			<Form.Group>
-                <Form.Label className="form--label">Email adress</Form.Label>
-                <Form.Control className="form--input" name="emailadress" placeholder="Example@example.com" ref={register}/>
+            </div>
+			<div className="contact__page">
+                <label className="form__label">Email adress</label>
+                <input className="form__input" name="emailadress" placeholder="Example@example.com" ref={register}/>
                 {errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
-            </Form.Group>
-			<Form.Group>
-				<Form.Label className="form--label">Message</Form.Label>
-				<Form.Control className="message--input" as="textarea" name="message" placeholder="Please enter your message here..." ref={register}/>
+            </div>
+			<div className="contact__page">
+				<label className="form__label">Message</label>
+				<input className="message__input" as="textarea" name="message" placeholder="Please enter your message here..." ref={register}/>
 				{errors.message && <p className="error__message">Please enter in minimum 10 characters.</p>}
-			</Form.Group>
-            <Button className="contact--button" type="submit">Submit</Button>
-        </Form>
+			</div>
+            <button className="contact__button" type="submit">Submit</button>
+        </div>
         )
 }
