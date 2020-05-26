@@ -14,7 +14,7 @@ import { useHistory } from 'react-router-dom';
 		if(username === "Admin" && password === "Admin123"){
 			localStorage.setItem("username", username);
 			localStorage.setItem("password", password);
-			history.push("/Hotels");
+			history.push("/Enstablishment");
 		}
 		else{
 			setError(true);
