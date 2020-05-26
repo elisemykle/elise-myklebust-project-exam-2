@@ -40,13 +40,16 @@ const API_URL = "http://localhost:8888/get-establishments.php";
 
         return (
             <div className="home">
-                <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero" />
-                <input className="search--box" type="text" placeholder="Search for hotels here..." onChange={(e) => {
-                        updateSearchValue(e.target.value);
-                        searchHotels();
-                    }
-                }/>
-            <button className="search--button" onClick={() => searchHotels()}>Search</button>
+                <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero">
+                    <div className="search__bar row">
+                        <input className="search--box col-auto" type="text" placeholder="Search for hotels here..." onChange={(e) => {
+                            updateSearchValue(e.target.value);
+                            searchHotels();
+                        }
+                    }/>
+                    <button className="search--button" onClick={() => searchHotels()}>Search</button>
+                    </div>
+                </Hero>
                 {
                     filterHotels.map((hotel, index) =>
                         <div key={index}>

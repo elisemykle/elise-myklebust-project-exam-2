@@ -32,7 +32,7 @@ const schema = yup.object().shape({
 			history.push("/Success");
     }
     return(
-        <div className="contact__form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="contact__form" onSubmit={handleSubmit(onSubmit)}>
             <div className="contact__page">
                 <Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
                 <div className="contact__contact--page">
@@ -60,6 +60,6 @@ const schema = yup.object().shape({
 				{errors.message && <p className="error__message">Please enter in minimum 10 characters.</p>}
 			</div>
             <button className="contact__button" type="submit">Submit</button>
-        </div>
+        </form>
         )
 }

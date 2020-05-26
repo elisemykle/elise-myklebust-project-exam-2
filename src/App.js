@@ -18,19 +18,19 @@ import Success from "./components/Success.js";
 function App() {
   return (
       <Router className="App">
-          <div className="page">
            <Navigation />
-          <Switch>
-              <Route path="/" exact component={Home}/>
-              <Route path="/Hotels" component={Hotels}/>
-              <Route path="/Contact" component={Contact}/>
-              <Route path="/Login" component={Login}/>
-              <Route path="/Hotelspesific/:id" component={Hotelspesific}/>
-              <Route path="/Enquiry" component={Enquiry}/>
-              <Route path="/Success" component={Success}/>
-          </Switch>
+           <div className="page">
+              <Switch>
+                  <Route path="/" exact component={Home}/>
+                  <Route path="/Hotels" component={Hotels}/>
+                  <Route path="/Contact" component={Contact}/>
+                  <Route path="/Login" component={Login}/>
+                  <Route path="/Hotelspesific/:id" component={Hotelspesific}/>
+                  <Route path="/Enquiry" component={Enquiry}/>
+                  <Route path="/Success" component={Success}/>
+              </Switch>
+          </div>
         <Footer />
-        </div>
       </Router>
       );
     }

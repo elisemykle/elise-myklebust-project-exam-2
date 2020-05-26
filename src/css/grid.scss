@@ -45,6 +45,9 @@ $spacingPrimary: 10px;
 @media only screen {
   /*for all*/
   @include makeGrid($prefix:"col-");
+  .col-auto {
+    flex-grow: 1;
+  }
 
   /*for mobile*/
   @media (min-width: 0) and (max-width: $mobile) {

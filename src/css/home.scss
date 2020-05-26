@@ -9,12 +9,22 @@
     font-family: $fontfamily;
 }
 
+.search__bar{
+    transform: translate(-50%, 0);
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    width: 33.33%;
+    max-width: 700px;
+    padding: 0;
+}
+
 .search--box{
-    height: 30px;
-    width: 20%;
+    height: 34px;
     font-size: 14px;
     font-family: $fontfamily;
     border: none;
+    padding: 5px;
 }
 
 .search--button{
@@ -22,7 +32,6 @@
     border: none;
     color: white;
     height: 34px;
-    width: 5%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
