@@ -2,9 +2,14 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import Hero from "../../Hero.js";
+import { useHistory } from 'react-router-dom';
 
 const schema = yup.object().shape({
-	firstname: yup
+	establishment: yup
+        .string()
+		.required()
+		.min(2, "Required, minimum 2 characters"),
+	fullname: yup
         .string()
 		.required()
 		.min(2, "Required, minimum 2 characters"),
@@ -16,21 +21,25 @@ const schema = yup.object().shape({
 		.string()
 		.required()
 		.min("Required, must be in a valid email format"),
-	message: yup
-		.string()
+	date1: yup
+		.date()
+		.required(),
+	date2: yup
+		.date()
 		.required()
-		.min(10, "Required, minimum 10 characters"),
 });
 
-
 export default function Enquiry(props){
-    const { register, handleSubmit, errors } = useForm({
-        validationSchema: schema
-    });
-    function onSubmit() {
-    }
+	const history = useHistory();
+   const { register, handleSubmit, errors } = useForm({
+	   validationSchema: schema
+   });
+   function onSubmit() {
+		   history.push("/Success");
+   }
+
     return(
-        <div className="contact" onSubmit={handleSubmit(onSubmit)}>
+        <form className="contact" onSubmit={handleSubmit(onSubmit)}>
             <div className="contact__page">
                 <Hero title="Enquiry" text="" classes="hero hero--contact" showSearch={false}/>
                 <div className="contact__contact--page">
@@ -52,15 +61,15 @@ export default function Enquiry(props){
             </div>
         	<div className="contact__page">
                 <label className="form__label">Check-in:</label>
-				<input className="form__input" type="date" name="date" ref={register}/>
+				<input className="form__input" type="date" name="date1" ref={register}/>
 				{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
             </div>
             <div className="contact__page">
                 <label className="form__label">Check-out:</label>
-				<input className="form__input" type="date" name="date" ref={register}/>
+				<input className="form__input" type="date" name="date2" ref={register}/>
 				{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
             </div>
             <button className="contact__button" type="submit">Send</button>
-        </div>
+        </form>
         )
 }
