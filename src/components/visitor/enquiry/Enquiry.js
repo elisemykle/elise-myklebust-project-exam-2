@@ -54,9 +54,9 @@ export default function Enquiry(props){
 				</div>
 
 				<div className="col-6 col-m-12">
-						<label className="form__label">Full name</label>
-						<input className="form__input" name="lastname" placeholder="Enter your full name" ref={register}/>
-						{errors.lastname && <p className="error__message">Please enter minimum 2 characters.</p>}
+					<label className="form__label">Full name</label>
+					<input className="form__input" name="lastname" placeholder="Enter your full name" ref={register}/>
+					{errors.lastname && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
 
 				<div className="col-12">
