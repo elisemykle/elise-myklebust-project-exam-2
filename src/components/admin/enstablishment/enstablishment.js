@@ -32,10 +32,10 @@ const schema = yup.object().shape({
 			history.push("/Success");
     }
     return(
-		
+
         <form className="contact__form" onSubmit={handleSubmit(onSubmit)}>
             <div className="contact__page">
-                <Hero title="Enstablishment" text="" classes="hero hero--contact" showSearch={false}/>
+                <Hero title="Admin" text="" classes="hero hero--contact" showSearch={false}/>
                 <div className="contact__contact--page">
                     <h1 className="contact__h1">Add Enstablishment</h1>
                 </div>
@@ -92,6 +92,12 @@ const schema = yup.object().shape({
                 {errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
             </div>
             <button className="contact__button" type="submit">Submit</button>
+			<div className="enquiries">
+				<h1 className="enquiries__clients">Enquiries from clients</h1>
+			</div>
+			<div className="messages">
+				<h1 className="messages_clients">Messages from clients</h1>
+			</div>
         </form>
         )
 }

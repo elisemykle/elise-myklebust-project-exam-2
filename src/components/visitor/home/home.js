@@ -50,6 +50,11 @@ const API_URL = "http://elisemdesign.no/project-exam-2-master/get-establishments
                     <button className="search--button" onClick={() => searchHotels()}>Search</button>
                     </div>
                 </Hero>
+                <div className="about">
+                    <h1 className="about__h1">About Bergen city</h1>
+                    <p className="aboutbergen__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo turpis. Fusce quis enim ante. Etiam cursus nibh sit amet massa tempus ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas eget consectetur nulla. Maecenas nec rhoncus urna, volutpat lobortis neque. Aenean sapien dui, scelerisque at mi id, feugiat tincidunt arcu. Curabitur lobortis felis sit amet efficitur cursus.</p>
+                    <p className="aboutbergen__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo turpis. Fusce quis enim ante. Etiam cursus nibh sit amet massa tempus ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas eget consectetur nulla. Maecenas nec rhoncus urna, volutpat lobortis neque. Aenean sapien dui, scelerisque at mi id, feugiat tincidunt arcu. Curabitur lobortis felis sit amet efficitur cursus.</p>
+                    </div>
                 {
                     filterHotels.map((hotel, index) =>
                         <div key={index}>

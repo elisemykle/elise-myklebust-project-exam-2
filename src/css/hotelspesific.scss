@@ -45,11 +45,5 @@
         &:hover{
         background-color: $secondarycolor;
         }
-        &--blue{
-            background-color: blue;
-            &:hover{
-                background-color: yellow;
-            }
-        }
     }
 }
