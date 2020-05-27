@@ -5,16 +5,16 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import Navigation from './components/Navigation.js';
-import Home from "./components/visitor/home/Home.js";
-import Contact from "./components/visitor/contact/Contact.js";
-import Hotels from "./components/visitor/hotels/Hotels.js";
-import Login from "./components/admin/login/Login.js";
-import Footer from "./components/Footer.js";
-import Hotelspesific from "./components/visitor/hotelspesific/Hotelspesific.js";
-import Enquiry from "./components/visitor/enquiry/Enquiry.js";
-import Success from "./components/Success.js";
-import Enstablishment from "./components/admin/enstablishment/Enstablishment.js";
+import Navigation from 'components/Navigation.js';
+import Home from "components/visitor/home/Home.js";
+import Contact from "components/visitor/contact/Contact.js";
+import Hotels from "components/visitor/hotels/Hotels.js";
+import Login from "components/admin/login/Login.js";
+import Footer from "components/Footer.js";
+import Hotelspesific from "components/visitor/hotelspesific/Hotelspesific.js";
+import Enquiry from "components/visitor/enquiry/Enquiry.js";
+import Success from "components/Success.js";
+import Enstablishment from "components/admin/enstablishment/Enstablishment.js";
 
 function App() {
   return (
