@@ -1,12 +1,26 @@
 .enquiry__h1{
-text-align: center;
+    color: $secondarycolor;
+    padding-bottom: 20px;
+    font-family: $fontfamily;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 40px;
 }
 
-.form--input {
-    width: 100%;
+.form__label{
+    padding-bottom: 5px;
+    color: $secondarycolor;
+    font-size: $formfontsize;
+    font-weight: $formlabelweight;
+    font-family: $fontfamily;
+}
+
+.form__input {
+    width: $forminputwidth;
+    height: $forminputheight;
     padding: 10px;
     font-family: $fontfamily;
-    font-size: 16px;
+    font-size: $formfontsize;
 }
 
 .enquiry__form{

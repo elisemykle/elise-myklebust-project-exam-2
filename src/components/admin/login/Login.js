@@ -30,19 +30,18 @@ export default function Login(props){
             <form onSubmit={(event) => onSubmit(event)}>
                 <div className="login__form-group">
                     <label className="form__label">Username</label>
-                    <input className="form__control" name="emailaddress" placeholder="Please enter your username" onChange={event =>
+                    <input className="form__input" name="emailaddress" placeholder="Please enter your username" onChange={event =>
                             {
                                 setUsername(event.target.value);
                                 setError(false);
                             }
 
                         } />
-
                     </div>
 
                     <div className="login__form-group">
                         <label className="form__label">Password</label>
-                        <input className="form--input" type="password" name="pwd" placeholder="Please enter your password" onChange={event =>
+                        <input className="form__input" type="password" name="pwd" placeholder="Please enter your password" onChange={event =>
                                 {
                                     setPassword(event.target.value);
                                     setError(false);

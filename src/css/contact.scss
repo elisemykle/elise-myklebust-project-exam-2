@@ -12,20 +12,22 @@
 }
 
 .form__label{
-    font-size: 16px;
-    font-weight: bold;
+    font-size: $formfontsize;
+    font-weight: $forminputwidth;
     font-family: $fontfamily;
     color: $secondarycolor;
 }
 
 .form__input {
+    height: $forminputheight;
     display: block;
-    width: 100%;
+    width: $forminputwidth;
 }
 
 .message__input{
-    width: 100%;
-    font-size: 16px;
+    width: $forminputwidth;
+    height: 150px;
+    font-size: $formfontsize;
     font-family: $fontfamily;
 }
 

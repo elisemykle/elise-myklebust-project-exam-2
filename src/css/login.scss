@@ -6,17 +6,9 @@
 
 .form__label{
     color: $secondarycolor;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: $formfontsize;
+    font-weight: $formlabelweight;
     font-family: $fontfamily;
-}
-
-.form__control{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
 }
 
 .login__form-group{
@@ -28,12 +20,12 @@ input::placeholder {
 }
 
 label, input {
-    font-size: 16px;
+    font-size: $formfontsize;
 }
 
 .error__message{
     color: $secondarycolor;
-    font-size: 16px;
+    font-size: $formfontsize;
     font-style: italic;
     font-family: $fontfamily;
 }

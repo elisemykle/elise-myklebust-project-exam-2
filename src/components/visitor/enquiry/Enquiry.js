@@ -42,7 +42,7 @@ export default function Enquiry(props){
 		<div className="enquiry">
 			<div className="enquiry__heading">
 				<Hero title="Enquiry" text="" classes="hero hero--contact" showSearch={false}/>
-				<div className="contact__contact--page">
+				<div className="enquiry__enquiry--page">
 					<h1 className="enquiry__h1">Make your reservation</h1>
 				</div>
 			</div>
