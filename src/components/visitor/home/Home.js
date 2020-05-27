@@ -39,7 +39,7 @@ const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishment
 
         return (
             <div className="home">
-                <Hero title="Stop payingg more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero">
+                <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero">
                     <div className="search__bar row">
                         <input className="search--box col-auto" type="text" placeholder="Search for hotels here..." onChange={(e) => {
                             updateSearchValue(e.target.value);

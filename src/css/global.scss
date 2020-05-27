@@ -44,6 +44,15 @@ body{
     border-bottom: 3px solid $primarycolor;
 }
 
+.nav__menuToggler{
+    display: none;
+}
+
+.nav__right{
+    float: right;
+    padding: 20px;
+}
+
 .hero{
     background: url("../image/heroimg.png");
     background-size: cover;
@@ -82,13 +91,4 @@ body{
     padding-top: 90px;
     font-family: $fontfamily;
     color: $navlinkcolor;
-}
-
-.nav__menuToggler{
-    display: none;
-}
-
-.nav__right{
-    float: right;
-    padding: 12px;
 }
