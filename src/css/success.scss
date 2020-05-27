@@ -1,0 +1,53 @@
+.success__headline{
+    color: $elementcolor;
+    font-family: $fontfamily;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.success__message{
+    font-size: 16px;
+    text-align: center;
+    font-family: $fontfamily;
+    color: $secondarycolor;
+}
+
+.success__button{
+    background-color: $elementcolor;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: $fontfamily;
+}
+
+.success__button:hover{
+    background-color: $secondarycolor;
+}
+
+.success__image{
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+  height: 80px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

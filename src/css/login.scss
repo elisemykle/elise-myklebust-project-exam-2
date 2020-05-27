@@ -1,0 +1,63 @@
+.login__h1{
+    color: $elementcolor;
+    font-family: $fontfamily;
+    text-align: center;
+}
+
+.form__label{
+    color: $secondarycolor;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: $fontfamily;
+}
+
+.form__control{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.login__form-group{
+    padding: 10px 0px;
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+
+label, input {
+    font-size: 16px;
+}
+
+.error__message{
+    color: $secondarycolor;
+    font-size: 16px;
+    font-style: italic;
+    font-family: $fontfamily;
+}
+
+.login__button{
+    background-color: $elementcolor;
+    border: none;
+    color: white;
+    padding: 10px 100px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: $fontfamily;
+}
+
+.login__button:hover{
+    background-color: $secondarycolor;
+}
+
+.login__error{
+    font-size: 14px;
+    font-family: $fontfamily;
+    font-weight: bolder;
+    color: $elementcolor;
+}
