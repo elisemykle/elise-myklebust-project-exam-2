@@ -32,6 +32,7 @@ const schema = yup.object().shape({
 			history.push("/Success");
     }
     return(
+		
         <form className="contact__form" onSubmit={handleSubmit(onSubmit)}>
             <div className="contact__page">
                 <Hero title="Enstablishment" text="" classes="hero hero--contact" showSearch={false}/>

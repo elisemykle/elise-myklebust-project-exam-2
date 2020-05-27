@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const API_URL = "http://localhost:8888/get-establishment.php?id=";
+const API_URL = "http://elisemdesign.no/project-exam-2-master/get-establishment.php?id=";
 
 export default function Hotelspesific(props) {
     const {id}=useParams();
