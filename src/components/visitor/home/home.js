@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from "../../Hero.js";
 
-/* link til listen av hoteller og innhold */
 const API_URL = "http://elisemdesign.no/project-exam-2-master/get-establishments.php";
 
     function Home() {
