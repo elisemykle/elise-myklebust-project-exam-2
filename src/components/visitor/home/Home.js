@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from "../../Hero.js";
 
-const API_URL = "http://elisemdesign.no/project-exam-2-master/get-establishments.php";
+const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 
     function Home() {
         const [hotels, updateHotels] = useState([]);
