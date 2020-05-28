@@ -28,8 +28,6 @@ export default function Contact(props){
 	const [clientName, setClientName] = useState("");
 	const [useremail, setEmail] = useState("");
 	const [message, setMessage] = useState("");
-
-	
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
