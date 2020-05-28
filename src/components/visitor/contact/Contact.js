@@ -5,11 +5,7 @@ import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
 
 const schema = yup.object().shape({
-	firstname: yup
-	.string()
-	.required()
-	.min(2, "Required, minimum 2 characters"),
-	lastname: yup
+	fullname: yup
 	.string()
 	.required()
 	.min(2, "Required, minimum 2 characters"),
@@ -26,18 +22,20 @@ const schema = yup.object().shape({
 export default function Contact(props){
 	const history = useHistory();
 	const [clientName, setClientName] = useState("");
-	const [useremail, setEmail] = useState("");
+	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
 	function onSubmit() {
-		history.push("/Success");
+		//history.push("/Success");
+		uploadData(clientName, email, message);
 	}
 
 	function uploadData(clientName,email, message) {
-
+	console.log(clientName+email+message);
 	}
+
 	return(
 		<form className="contact__form"  onSubmit={handleSubmit(onSubmit)}>
 			<div className="contact__page">
@@ -48,26 +46,23 @@ export default function Contact(props){
 					</p>
 				</div>
 
-				<label className="form__label">First name</label>
-				<input className="form__input" name="firstname" placeholder="Enter your first name" ref={register}/>
+			<div className="contact__page">
+				<label className="form__label">Full name</label>
+				<input className="form__input" name="fullname" placeholder="Enter your first name"
+				 ref={register} onChange={ event => setClientName(event.target.value) } />
 				{errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
 			</div>
-
-			<div className="contact__page">
-				<label className="form__label">Last name</label>
-				<input className="form__input" name="lastname" placeholder="Enter your last name" ref={register}/>
-				{errors.lastname && <p className="error__message">Please enter minimum 2 characters.</p>}
-			</div>
+		</div>
 
 			<div className="contact__page">
 				<label className="form__label">Email adress</label>
-				<input className="form__input" name="emailadress" placeholder="Example@example.com" ref={register}/>
+				<input className="form__input" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
 				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">Message</label>
-				<input className="message__input" as="textarea" name="message" placeholder="Please enter your message here..." ref={register}/>
+				<input className="message__input" as="textarea" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
 				{errors.message && <p className="error__message">Please enter in minimum 10 characters.</p>}
 			</div>
 			<button className="contact__button" type="submit">Submit</button>
