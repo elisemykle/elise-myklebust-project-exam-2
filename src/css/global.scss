@@ -8,7 +8,6 @@ $forminputwidth: 100%;
 $formfontsize: 16px;
 $formlabelweight: bold;
 
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -92,8 +91,11 @@ body{
 }
 
 .hero__heading{
+    font-family: 'los-feliz, serif';
+    font-weight: 400;
+    font-style: normal;
     text-align: center;
-    padding-top: 90px;
+    padding-top: 75px;
     font-family: $fontfamily;
     color: $navlinkcolor;
 }

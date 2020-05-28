@@ -20,6 +20,7 @@ const schema = yup.object().shape({
 });
 
 export default function Contact(props){
+	const API_URL = "http://elisemdesign.no/project-exam-2-master/contact-success.php";
 	const history = useHistory();
 	const [clientName, setClientName] = useState("");
 	const [email, setEmail] = useState("");
@@ -28,12 +29,32 @@ export default function Contact(props){
 		validationSchema: schema
 	});
 	function onSubmit() {
-		//history.push("/Success");
-		uploadData(clientName, email, message);
+		if(uploadData(clientName, email, message)) {
+			history.push("/Success");
+		} else{
+			console.log("Noe gikk galt");
+		}
 	}
 
-	function uploadData(clientName,email, message) {
-	console.log(clientName+email+message);
+	async function uploadData(clientName,email, message) {
+		fetch(API_URL,{
+			method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            credentials: 'same-origin',
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+			/* Datane som skal sendes til PHP, æøå blir omgjort. */
+			body: 'clientName=' + encodeURIComponent(clientName) + '&email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message)
+		})
+		.then(() => {
+			return true;
+		})
+		.catch((error) => {
+			console.log(error);
+			return false;
+		});
 	}
 
 	return(
@@ -46,13 +67,13 @@ export default function Contact(props){
 					</p>
 				</div>
 
-			<div className="contact__page">
-				<label className="form__label">Full name</label>
-				<input className="form__input" name="fullname" placeholder="Enter your first name"
-				 ref={register} onChange={ event => setClientName(event.target.value) } />
-				{errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
+				<div className="contact__page">
+					<label className="form__label">Full name</label>
+					<input className="form__input" name="fullname" placeholder="Enter your first name"
+						ref={register} onChange={ event => setClientName(event.target.value) } />
+					{errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
+				</div>
 			</div>
-		</div>
 
 			<div className="contact__page">
 				<label className="form__label">Email adress</label>
