@@ -76,7 +76,7 @@ export default function Enquiry(props){
 					<input className="form__input" type="date" name="date2" ref={register}/>
 					{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
 				</div>
-				<button className="contact__button" type="submit">Send</button>
+				<button className="enquiry__button" type="submit">Submit</button>
 			</form>
 		</div>
 	)

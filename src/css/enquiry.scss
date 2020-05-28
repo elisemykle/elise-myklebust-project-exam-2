@@ -26,5 +26,18 @@
 .enquiry__form{
     max-width: 900px;
     margin: 0 auto;
-    margin-top: -40px;
+    margin-top: -45px;
+}
+
+.enquiry__button{
+    background-color: $elementcolor;
+    border: none;
+    font-weight: bold;
+    color: white;
+    height: 34px;
+    width: 8%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
 }
