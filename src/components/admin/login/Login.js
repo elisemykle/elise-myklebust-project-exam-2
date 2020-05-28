@@ -24,10 +24,11 @@ export default function Login(props){
     return(
         <div className="login__page">
             <Hero title="login" text="" classes="hero hero--login" showSearch={false}/>
-            <div className="login__form--page">
+            <div className="row login__form--page">
                 <h1 className="login__h1">Welcome back</h1>
             </div>
             <form onSubmit={(event) => onSubmit(event)}>
+            	<div className="col-12">
                 <div className="login__form-group">
                     <label className="form__label">Username</label>
                     <input className="form__input" name="emailaddress" placeholder="Please enter your username" onChange={event =>
@@ -38,7 +39,9 @@ export default function Login(props){
 
                         } />
                     </div>
+                </div>
 
+				<div className="col-12">
                     <div className="login__form-group">
                         <label className="form__label">Password</label>
                         <input className="form__input" type="password" name="pwd" placeholder="Please enter your password" onChange={event =>
@@ -49,6 +52,7 @@ export default function Login(props){
 
                             } />
                         </div>
+                    </div>
                         <button className="login__button" type="submit">Login</button>
                         {
                             (error) &&
