@@ -48,12 +48,10 @@ export default function Enquiry(props){
 			</div>
 			<form className="row enquiry__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
-					<div className="col-6 col-m-12">
 					<label className="form__label">Establishment</label>
 					<input className="form__input" name="firstname" placeholder="Enter establishment name" ref={register}/>
 					{errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
-			</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label">Full name</label>
