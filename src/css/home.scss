@@ -29,7 +29,7 @@
 }
 
 .search--button{
-    background-color: $elementcolor;
+    background-color: $secondarycolor;
     border: none;
     color: white;
     height: 34px;
@@ -41,6 +41,6 @@
 }
 
 .search--button:hover{
-    background-color: $secondarycolor;
+    background-color: $elementcolor;
     color: white;
 }

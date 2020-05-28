@@ -22,8 +22,8 @@ export default function Login(props){
 
     }
     return(
-        <div className="Login__page">
-            <Hero title="Login" text="" classes="hero hero--login" showSearch={false}/>
+        <div className="login__page">
+            <Hero title="login" text="" classes="hero hero--login" showSearch={false}/>
             <div className="login__form--page">
                 <h1 className="login__h1">Welcome back</h1>
             </div>
