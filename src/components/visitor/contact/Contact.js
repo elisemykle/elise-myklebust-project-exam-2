@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import Hero from "../../Hero.js";
@@ -25,11 +25,20 @@ const schema = yup.object().shape({
 
 export default function Contact(props){
 	const history = useHistory();
+	const [clientName, setClientName] = useState("");
+	const [useremail, setEmail] = useState("");
+	const [message, setMessage] = useState("");
+
+	
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
 	function onSubmit() {
 		history.push("/Success");
+	}
+
+	function uploadData(clientName,email, message) {
+
 	}
 	return(
 		<form className="contact__form"  onSubmit={handleSubmit(onSubmit)}>
