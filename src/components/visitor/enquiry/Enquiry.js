@@ -32,6 +32,7 @@ const schema = yup.object().shape({
 export default function Enquiry(props){
 	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 	const history = useHistory();
+	const [filterHotels, updateFilterHotels] = useState([]);
 	const [establishmentName, setestablishmentName] = useState("");
 	const [fullname, setFullName] = useState("");
 	const [email, setEmail] = useState("");
@@ -51,8 +52,8 @@ export default function Enquiry(props){
 	async function uploadEstablishment(establishmentName, fullname, email, checkin, checkout) {
 		fetch(API_URL,{
 			method: 'POST',
-            mode: 'cors',
-            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+			mode: 'cors',
+			headers: {'Content-Type':'application/x-www-form-urlencoded'},
 			/* Datane som skal sendes til PHP, æøå blir omgjort. */
 			body: 'establishmentName=' + encodeURIComponent(establishmentName) + '&fullname=' + encodeURIComponent(fullname) + '&email=' + encodeURIComponent(email) + '&checkin=' + encodeURIComponent(checkin) + '&checkout=' + encodeURIComponent(checkout)
 		})
@@ -105,7 +106,14 @@ export default function Enquiry(props){
 					{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
 				</div>
 				<button className="enquiry__button" type="submit">Submit</button>
-			</form>
-		</div>
-	)
+				{
+					filterHotels.map((hotel, index) =>
+					<div key={index}>
+						<object>hotel.establishmentName}</object>
+					</div>
+				)
+			}
+		</form>
+	</div>
+)
 }
