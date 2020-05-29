@@ -13,20 +13,21 @@
     text-align: center;
 }
 
-.form__label{
+.form__label--contact{
     font-size: $formfontsize;
-    font-weight: $forminputwidth;
+    font-weight: bold;
     font-family: $fontfamily;
     color: $secondarycolor;
+
 }
 
-.form__input {
+.form__input--contact {
     height: $forminputheight;
     display: block;
     width: $forminputwidth;
 }
 
-.message__input{
+.message__input--contact{
     width: $forminputwidth;
     height: 150px;
     font-size: $formfontsize;
@@ -51,7 +52,7 @@
     color: white;
 }
 
-.error__message{
+.error__message--contact{
     color: $secondarycolor;
     font-size: 16px;
     font-style: italic;

@@ -86,43 +86,40 @@ export default function Enquiry(props){
 			</div>
 			<form className="row enquiry__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
-					<label className="form__label">Establishment</label>
-					<input className="form__input" name="establishmentname" placeholder="Enter establishment name"
-					ref={register} onChange={ event => setestablishmentName(event.target.value) } />
-				{errors.establishmentname && <p className="error__message">Required field</p>}
+					<label className="form__label--enquiry">Establishment</label>
+						<select className="form__custom">
+							{
+								hotels.map((hotel, index) => <option key={index}>
+								{hotel.establishmentName}</option>)
+							}
+						</select>
+					{errors.establishmentname && <p className="error__message">Required field</p>}
 				</div>
-
 				<div className="col-6 col-m-12">
-					<label className="form__label">Full name</label>
-					<input className="form__input" name="fullname" placeholder="Enter your full name" ref={register} onChange={ event => setFullName(event.target.value) } />
+					<label className="form__label--enquiry">Full name</label>
+					<input className="form__input--enquiry" name="fullname" placeholder="Enter your full name" ref={register} onChange={ event => setFullName(event.target.value) } />
 					{errors.fullname && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
 
 				<div className="col-12">
-					<label className="form__label">Email adress</label>
-					<input className="form__input" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
+					<label className="form__label--enquiry">Email adress</label>
+					<input className="form__input--enquiry" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
 					{errors.emailadress && <p className="error__message">Invalid email address</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
-					<label className="form__label">Check-in</label>
-					<input className="form__input" type="date" name="date1" ref={register}
-					ref={register} onChange={ event => setCheckin(event.target.value) } />
-				{errors.date1 && <p className="error__message">Required field</p>}
+					<label className="form__label--enquiry">Check-in</label>
+					<input className="form__input--enquiry" type="date" name="date1" ref={register}
+						ref={register} onChange={ event => setCheckin(event.target.value) } />
+					{errors.date1 && <p className="error__message">Required field</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
-					<label className="form__label">Check-out</label>
-					<input className="form__input" type="date" name="date2" ref={register}
-					ref={register} onChange={ event => setCheckout(event.target.value) } />
-				{errors.date2 && <p className="error__message">Required field</p>}
+					<label className="form__label--enquiry">Check-out</label>
+					<input className="form__input--enquiry" type="date" name="date2" ref={register}
+						ref={register} onChange={ event => setCheckout(event.target.value) } />
+					{errors.date2 && <p className="error__message">Required field</p>}
 				</div>
-				<select className="custom__select">
-					{
-						hotels.map((hotel, index) => <option key={index}>
-						{hotel.establishmentName}</option>)
-					}
-				</select>
 				<button className="enquiry__button" type="submit">Submit</button>
 			</form>
 		</div>

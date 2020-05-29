@@ -7,7 +7,7 @@
     padding-top: 40px;
 }
 
-.form__label{
+.form__label--enquiry{
     padding-bottom: 5px;
     color: $secondarycolor;
     font-size: $formfontsize;
@@ -15,12 +15,23 @@
     font-family: $fontfamily;
 }
 
-.form__input {
+.form__input--enquiry {
     width: $forminputwidth;
     height: $forminputheight;
     padding: 10px;
     font-family: $fontfamily;
     font-size: $formfontsize;
+}
+
+.form__custom{
+    width: $forminputwidth;
+    height: $forminputheight;
+    padding: 10px;
+    font-family: $fontfamily;
+    font-size: $formfontsize;
+    background-color: white;
+    border: 0px solid;
+    border-radius: 1px;
 }
 
 .enquiry__form{
@@ -38,12 +49,4 @@
     width: 8%;
     text-decoration: none;
     font-size: 14px;
-}
-
-
-.custom__select {
-  position: relative;
-  font-family: Arial;
-  font-size: $formfontsize;
-   background-color: white;
 }

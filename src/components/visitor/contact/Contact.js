@@ -64,23 +64,23 @@ export default function Contact(props){
 				</div>
 
 				<div className="contact__page">
-					<label className="form__label">Full name</label>
-					<input className="form__input" name="fullname" placeholder="Enter your first name"
+					<label className="form__label--contact">Full name</label>
+					<input className="form__input--contact" name="fullname" placeholder="Enter your first name"
 						ref={register} onChange={ event => setClientName(event.target.value) } />
-					{errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
+					{errors.firstname && <p className="error__message--contact">Please enter minimum 2 characters.</p>}
 				</div>
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Email adress</label>
-				<input className="form__input" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
-				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				<label className="form__label--contact">Email adress</label>
+				<input className="form__input--contact" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
+				{errors.emailadress && <p className="error__message--contact">Please enter in a valid email format.</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Message</label>
-				<input className="message__input" as="textarea" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
-				{errors.message && <p className="error__message">Please enter in minimum 10 characters.</p>}
+				<label className="form__label--contact">Message</label>
+				<input className="message__input--contact" as="textarea" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
+				{errors.message && <p className="error__message--contact">Please enter in minimum 10 characters.</p>}
 			</div>
 			<button className="contact__button" type="submit">Submit</button>
 		</form>
