@@ -40,11 +40,7 @@ export default function Contact(props){
 		fetch(API_URL,{
 			method: 'POST',
             mode: 'cors',
-            cache: 'no-cache',
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            credentials: 'same-origin',
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
 			/* Datane som skal sendes til PHP, æøå blir omgjort. */
 			body: 'clientName=' + encodeURIComponent(clientName) + '&email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message)
 		})
