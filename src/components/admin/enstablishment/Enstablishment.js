@@ -5,22 +5,46 @@ import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
 
 const schema = yup.object().shape({
-	enstablisment: yup
+	Enstablisment: yup
 	.string()
 	.required()
-	.min(2, "Required, minimum 2 characters"),
-	lastname: yup
+	.min(2, "Required field"),
+	EnstablishmentEmail: yup
 	.string()
 	.required()
-	.min(2, "Required, minimum 2 characters"),
-	emailadress: yup
+	.min(5, "Invalid email address"),
+	ImageURL: yup
 	.string()
 	.required()
-	.min(5, "Required, must be in a valid email format"),
-	message: yup
+	.min(2, "Invalid URL"),
+	Price: yup
 	.string()
 	.required()
-	.min(10, "Required, minimum 10 characters"),
+	.min(10, "Required field"),
+	Maxguests: yup
+	.string()
+	.required()
+	.min(10, "Required field"),
+	Guests: yup
+	.string()
+	.required()
+	.min(10, "Required field"),
+	Latitude: yup
+	.string()
+	.required()
+	.min(10, "Invalid Google Latitude"),
+	Longitude: yup
+	.string()
+	.required()
+	.min(10, "Invalid Google Longitude"),
+	Description: yup
+	.string()
+	.required()
+	.min(10, "Required field"),
+	id: yup
+	.string()
+	.required()
+	.min(10, "Required field"),
 });
 
 export default function Enstablishment(props){
@@ -42,55 +66,55 @@ export default function Enstablishment(props){
 				</div>
 				<label className="form__label">Enstablisment Name</label>
 				<input className="form__input" name="firstname" placeholder="Enstablisment name" ref={register}/>
-				{errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
+				{errors.firstname && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">Establishment Email</label>
 				<input className="form__input" name="lastname" placeholder="Example@example.com" ref={register}/>
-				{errors.lastname && <p className="error__message">Please enter minimum 2 characters.</p>}
+				{errors.lastname && <p className="error__message">Invalid email address</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">Image URL</label>
 				<input className="form__input" name="emailadress" placeholder="https://images.unsplash.com/photo" ref={register}/>
-				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				{errors.emailadress && <p className="error__message">Invalid URL</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">Price per person per night ($)</label>
-				<input className="form__input" type="number" name="number" ref={register}/>
-				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				<input className="form__input" type="number" name="number" placeholder="0" ref={register}/>
+				{errors.emailadress && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">Max guests</label>
-				<input className="form__input" type="number" name="number" ref={register}/>
-				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				<input className="form__input" type="number" name="number" placeholder="0" ref={register}/>
+				{errors.emailadress && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">Google Coordinates Latitude:</label>
 				<input className="form__input" name="emailadress" placeholder="60.4058" ref={register}/>
-				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				{errors.emailadress && <p className="error__message">Invalid Google Latitude</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">Google Coordinates Longitude</label>
 				<input className="form__input" name="emailadress" placeholder="87.5976" ref={register}/>
-				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				{errors.emailadress && <p className="error__message">Invalid Google Longitude</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">Description</label>
 				<input className="form__input" name="emailadress" placeholder="About the hotels" ref={register}/>
-				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				{errors.emailadress && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
 				<label className="form__label">ID</label>
-				<input className="form__input" type="number" name="number" ref={register}/>
-				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+				<input className="form__input" type="number" name="number" placeholder="0" ref={register}/>
+				{errors.emailadress && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">

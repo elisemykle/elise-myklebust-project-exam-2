@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import Hero from "../../Hero.js";
@@ -31,6 +31,9 @@ const schema = yup.object().shape({
 
 export default function Enquiry(props){
 	const history = useHistory();
+	const [clientName, setClientName] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
