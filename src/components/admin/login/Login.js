@@ -43,8 +43,8 @@ export default function Login(props){
 
 				<div className="col-12">
                     <div className="login__form-group">
-                        <label className="form__label">Password</label>
-                        <input className="form__input" type="password" name="pwd" placeholder="Please enter your password" onChange={event =>
+                        <label className="form__label--login">Password</label>
+                        <input className="form__input--login" type="password" name="pwd" placeholder="Please enter your password" onChange={event =>
                                 {
                                     setPassword(event.target.value);
                                     setError(false);

@@ -64,64 +64,64 @@ export default function Enstablishment(props){
 				<div className="contact__contact--page">
 					<h1 className="contact__h1">Add Enstablishment</h1>
 				</div>
-				<label className="form__label">Enstablisment Name</label>
-				<input className="form__input" name="firstname" placeholder="Enstablisment name" ref={register}/>
+				<label className="form__label--enstablisment">Enstablisment Name</label>
+				<input className="form__input--enstablisment" name="firstname" placeholder="Enstablisment name" ref={register}/>
 				{errors.firstname && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Establishment Email</label>
-				<input className="form__input" name="lastname" placeholder="Example@example.com" ref={register}/>
+				<label className="form__label--enstablisment">Establishment Email</label>
+				<input className="form__input--enstablisment" name="lastname" placeholder="Example@example.com" ref={register}/>
 				{errors.lastname && <p className="error__message">Invalid email address</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Image URL</label>
-				<input className="form__input" name="emailadress" placeholder="https://images.unsplash.com/photo" ref={register}/>
+				<label className="form__label--enstablisment">Image URL</label>
+				<input className="form__input--enstablisment" name="emailadress" placeholder="https://images.unsplash.com/photo" ref={register}/>
 				{errors.emailadress && <p className="error__message">Invalid URL</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Price per person per night ($)</label>
-				<input className="form__input" type="number" name="number" placeholder="0" ref={register}/>
+				<label className="form__label--enstablisment">Price per person per night ($)</label>
+				<input className="form__input--enstablisment" type="number" name="number" placeholder="0" ref={register}/>
 				{errors.emailadress && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Max guests</label>
-				<input className="form__input" type="number" name="number" placeholder="0" ref={register}/>
+				<label className="form__label--enstablisment">Max guests</label>
+				<input className="form__input--enstablisment" type="number" name="number" placeholder="0" ref={register}/>
 				{errors.emailadress && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Google Coordinates Latitude:</label>
-				<input className="form__input" name="emailadress" placeholder="60.4058" ref={register}/>
+				<label className="form__label--enstablisment">Google Coordinates Latitude:</label>
+				<input className="form__input--enstablisment" name="emailadress" placeholder="60.4058" ref={register}/>
 				{errors.emailadress && <p className="error__message">Invalid Google Latitude</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Google Coordinates Longitude</label>
-				<input className="form__input" name="emailadress" placeholder="87.5976" ref={register}/>
+				<label className="form__label--enstablisment">Google Coordinates Longitude</label>
+				<input className="form__input--enstablisment" name="emailadress" placeholder="87.5976" ref={register}/>
 				{errors.emailadress && <p className="error__message">Invalid Google Longitude</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Description</label>
-				<input className="form__input" name="emailadress" placeholder="About the hotels" ref={register}/>
+				<label className="form__label--enstablisment">Description</label>
+				<input className="form__input--enstablisment" name="emailadress" placeholder="About the hotels" ref={register}/>
 				{errors.emailadress && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">ID</label>
-				<input className="form__input" type="number" name="number" placeholder="0" ref={register}/>
+				<label className="form__label--enstablisment">ID</label>
+				<input className="form__input--enstablisment" type="number" name="number" placeholder="0" ref={register}/>
 				{errors.emailadress && <p className="error__message">Required field</p>}
 			</div>
 
 			<div className="contact__page">
-				<label className="form__label">Self-catering</label>
-				<input className="form__input" type="checkbox" name="checkbox" ref={register}/>
+				<label className="form__label--enstablisment">Self-catering</label>
+				<input className="form__input--enstablisment" type="checkbox" name="checkbox" ref={register}/>
 				<label>True</label>
-				<input className="form__input" type="checkbox" name="checkbox" ref={register}/>
+				<input className="form__input--enstablisment" type="checkbox" name="checkbox" ref={register}/>
 				<label>False</label>
 				{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
 			</div>
