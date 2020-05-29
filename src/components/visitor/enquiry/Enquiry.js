@@ -5,7 +5,7 @@ import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
 
 const schema = yup.object().shape({
-	establishment: yup
+	establishmentname: yup
 	.string()
 	.required()
 	.min(2, "Required, minimum 2 characters"),
@@ -87,37 +87,37 @@ export default function Enquiry(props){
 			<form className="row enquiry__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
 					<label className="form__label">Establishment</label>
-					<input className="form__input" name="firstname" placeholder="Enter establishment name"
-						ref={register} onChange={ event => setestablishmentName(event.target.value) } />
-					{errors.establishmentName && <p className="error__message">Please enter minimum 2 characters.</p>}
+					<input className="form__input" name="establishmentname" placeholder="Enter establishment name"
+					ref={register} onChange={ event => setestablishmentName(event.target.value) } />
+				{errors.establishmentname && <p className="error__message">Required field</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label">Full name</label>
-					<input className="form__input" name="lastname" placeholder="Enter your full name" ref={register} onChange={ event => setFullName(event.target.value) } />
+					<input className="form__input" name="fullname" placeholder="Enter your full name" ref={register} onChange={ event => setFullName(event.target.value) } />
 					{errors.fullname && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
 
 				<div className="col-12">
 					<label className="form__label">Email adress</label>
 					<input className="form__input" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
-					{errors.email && <p className="error__message">Please enter minimum 2 characters.</p>}
+					{errors.emailadress && <p className="error__message">Invalid email address</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
-					<label className="form__label">Check-in:</label>
+					<label className="form__label">Check-in</label>
 					<input className="form__input" type="date" name="date1" ref={register}
-						ref={register} onChange={ event => setCheckin(event.target.value) } />
-					{errors.checkin && <p className="error__message">Please enter minimum 2 characters.</p>}
+					ref={register} onChange={ event => setCheckin(event.target.value) } />
+				{errors.date1 && <p className="error__message">Required field</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
-					<label className="form__label">Check-out:</label>
+					<label className="form__label">Check-out</label>
 					<input className="form__input" type="date" name="date2" ref={register}
-						ref={register} onChange={ event => setCheckout(event.target.value) } />
-					{errors.checkout && <p className="error__message">Please enter minimum 2 characters.</p>}
+					ref={register} onChange={ event => setCheckout(event.target.value) } />
+				{errors.date2 && <p className="error__message">Required field</p>}
 				</div>
-				<select>
+				<select className="custom__select">
 					{
 						hotels.map((hotel, index) => <option key={index}>
 						{hotel.establishmentName}</option>)

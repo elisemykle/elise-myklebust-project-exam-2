@@ -39,3 +39,11 @@
     text-decoration: none;
     font-size: 14px;
 }
+
+
+.custom__select {
+  position: relative;
+  font-family: Arial;
+  font-size: $formfontsize;
+   background-color: white;
+}
