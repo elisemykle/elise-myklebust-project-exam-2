@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import Hero from "../../Hero.js";
@@ -32,7 +32,8 @@ const schema = yup.object().shape({
 export default function Enquiry(props){
 	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 	const history = useHistory();
-	const [filterHotels, updateFilterHotels] = useState([]);
+	const [hotels ,updateHotels] = useState([]);
+	const [error, setError] = useState(false);
 	const [establishmentName, setestablishmentName] = useState("");
 	const [fullname, setFullName] = useState("");
 	const [email, setEmail] = useState("");
@@ -66,6 +67,14 @@ export default function Enquiry(props){
 		});
 	}
 
+	useEffect(() => {
+		fetch(API_URL)
+		.then(response => response.json())
+		.then((json) => {
+			updateHotels(json);
+		})
+		.catch(error => console.log(error));
+	}, []);
 
 	return(
 		<div className="enquiry">
@@ -78,42 +87,44 @@ export default function Enquiry(props){
 			<form className="row enquiry__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
 					<label className="form__label">Establishment</label>
-					<input className="form__input" name="firstname" placeholder="Enter establishment name" ref={register}/>
-					{errors.firstname && <p className="error__message">Please enter minimum 2 characters.</p>}
+					<input className="form__input" name="firstname" placeholder="Enter establishment name"
+						ref={register} onChange={ event => setestablishmentName(event.target.value) } />
+					{errors.establishmentName && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label">Full name</label>
-					<input className="form__input" name="lastname" placeholder="Enter your full name" ref={register}/>
-					{errors.lastname && <p className="error__message">Please enter minimum 2 characters.</p>}
+					<input className="form__input" name="lastname" placeholder="Enter your full name" ref={register} onChange={ event => setFullName(event.target.value) } />
+					{errors.fullname && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
 
 				<div className="col-12">
 					<label className="form__label">Email adress</label>
-					<input className="form__input" name="emailadress" placeholder="Example@example.com" ref={register}/>
-					{errors.emailadress && <p className="error__message">Please enter in a valid email format.</p>}
+					<input className="form__input" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
+					{errors.email && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label">Check-in:</label>
-					<input className="form__input" type="date" name="date1" ref={register}/>
-					{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
+					<input className="form__input" type="date" name="date1" ref={register}
+						ref={register} onChange={ event => setCheckin(event.target.value) } />
+					{errors.checkin && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label">Check-out:</label>
-					<input className="form__input" type="date" name="date2" ref={register}/>
-					{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
+					<input className="form__input" type="date" name="date2" ref={register}
+						ref={register} onChange={ event => setCheckout(event.target.value) } />
+					{errors.checkout && <p className="error__message">Please enter minimum 2 characters.</p>}
 				</div>
+				<select>
+					{
+						hotels.map((hotel, index) => <option key={index}>
+						{hotel.establishmentName}</option>)
+					}
+				</select>
 				<button className="enquiry__button" type="submit">Submit</button>
-				{
-					filterHotels.map((hotel, index) =>
-					<div key={index}>
-						<object>hotel.establishmentName}</object>
-					</div>
-				)
-			}
-		</form>
-	</div>
-)
+			</form>
+		</div>
+	)
 }
