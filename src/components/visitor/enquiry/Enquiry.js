@@ -30,16 +30,41 @@ const schema = yup.object().shape({
 });
 
 export default function Enquiry(props){
+	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 	const history = useHistory();
-	const [clientName, setClientName] = useState("");
+	const [establishmentName, setestablishmentName] = useState("");
+	const [fullname, setFullName] = useState("");
 	const [email, setEmail] = useState("");
-	const [message, setMessage] = useState("");
+	const [checkin, setCheckin] = useState("");
+	const [checkout, setCheckout] = useState("");
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
 	function onSubmit() {
-		history.push("/Success");
+		if(uploadEstablishment(establishmentName, fullname, email, checkin, checkout)) {
+			history.push("/Success");
+		} else{
+			console.log("Noe gikk galt");
+		}
 	}
+
+	async function uploadEstablishment(establishmentName, fullname, email, checkin, checkout) {
+		fetch(API_URL,{
+			method: 'POST',
+            mode: 'cors',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+			/* Datane som skal sendes til PHP, æøå blir omgjort. */
+			body: 'establishmentName=' + encodeURIComponent(establishmentName) + '&fullname=' + encodeURIComponent(fullname) + '&email=' + encodeURIComponent(email) + '&checkin=' + encodeURIComponent(checkin) + '&checkout=' + encodeURIComponent(checkout)
+		})
+		.then(() => {
+			return true;
+		})
+		.catch((error) => {
+			console.log(error);
+			return false;
+		});
+	}
+
 
 	return(
 		<div className="enquiry">
@@ -79,7 +104,7 @@ export default function Enquiry(props){
 					<input className="form__input" type="date" name="date2" ref={register}/>
 					{errors.emailadress && <p className="error__message">Please enter in a valid date.</p>}
 				</div>
-					<button className="enquiry__button" type="submit">Submit</button>
+				<button className="enquiry__button" type="submit">Submit</button>
 			</form>
 		</div>
 	)
