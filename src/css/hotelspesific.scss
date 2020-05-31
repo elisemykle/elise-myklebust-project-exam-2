@@ -2,14 +2,16 @@
     &__image{
         display: block;
         width: 50%;
+        height: 400px;
         margin: 0 auto;
-        align-items: center;
         object-fit: cover;
+        align-items: center;
     }
 
     &__establishmentName{
         text-align: center;
         margin: 20px;
+        margin-top: 40px;
         color: $secondarycolor;
         font-family: $fontfamily;
     }

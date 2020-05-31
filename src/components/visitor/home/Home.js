@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Hero from "../../Hero.js";
-import SearchResults from "../../SearchResults";
-
+import { Link } from 'react-router-dom';
 const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 
 function Home() {
     const [hotels, updateHotels] = useState([]);
     const [filterHotels, updateFilterHotels] = useState([]);
-    const [searchValue, updateSearchValue] = useState("");
+    const [selectedEstablishment, setSelectedEstablishment] = useState({});
+    const [showResults, setShowResults] = useState(false);
 
     useEffect(() => {
         fetch(API_URL)
@@ -20,14 +19,9 @@ function Home() {
         .catch(error => console.log(error));
     }, []);
 
-    const searchHotels = function(){
-        const searchText = searchValue.toLowerCase();
-        if(searchText === "") {
-            updateFilterHotels([]);
-            return;
-        }
+    const searchHotels = function(searchValue){
         const filterArray = hotels.filter((hotel) => {
-            new RegExp(searchValue, "i").test(hotel.establishmentName)
+            return new RegExp(searchValue, "i").test(hotel.establishmentName);
         });
         updateFilterHotels(filterArray);
     }
@@ -37,14 +31,23 @@ function Home() {
             <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero">
                 <div className="search__bar row">
                     <input className="search__input col-auto" type="text" placeholder="Search for hotels here..." onChange={(e) => {
-                            updateSearchValue(e.target.value);
+                            searchHotels(e.target.value);
                         }
-                    }/>
-                <div className="search__results">
-                    {filterHotels.map((hotel, index) => {
-                        
-                    })}
-                    </div>
+                    } onInput={() => setShowResults(true)} onBlur={() => setShowResults(false)}/>
+                    {showResults && (
+                        <div className="search__results">
+                            <div className="results__list">
+                                {filterHotels.map((hotel, index) => {
+                                    return(
+                                    <Link key={index} className="results__hotel row" to={"/Hotelspesific/" + hotel.id}>
+                                        <img src={hotel.imageUrl} className="results__image" alt="hotel" />
+                                        <p className="results__name">{hotel.establishmentName}</p>
+                                    </Link>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    )}
                     <button className="search--button" onClick={() => searchHotels()}>Search</button>
                 </div>
             </Hero>
