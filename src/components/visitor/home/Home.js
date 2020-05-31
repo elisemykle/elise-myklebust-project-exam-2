@@ -6,7 +6,6 @@ const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishment
 function Home() {
     const [hotels, updateHotels] = useState([]);
     const [filterHotels, updateFilterHotels] = useState([]);
-    const [selectedEstablishment, setSelectedEstablishment] = useState({});
     const [showResults, setShowResults] = useState(false);
 
     useEffect(() => {
@@ -25,7 +24,6 @@ function Home() {
         });
         updateFilterHotels(filterArray);
     }
-    console.log(filterHotels);
     return (
         <div className="home">
             <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero">
@@ -33,7 +31,7 @@ function Home() {
                     <input className="search__input col-auto" type="text" placeholder="Search for hotels here..." onChange={(e) => {
                             searchHotels(e.target.value);
                         }
-                    } onInput={() => setShowResults(true)} onBlur={() => setShowResults(false)}/>
+                    } onInput={() => setShowResults(true)}/>
                     {showResults && (
                         <div className="search__results">
                             <div className="results__list">
