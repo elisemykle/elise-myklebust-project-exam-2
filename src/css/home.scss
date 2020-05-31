@@ -41,24 +41,26 @@
     width: 100%;
     max-height: 320px;
     overflow: auto;
-    background-color: darkgrey;
+    background-color: #EFEFEF;
+    font-family: $fontfamily;
 }
 
 .results__hotel {
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin: 5px 0;
     justify-content: flex-start;
     color: black;
     text-decoration: none;
     &:hover {
-        background-color: $secondarycolor;
+        background-color: $elementcolor;
         color: white;
+        font-weight: bold;
     }
 }
 
 .results__image {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 .results__name {
@@ -78,4 +80,9 @@
 .search--button:hover{
     background-color: $elementcolor;
     color: white;
+}
+
+
+.search__input{
+    font-size: 14px;
 }
