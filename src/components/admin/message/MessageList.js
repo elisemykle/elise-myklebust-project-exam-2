@@ -11,10 +11,10 @@ export default function Message() {
     },[]);
     return (
         <div className="messages">
-        <h1 className="messages__h1">Messages</h1>
+        <h1 className="messages__h1">Messages from customers</h1>
         {
             messages.map((message, index) =>
-            <h1 key={index}>{message.clientName} wrote this; {message.message}</h1>
+            <h1 key={index}> {message.clientName} wrote this; {message.message}</h1>
         )
     }
     </div>
