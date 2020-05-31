@@ -27,11 +27,13 @@
     border: none;
     padding: 5px;
 }
+
 .search__results {
     position: relative;
     width: 100%;
     height: 1px;
 }
+
 .results__list {
     position: absolute;
     top: 0;
@@ -41,6 +43,7 @@
     overflow: auto;
     background-color: darkgrey;
 }
+
 .results__hotel {
     padding: 10px 20px;
     margin: 5px 0;
@@ -52,18 +55,20 @@
         color: white;
     }
 }
+
 .results__image {
     width: 30px;
     height: 30px;
 }
+
 .results__name {
     margin: auto 10px;
 }
+
 .search--button{
     background-color: $secondarycolor;
     border: none;
     color: white;
-    height: 34px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
