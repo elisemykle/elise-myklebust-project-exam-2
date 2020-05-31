@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from "../../Hero.js";
+import SearchResults from "../../SearchResults";
 
 const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 
@@ -14,7 +15,7 @@ function Home() {
         .then(response => response.json())
         .then((json) => {
             updateHotels(json);
-            //updateFilterHotels(json);
+            updateFilterHotels(json);
         })
         .catch(error => console.log(error));
     }, []);
@@ -26,44 +27,34 @@ function Home() {
             return;
         }
         const filterArray = hotels.filter((hotel) => {
-            const lowerCaseName = hotel.establishmentName.toLowerCase();
-            if(lowerCaseName.indexOf(searchText)){
-                return true;
-            }
-            else {
-                return false;
-            }
+            new RegExp(searchValue, "i").test(hotel.establishmentName)
         });
         updateFilterHotels(filterArray);
     }
-
+    console.log(filterHotels);
     return (
         <div className="home">
             <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero">
                 <div className="search__bar row">
-                    <input className="search--box col-auto" type="text" placeholder="Search for hotels here..." onChange={(e) => {
+                    <input className="search__input col-auto" type="text" placeholder="Search for hotels here..." onChange={(e) => {
                             updateSearchValue(e.target.value);
-                            searchHotels();
                         }
                     }/>
+                <div className="search__results">
+                    {filterHotels.map((hotel, index) => {
+                        
+                    })}
+                    </div>
                     <button className="search--button" onClick={() => searchHotels()}>Search</button>
                 </div>
             </Hero>
 
             <div className="about">
                 <h1 className="about__h1">About Bergen city</h1>
-                <p className="aboutbergen__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo turpis. Fusce quis enim ante. Etiam cursus nibh sit amet massa tempus ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas eget consectetur nulla. Maecenas nec rhoncus urna, volutpat lobortis neque. Aenean sapien dui, scelerisque at mi id, feugiat tincidunt arcu. Curabitur lobortis felis sit amet efficitur cursus.</p>
-                <p className="aboutbergen__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo turpis. Fusce quis enim ante. Etiam cursus nibh sit amet massa tempus ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas eget consectetur nulla. Maecenas nec rhoncus urna, volutpat lobortis neque. Aenean sapien dui, scelerisque at mi id, feugiat tincidunt arcu. Curabitur lobortis felis sit amet efficitur cursus.</p>
+                <p className="aboutbergen__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur euismod ligula id consequat. Vestibulum sagittis erat id blandit dictum. Vestibulum augue arcu, efficitur id tempor quis, viverra et risus. Pellentesque a dolor rhoncus, sagittis mauris ut, sodales orci. Curabitur maximus augue ut justo vulputate, id imperdiet arcu elementum. Cras sed ultricies nunc. Integer mollis diam a nisl aliquam eleifend. Donec tempus erat ligula, ut porttitor dolor tristique et. Cras tempor nulla id nisl tempus, sit amet euismod turpis elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam erat nunc, pellentesque vitae dui non, auctor pretium mi.</p>
+                <p className="aboutbergen__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur euismod ligula id consequat. Vestibulum sagittis erat id blandit dictum. Vestibulum augue arcu, efficitur id tempor quis, viverra et risus. Pellentesque a dolor rhoncus, sagittis mauris ut, sodales orci. Curabitur maximus augue ut justo vulputate, id imperdiet arcu elementum. Cras sed ultricies nunc. Integer mollis diam a nisl aliquam eleifend. Donec tempus erat ligula, ut porttitor dolor tristique et. Cras tempor nulla id nisl tempus, sit amet euismod turpis elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam erat nunc, pellentesque vitae dui non, auctor pretium mi.</p>
             </div>
-            {
-                filterHotels.map((hotel, index) =>
-                <div key={index}>
-                    <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">
-                        <h1>{hotel.establishmentName}</h1>
-                    </Link>
-                </div>
-            )
-        }
+
     </div>
 );
 }

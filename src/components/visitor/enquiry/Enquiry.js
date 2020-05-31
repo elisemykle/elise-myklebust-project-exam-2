@@ -7,20 +7,17 @@ import { useHistory } from 'react-router-dom';
 const schema = yup.object().shape({
 	establishmentname: yup
 	.string()
-	.required()
-	.min(2, "Required, minimum 2 characters"),
+	.required(),
 	fullname: yup
 	.string()
 	.required()
-	.min(2, "Required, minimum 2 characters"),
-	lastname: yup
-	.string()
-	.required()
-	.min(2, "Required, minimum 2 characters"),
+	.matches(/\w+\s\w+/, {
+		message: "Not a valid name"
+	}),
 	emailadress: yup
 	.string()
-	.required()
-	.min("Required, must be in a valid email format"),
+	.email()
+	.required(),
 	date1: yup
 	.date()
 	.required(),
@@ -33,38 +30,18 @@ export default function Enquiry(props){
 	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 	const history = useHistory();
 	const [hotels ,updateHotels] = useState([]);
-	const [error, setError] = useState(false);
-	const [establishmentName, setestablishmentName] = useState("");
-	const [fullname, setFullName] = useState("");
-	const [email, setEmail] = useState("");
-	const [checkin, setCheckin] = useState("");
-	const [checkout, setCheckout] = useState("");
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
-	function onSubmit() {
-		if(uploadEstablishment(establishmentName, fullname, email, checkin, checkout)) {
-			history.push("/Success");
-		} else{
-			console.log("Noe gikk galt");
-		}
-	}
-
-	async function uploadEstablishment(establishmentName, fullname, email, checkin, checkout) {
+	function onSubmit(item) {
 		fetch(API_URL,{
 			method: 'POST',
 			mode: 'cors',
 			headers: {'Content-Type':'application/x-www-form-urlencoded'},
-			/* Datane som skal sendes til PHP, æøå blir omgjort. */
-			body: 'establishmentName=' + encodeURIComponent(establishmentName) + '&fullname=' + encodeURIComponent(fullname) + '&email=' + encodeURIComponent(email) + '&checkin=' + encodeURIComponent(checkin) + '&checkout=' + encodeURIComponent(checkout)
+			/* Datane som skal sendes til PHP, å blir omgjort. */
+			body: 'establishmentName=' + encodeURIComponent(item.establishmentname) + '&fullname=' + encodeURIComponent(item.fullname) + '&email=' + encodeURIComponent(item.emailadress) + '&checkin=' + encodeURIComponent(item.date1) + '&checkout=' + encodeURIComponent(item.date2)
 		})
-		.then(() => {
-			return true;
-		})
-		.catch((error) => {
-			console.log(error);
-			return false;
-		});
+		history.push("/Success");
 	}
 
 	useEffect(() => {
@@ -87,7 +64,7 @@ export default function Enquiry(props){
 			<form className="row enquiry__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Establishment</label>
-						<select className="form__custom">
+						<select className="form__custom" name="establishmentname" ref={register}>
 							{
 								hotels.map((hotel, index) => <option key={index}>
 								{hotel.establishmentName}</option>)
@@ -97,28 +74,26 @@ export default function Enquiry(props){
 				</div>
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Full name</label>
-					<input className="form__input--enquiry" name="fullname" placeholder="Enter your full name" ref={register} onChange={ event => setFullName(event.target.value) } />
-					{errors.fullname && <p className="error__message">Please enter minimum 2 characters.</p>}
+					<input className="form__input--enquiry" name="fullname" placeholder="Enter your full name" ref={register}/>
+					{errors.fullname && <p className="error__message">{errors.fullname.message}</p>}
 				</div>
 
 				<div className="col-12">
 					<label className="form__label--enquiry">Email adress</label>
-					<input className="form__input--enquiry" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
-					{errors.emailadress && <p className="error__message">Invalid email address</p>}
+					<input className="form__input--enquiry" name="emailadress" placeholder="Example@example.com" ref={register}/>
+					{errors.emailadress && <p className="error__message">{errors.emailadress.message}</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Check-in</label>
-					<input className="form__input--enquiry" type="date" name="date1" ref={register}
-						ref={register} onChange={ event => setCheckin(event.target.value) } />
-					{errors.date1 && <p className="error__message">Required field</p>}
+					<input className="form__input--enquiry" type="date" name="date1" ref={register}/>
+					{errors.date1 && <p className="error__message">{errors.date1.message}</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Check-out</label>
-					<input className="form__input--enquiry" type="date" name="date2" ref={register}
-						ref={register} onChange={ event => setCheckout(event.target.value) } />
-					{errors.date2 && <p className="error__message">Required field</p>}
+					<input className="form__input--enquiry" type="date" name="date2" ref={register}/>
+					{errors.date2 && <p className="error__message">{errors.date2.message}</p>}
 				</div>
 				<button className="enquiry__button" type="submit">Submit</button>
 			</form>
