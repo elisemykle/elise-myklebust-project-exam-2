@@ -14,7 +14,7 @@ export default function Login(props){
         if(username === "Admin" && password === "Admin123"){
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
-            history.push("/Establishment");
+            history.push("/Admin");
         }
         else{
             setError(true);

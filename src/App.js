@@ -14,7 +14,7 @@ import Footer from "./components/Footer.js";
 import Hotelspesific from "./components/visitor/hotelspesific/Hotelspesific.js";
 import Enquiry from "./components/visitor/enquiry/Enquiry.js";
 import Success from "./components/Success.js";
-import Establishment from "./components/admin/enstablishment/Establishment.js";
+import Admin from "./components/admin/admin/Admin.js";
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
                   <Route path="/Hotelspesific/:id" component={Hotelspesific}/>
                   <Route path="/Enquiry" component={Enquiry}/>
                   <Route path="/Success" component={Success}/>
-                  <Route path="/Establishment" component={Establishment}/>
+                  <Route path="/Admin" component={Admin}/>
               </Switch>
           </div>
         <Footer />

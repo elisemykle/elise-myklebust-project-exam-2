@@ -6,15 +6,20 @@ export default function Message() {
     const [messages, setMessages] = useState([]);
     useEffect(() => {
         fetch(API_URL)
-            .then(response => response.json())
-            .then(setMessages);
+        .then(response => response.json())
+        .then((json) => {
+            setMessages(json);
+        })
+        .catch(() => {
+            console.log("Noe gikk galt");
+        })
     },[]);
     return (
         <div className="messages">
         <h1 className="messages__h1">Messages from customers</h1>
         {
             messages.map((message, index) =>
-            <h1 key={index}> {message.clientName} wrote this; {message.message}</h1>
+            <div key={index}> <p className="message__text">{message.message} {message.clientName}</p></div>
         )
     }
     </div>

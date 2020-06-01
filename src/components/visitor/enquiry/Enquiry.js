@@ -37,13 +37,19 @@ export default function Enquiry(props){
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
+
 	function onSubmit(item) {
+		var ci= new Date(item.date1);
+		var checkindate= ci.getFullYear()+"-"+ci.getMonth()+"-"+ci.getDay();
+		var co= new Date(item.date2);
+		var checkoutdate= co.getFullYear()+"-"+co.getMonth()+"-"+co.getDay();
+		
 		fetch(API_URL_ENQUIRY,{
 			method: 'POST',
 			mode: 'cors',
 			headers: {'Content-Type':'application/x-www-form-urlencoded'},
 			/* Datane som skal sendes til PHP, å blir omgjort. */
-			body: 'establishment=' + encodeURIComponent(item.establishmentname) + '&clientName=' + encodeURIComponent(item.fullname) + '&email=' + encodeURIComponent(item.emailadress) + '&checkin=' + encodeURIComponent(item.date1) + '&checkout=' + encodeURIComponent(item.date2)
+			body: 'establishment=' + encodeURIComponent(item.establishmentname) + '&clientName=' + encodeURIComponent(item.fullname) + '&email=' + encodeURIComponent(item.emailadress) + '&checkin=' + encodeURIComponent(checkindate) + '&checkout=' + encodeURIComponent(checkoutdate)
 		})
 		.then(() => {
 			history.push("/Success");

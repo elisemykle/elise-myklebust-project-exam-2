@@ -6,15 +6,21 @@ export default function EnquiryList() {
     const [enquiries, setEnquiries] = useState([]);
     useEffect(() => {
         fetch(API_URL)
-            .then(response => response.json())
-            .then(setEnquiries);
+        .then(response => response.json())
+        .then((json) => {
+            setEnquiries(json);
+        })
+        .catch(() => {
+            console.log("Noe gikk galt");
+        })
     },[]);
+
     return (
         <div className="enquirylist">
         <h1 className="enquirylist__h1">Enquiry from customers</h1>
         {
             enquiries.map((enquiry, index) =>
-            <h1 key={index}> {enquiry.establishment} wrote this; {enquiry.clientName} {enquiry.email}
+            <h1 key={index}> {enquiry.establishment} {enquiry.clientName} {enquiry.email}
             {enquiry.checkin} {enquiry.checkout}</h1>
         )
     }

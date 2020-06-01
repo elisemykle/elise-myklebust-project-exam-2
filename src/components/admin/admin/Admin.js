@@ -164,6 +164,11 @@ export default function Enstablishment(props){
 					<MessageList/>
 				</div>
 			</div>
+			<div className="enquiries">
+				<div className="enquiries__list">
+					<EnquiryList/>
+				</div>
+			</div>
 		</div>
 	)
 }
