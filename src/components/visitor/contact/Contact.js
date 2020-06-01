@@ -4,6 +4,7 @@ import * as yup from "yup";
 import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
 
+/* Validere for å bekrefte om objektet er gyldig(om det tilfredsstiller skjema og valideringer)*/
 const schema = yup.object().shape({
 	fullname: yup
 	.string()
@@ -28,10 +29,14 @@ export default function Contact(props){
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
+	
+	/* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
 	function onSubmit() {
 		if(uploadData(clientName, email, message)) {
+			/* Blir sendt videre til Success om skjemaet valideres riktig uten error */
 			history.push("/Success");
 		} else{
+			/* Console.log lar deg generere ut tilpassendes feilmeldinger om noe skulle gå galt*/
 			console.log("Noe gikk galt");
 		}
 	}
@@ -53,6 +58,7 @@ export default function Contact(props){
 		});
 	}
 
+    /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
 	return(
 		<div className="contact">
 			<Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>

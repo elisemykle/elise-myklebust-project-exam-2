@@ -4,6 +4,7 @@ import * as yup from "yup";
 import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
 
+/* Validere for å bekrefte om objektet er gyldig(om det tilfredsstiller skjema og valideringer)*/
 const schema = yup.object().shape({
 	establishmentname: yup
 	.string()
@@ -38,7 +39,9 @@ export default function Enquiry(props){
 		validationSchema: schema
 	});
 
+	/* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
 	function onSubmit(item) {
+		/* Laget en Date variabel for å kunne forkorte ned datoen til å kun vise år, måneder og dager.*/
 		var ci= new Date(item.date1);
 		var checkindate= ci.getFullYear()+"-"+ci.getMonth()+"-"+ci.getDay();
 		var co= new Date(item.date2);
@@ -52,10 +55,12 @@ export default function Enquiry(props){
 			body: 'establishment=' + encodeURIComponent(item.establishmentname) + '&clientName=' + encodeURIComponent(item.fullname) + '&email=' + encodeURIComponent(item.emailadress) + '&checkin=' + encodeURIComponent(checkindate) + '&checkout=' + encodeURIComponent(checkoutdate)
 		})
 		.then(() => {
+			/* Blir sendt videre til Success om skjemaet valideres riktig uten error */
 			history.push("/Success");
 			return;
 		})
 		.catch(() => {
+			/* Console.log lar deg generere ut tilpassendes feilmeldinger om noe skulle gå galt*/
 			console.log("Noe gikk galt");
 		});
 	}
@@ -69,6 +74,7 @@ export default function Enquiry(props){
 		.catch(error => console.log(error));
 	}, []);
 
+	/* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
 	return(
 		<div className="enquiry">
 			<div className="enquiry__heading">

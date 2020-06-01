@@ -17,7 +17,7 @@ export default function EnquiryList() {
             console.log("Noe gikk galt");
         })
     },[]);
-    
+
     /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
         <div className="enquirylist">

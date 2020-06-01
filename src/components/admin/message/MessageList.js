@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+/* API call som henter informasjonen fra en url-kobling */
 const API_URL = "http://elisemdesign.no/project-exam-2-master/get-contacts.php";
+
 
 export default function Message() {
     const [messages, setMessages] = useState([]);
@@ -10,10 +12,12 @@ export default function Message() {
         .then((json) => {
             setMessages(json);
         })
+        /* Catch funksjonen lar deg generere tilpassendes feilmeldinger om noe skulle gå galt*/
         .catch(() => {
             console.log("Noe gikk galt");
         })
     },[]);
+    /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
         <div className="messages">
         <h1 className="messages__h1">Messages from customers</h1>
