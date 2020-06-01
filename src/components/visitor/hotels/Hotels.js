@@ -35,7 +35,7 @@ function Hotels() {
                                     <Link to={"/Hotelspesific/" + hotel.id} className="card__readmore">read more</Link>
                                 </div>
                             </div>
-                            <Link  className="card__button">Book now</Link>
+                            <Link to={"/Enquiry/"} className="card__button">Book now</Link>
                         </div>
                     </div>
                 )
