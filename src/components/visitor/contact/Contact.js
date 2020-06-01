@@ -55,7 +55,6 @@ export default function Contact(props){
 
 	return(
 		<form className="contact__form"  onSubmit={handleSubmit(onSubmit)}>
-			<div className="contact__page">
 				<Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
 				<div className="contact__contact--page">
 					<h1 className="contact__h1">Any questions ?</h1>
@@ -69,7 +68,6 @@ export default function Contact(props){
 						ref={register} onChange={ event => setClientName(event.target.value) } />
 					{errors.firstname && <p className="error__message--contact">Please enter minimum 2 characters.</p>}
 				</div>
-			</div>
 
 			<div className="contact__page">
 				<label className="form__label--contact">Email adress</label>
