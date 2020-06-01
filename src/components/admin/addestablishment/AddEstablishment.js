@@ -9,7 +9,7 @@ const schema = yup.object().shape({
     .string()
     .required()
     .min(2, "Required field"),
-    establismentemail: yup
+    establishmentemail: yup
     .string()
     .required()
     .min(5, "Invalid email address"),
@@ -19,45 +19,31 @@ const schema = yup.object().shape({
     .min(2, "Invalid URL"),
     price: yup
     .string()
-    .required()
-    .min(10, "Required field"),
+    .required(),
     maxguests: yup
     .string()
-    .required()
-    .min(10, "Required field"),
-    Guests: yup
-    .string()
-    .required()
-    .min(10, "Required field"),
+    .required(),
     latitude: yup
     .string()
-    .required()
-    .min(10, "Invalid Google Latitude"),
+    .required(),
     longitude: yup
     .string()
-    .required()
-    .min(10, "Invalid Google Longitude"),
+    .required(),
     description: yup
     .string()
     .required()
     .min(10, "Required field"),
     id: yup
     .string()
+    .required(),
+    selfcatering: yup
+    .boolean()
     .required()
-    .min(10, "Required field"),
-    selfcateringtrue: yup
-    .string()
-    .required()
-    .min(10, "Required field"),
-    selfcateringfalse: yup
-    .string()
-    .required()
-    .min(10, "Required field"),
 });
 
 export default function AddEstablishment(props) {
     const API_URL = "http://elisemdesign.no/project-exam-2-master/get-establishments.php";
-    const [establishment, setEstablishmentname ] = useState([]);
+    const [establishmentname, setEstablishmentname ] = useState([]);
     const [establismentemail, setEstablishmentemail ] = useState([]);
     const [imageurl, setImageurl ] = useState([]);
     const [price, setPrice ] = useState([]);
@@ -76,15 +62,17 @@ export default function AddEstablishment(props) {
 
     /* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
     function onSubmit(item) {
+        /*
         fetch(API_URL,{
             method: 'POST',
             mode: 'cors',
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            /* Datane som skal sendes til PHP, å blir omgjort. */
-            body: 'establishmentName=' + encodeURIComponent(item.establishmentname) + '&establismentemail=' + encodeURIComponent(item.establismentemail) + '&imageurl=' + encodeURIComponent(item.imageurl) + '&price=' + encodeURIComponent(item.price) + '&maxguests=' + encodeURIComponent(item.maxguests) + '&guests=' + encodeURIComponent(item.guests) + '&latitude=' + encodeURIComponent(item.latitude) + '&longitude=' + encodeURIComponent(item.longitude) + '&description=' + encodeURIComponent(item.description) + '&id=' + encodeURIComponent(item.id) + '&selfcateringtrue=' + encodeURIComponent(item.selfcateringtrue) + '&selfcateringfalse=' + encodeURIComponent(item.selfcateringfalse)
+            // Datane som skal sendes til PHP, å blir omgjort.
+            body: 'establishmentName=' + encodeURIComponent(item.establishmentname) + '&establismentEmail=' + encodeURIComponent(item.establismentemail) + '&imageUrl=' + encodeURIComponent(item.imageurl) + '&price=' + encodeURIComponent(item.price) + '&maxGuests=' + encodeURIComponent(item.maxguests) + '&googleLat=' + encodeURIComponent(item.latitude) + '&googleLong=' + encodeURIComponent(item.longitude) + '&description=' + encodeURIComponent(item.description) + '&id=' + encodeURIComponent(item.id) + '&selfCatering=' + encodeURIComponent(item.selfcatering)
         })
-        /* Blir sendt videre til Success om skjemaet valideres riktig uten error */
-        history.push("/Success");
+        /* Blir sendt videre til Success om skjemaet valideres riktig uten error
+        history.push("/Success"); */
+        console.log(establishmentname);
     }
 
     /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
@@ -94,20 +82,20 @@ export default function AddEstablishment(props) {
         <div className="contact__contact--page">
         <h1 className="contact__h1">Add Establishment</h1>
         </div>
-        <label className="form__label--enstablisment">Establisment Name</label>
-        <input className="form__input--enstablisment" name="establishmentname" placeholder="Enstablisment name" ref={register}/>
+        <label className="form__label--enstablisment">Establishment Name</label>
+        <input className="form__input--enstablisment" name="establishmentname" placeholder="Enstablisment name" ref={register} onChange={ event => setEstablishmentemail (event.target.value) } />
         {errors.establishmentname && <p className="error__message">Required field</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Establishment Email</label>
-        <input className="form__input--enstablisment" name="establismentemail" placeholder="Example@example.com" ref={register}/>
-        {errors.establismentemail && <p className="error__message">Invalid email address</p>}
+        <input className="form__input--enstablisment" name="establishmentemail" placeholder="Example@example.com" ref={register} onChange={ event => setEstablishmentemail (event.target.value) } />
+        {errors.establishmentemail && <p className="error__message">Invalid email address</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Image URL</label>
-        <input className="form__input--enstablisment" name="imageurl" placeholder="https://images.unsplash.com/photo" ref={register}/>
+        <input className="form__input--enstablisment" name="imageurl" placeholder="https://images.unsplash.com/photo" ref={register} />
         {errors.imageurl && <p className="error__message">Invalid URL</p>}
         </div>
 
@@ -149,12 +137,8 @@ export default function AddEstablishment(props) {
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Self-catering</label>
-        <input className="form__input--enstablisment" type="checkbox" name="selfcateringtrue" ref={register}/>
-        {errors.selfcateringtrue && <p className="error__message">Required field</p>}
-        <label>True</label>
-        <input className="form__input--enstablisment" type="checkbox" name="selfcateringfalse" ref={register}/>
-        <label>False</label>
-        {errors.selfcateringfalse && <p className="error__message">Required field</p>}
+        <input className="form__input--enstablisment" type="checkbox" name="selfcatering" ref={register}/>
+        {errors.selfcatering && <p className="error__message">Required field</p>}
         </div>
 
         <button className="contact__button" type="submit">Submit</button>
