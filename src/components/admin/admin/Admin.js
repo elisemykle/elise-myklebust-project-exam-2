@@ -9,6 +9,7 @@ import AddEstablishment from "../addestablishment/AddEstablishment.js";
 
 
 export default function Admin(props){
+	/* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
 	return(
 		<div className="admin">
 			<Hero title="Admin" text="" classes="hero hero--contact" showSearch={false}/>

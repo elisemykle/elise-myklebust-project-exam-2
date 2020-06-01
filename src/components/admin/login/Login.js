@@ -4,13 +4,13 @@ import { useHistory } from 'react-router-dom';
 
 export default function Login(props){
     const history = useHistory();
-
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
 
+    /* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
     function onSubmit(e) {
-        e.preventDefault();
+        e.preventDefault();/* e.preventDefault sjekker om passordet stemmer med en if/else statement. Om username og password er korrekt så vil man bli sendt videre til Admin. Visst det ikke stemmer så vil man ikke bli sendt videre. */
         if(username === "Admin" && password === "Admin123"){
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
@@ -21,6 +21,7 @@ export default function Login(props){
         }
 
     }
+    /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return(
         <div className="login__page">
             <Hero title="login" text="" classes="hero hero--login" showSearch={false}/>

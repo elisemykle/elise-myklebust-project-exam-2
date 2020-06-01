@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useHistory } from 'react-router-dom';
 
+/* Validere for å bekrefte om objektet er gyldig(om det tilfredsstiller skjema og valideringer)*/
 const schema = yup.object().shape({
     establishmentname: yup
     .string()
@@ -73,6 +74,7 @@ export default function AddEstablishment(props) {
         validationSchema: schema
     });
 
+    /* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
     function onSubmit(item) {
         fetch(API_URL,{
             method: 'POST',
@@ -81,9 +83,11 @@ export default function AddEstablishment(props) {
             /* Datane som skal sendes til PHP, å blir omgjort. */
             body: 'establishmentName=' + encodeURIComponent(item.establishmentname) + '&establismentemail=' + encodeURIComponent(item.establismentemail) + '&imageurl=' + encodeURIComponent(item.imageurl) + '&price=' + encodeURIComponent(item.price) + '&maxguests=' + encodeURIComponent(item.maxguests) + '&guests=' + encodeURIComponent(item.guests) + '&latitude=' + encodeURIComponent(item.latitude) + '&longitude=' + encodeURIComponent(item.longitude) + '&description=' + encodeURIComponent(item.description) + '&id=' + encodeURIComponent(item.id) + '&selfcateringtrue=' + encodeURIComponent(item.selfcateringtrue) + '&selfcateringfalse=' + encodeURIComponent(item.selfcateringfalse)
         })
+        /* Blir sendt videre til Success om skjemaet valideres riktig uten error */
         history.push("/Success");
     }
 
+    /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
         <form className="contact__form" onSubmit={handleSubmit(onSubmit)}>
         <div className="contact__page">
