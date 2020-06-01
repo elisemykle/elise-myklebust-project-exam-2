@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+/* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
 const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishment.php?id=";
 
 export default function Hotelspesific(props) {
@@ -14,8 +15,11 @@ export default function Hotelspesific(props) {
         .then((json) => {
             updateHotel(json);
         })
+        /* Console.log lar deg generere ut tilpassendes feilmeldinger om noe skulle gå galt*/
         .catch(error => console.log(error));
     }, [id]);
+
+    /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
         <div className="hotelspesific">
             <h1 className="hotelspesific__establishmentName">{hotel.establishmentName}</h1>

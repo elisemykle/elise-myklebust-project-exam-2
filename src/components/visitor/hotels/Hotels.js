@@ -14,9 +14,11 @@ function Hotels() {
         .then((json) => {
             updateHotels(json);
         })
+        /* Console.log lar deg generere ut tilpassendes feilmeldinger om noe skulle gå galt*/
         .catch(error => console.log(error));
     }, []);
 
+    /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
         <div className="hotels__hero">
             <Hero title="The Hotels" text="Choose between your hotels, b&b’s and guesthouses to stay at." classes="hero" />

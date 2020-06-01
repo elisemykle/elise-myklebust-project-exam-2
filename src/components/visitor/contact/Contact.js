@@ -29,7 +29,7 @@ export default function Contact(props){
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
-	
+
 	/* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
 	function onSubmit() {
 		if(uploadData(clientName, email, message)) {

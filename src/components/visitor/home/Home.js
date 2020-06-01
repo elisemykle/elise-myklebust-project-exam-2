@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Hero from "../../Hero.js";
 import { Link } from 'react-router-dom';
+
+// API call som henter informasjonen fra en url-kobling
 const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 
+// Home komponenten
 function Home() {
+    // States
     const [hotels, updateHotels] = useState([]);
     const [filterHotels, updateFilterHotels] = useState([]);
     const [showResults, setShowResults] = useState(false);
 
+    // Henter dataene fra API'et
     useEffect(() => {
         fetch(API_URL)
         .then(response => response.json())
@@ -18,23 +23,29 @@ function Home() {
         .catch(error => console.log(error));
     }, []);
 
-    const searchHotels = function(searchValue){
+    // Filterer listen med hoteller ut i fra hva man har søkt i søkeboksen
+    const typeAheadSearch = function(searchValue){
         const filterArray = hotels.filter((hotel) => {
             return new RegExp(searchValue, "i").test(hotel.establishmentName);
         });
         updateFilterHotels(filterArray);
     }
+
+    // Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden
     return (
         <div className="home">
             <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero">
                 <div className="search__bar row">
-                    <input className="search__input col-auto" type="text" placeholder="Search for hotels here..." onChange={(e) => {
-                            searchHotels(e.target.value);
+                    <input className="search__input col-auto" type="text" placeholder="Search for hotels here..."
+                    onInput={() => setShowResults(true)}
+                        onChange={(e) => {
+                            typeAheadSearch(e.target.value);
                         }
-                    } onInput={() => setShowResults(true)}/>
+                    } />
                     {showResults && (
                         <div className="search__results">
                             <div className="results__list">
+                                {/* Map method looper gjennom en liste og gjør noe med hvert enkelt element i listen*/}
                                 {filterHotels.map((hotel, index) => {
                                     return(
                                         <Link key={index} className="results__hotel row" to={"/Hotelspesific/" + hotel.id}>
@@ -46,7 +57,7 @@ function Home() {
                             </div>
                         </div>
                     )}
-                    <button className="search--button" onClick={() => searchHotels()}>Search</button>
+                    <button className="search--button" onClick={() => typeAheadSearch()}>Search</button>
                 </div>
             </Hero>
 
