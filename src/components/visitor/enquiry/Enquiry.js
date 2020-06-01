@@ -11,6 +11,7 @@ const schema = yup.object().shape({
 	fullname: yup
 	.string()
 	.required()
+	// Sjekker at navnet bare inneholder bokstaver og ikke tall
 	.matches(/\w+\s\w+/, {
 		message: "Not a valid name"
 	}),
@@ -20,28 +21,37 @@ const schema = yup.object().shape({
 	.required(),
 	date1: yup
 	.date()
+	.typeError("Invalid date")
 	.required(),
 	date2: yup
 	.date()
+	.typeError("Invalid date")
 	.required()
 });
 
 export default function Enquiry(props){
 	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
+	const API_URL_ENQUIRY = "https://elisemdesign.no/project-exam-2-master/enquiry-success.php";
 	const history = useHistory();
 	const [hotels ,updateHotels] = useState([]);
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
 	function onSubmit(item) {
-		fetch(API_URL,{
+		fetch(API_URL_ENQUIRY,{
 			method: 'POST',
 			mode: 'cors',
 			headers: {'Content-Type':'application/x-www-form-urlencoded'},
 			/* Datane som skal sendes til PHP, å blir omgjort. */
-			body: 'establishmentName=' + encodeURIComponent(item.establishmentname) + '&fullname=' + encodeURIComponent(item.fullname) + '&email=' + encodeURIComponent(item.emailadress) + '&checkin=' + encodeURIComponent(item.date1) + '&checkout=' + encodeURIComponent(item.date2)
+			body: 'establishment=' + encodeURIComponent(item.establishmentname) + '&clientName=' + encodeURIComponent(item.fullname) + '&email=' + encodeURIComponent(item.emailadress) + '&checkin=' + encodeURIComponent(item.date1) + '&checkout=' + encodeURIComponent(item.date2)
 		})
-		history.push("/Success");
+		.then(() => {
+			history.push("/Success");
+			return;
+		})
+		.catch(() => {
+			console.log("Noe gikk galt");
+		});
 	}
 
 	useEffect(() => {

@@ -4,6 +4,7 @@ import * as yup from "yup";
 import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
 import MessageList from "../message/MessageList.js";
+import EnquiryList from "../enquirylist/EnquiryList.js";
 
 const schema = yup.object().shape({
 	establishmentname: yup
@@ -74,6 +75,16 @@ export default function Enstablishment(props){
 		})
 		history.push("/Success");
 	}
+
+	useEffect(() => {
+		fetch(API_URL)
+		.then(response => response.json())
+		.then((json) => {
+			updateEnquiries(json);
+		})
+		.catch(error => console.log(error));
+	}, []);
+
 	return(
 		<div className="admin">
 			<form className="contact__form" onSubmit={handleSubmit(onSubmit)}>
