@@ -59,7 +59,7 @@ const schema = yup.object().shape({
 });
 
 export default function Enstablishment(props){
-	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-enquiries.php";
+	const API_URL = "http://elisemdesign.no/project-exam-2-master/get-establishments.php";
 	const history = useHistory();
 	const [enquiries ,updateEnquiries] = useState([]);
 	const { register, handleSubmit, errors } = useForm({
