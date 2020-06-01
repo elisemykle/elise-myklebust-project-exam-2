@@ -53,7 +53,9 @@ export default function Login(props){
                             } />
                         </div>
                     </div>
+                    <div className="button__placement">
                         <button className="login__button" type="submit">Login</button>
+                        </div>
                         {
                             (error) &&
                             <p className="login__error">Wrong password or username. Try signing in again.</p>
