@@ -63,24 +63,24 @@ export default function Contact(props){
 			</div>
 
 			<form className="row contact__form"  onSubmit={handleSubmit(onSubmit)}>
-					<div className="col-6 col-m-12">
-						<label className="form__label--contact">Full name</label>
-						<input className="form__input--contact" name="fullname" placeholder="Enter your first name"
-							ref={register} onChange={ event => setClientName(event.target.value) } />
-						{errors.firstname && <p className="error__message--contact">Please enter minimum 2 characters.</p>}
-					</div>
+				<div className="col-6 col-m-12">
+					<label className="form__label--contact">Full name</label>
+					<input className="form__input--contact" name="fullname" placeholder="Enter your first name"
+						ref={register} onChange={ event => setClientName(event.target.value) } />
+					{errors.firstname && <p className="error__message--contact">Please enter minimum 2 characters.</p>}
+				</div>
 
-					<div className="col-6 col-m-12">
-						<label className="form__label--contact">Email adress</label>
-						<input className="form__input--contact" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
-						{errors.emailadress && <p className="error__message--contact">Please enter in a valid email format.</p>}
-					</div>
+				<div className="col-6 col-m-12">
+					<label className="form__label--contact">Email adress</label>
+					<input className="form__input--contact" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
+					{errors.emailadress && <p className="error__message--contact">Please enter in a valid email format.</p>}
+				</div>
 
-					<div className="col-12">
-						<label className="form__label--contact">Message</label>
-						<input className="message__input--contact" as="textarea" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
-						{errors.message && <p className="error__message--contact">Please enter in minimum 10 characters.</p>}
-					</div>
+				<div className="col-12">
+					<label className="form__label--contact">Message</label>
+					<textarea className="message__input--contact" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
+					{errors.message && <p className="error__message--contact">Please enter in minimum 10 characters.</p>}
+				</div>
 				<button className="contact__button" type="submit">Submit</button>
 			</form>
 		</div>

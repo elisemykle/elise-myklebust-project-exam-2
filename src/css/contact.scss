@@ -19,6 +19,7 @@
     font-weight: bold;
     font-family: $fontfamily;
     color: $secondarycolor;
+    padding-bottom: 5px;
 
 }
 
@@ -26,13 +27,15 @@
     height: $forminputheight;
     display: block;
     width: $forminputwidth;
+    padding: 10px;
 }
 
 .message__input--contact{
     width: $forminputwidth;
-    height: 150px;
+    height: 200px;
     font-size: $formfontsize;
     font-family: $fontfamily;
+    padding: 15px;
 }
 
 .contact__button{
