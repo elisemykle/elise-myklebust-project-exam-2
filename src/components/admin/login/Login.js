@@ -24,10 +24,10 @@ export default function Login(props){
     return(
         <div className="login__page">
             <Hero title="login" text="" classes="hero hero--login" showSearch={false}/>
-            <div className="row login__form--page">
+            <div className="login__form--page">
                 <h1 className="login__h1">Welcome back</h1>
             </div>
-            <form onSubmit={(event) => onSubmit(event)}>
+            <form className="row login__form" onSubmit={(event) => onSubmit(event)}>
             	<div className="col-12">
                 <div className="login__form-group">
                     <label className="form__label--login">Username</label>

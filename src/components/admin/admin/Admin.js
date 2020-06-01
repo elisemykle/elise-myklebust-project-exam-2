@@ -11,8 +11,12 @@ import AddEstablishment from "../addestablishment/AddEstablishment.js";
 export default function Admin(props){
 	return(
 		<div className="admin">
-        <Hero title="Admin" text="" classes="hero hero--contact" showSearch={false}/>
-		<AddEstablishment/>
+			<Hero title="Admin" text="" classes="hero hero--contact" showSearch={false}/>
+			<div className="addestablishment">
+				<div className="establishment__list">
+					<AddEstablishment/>
+				</div>
+			</div>
 			<div className="messages">
 				<div className="messages__list">
 					<MessageList/>

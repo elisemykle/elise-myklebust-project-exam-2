@@ -39,8 +39,8 @@ export default function Contact(props){
 	async function uploadData(clientName,email, message) {
 		fetch(API_URL,{
 			method: 'POST',
-            mode: 'cors',
-            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+			mode: 'cors',
+			headers: {'Content-Type':'application/x-www-form-urlencoded'},
 			/* Datane som skal sendes til PHP, æøå blir omgjort. */
 			body: 'clientName=' + encodeURIComponent(clientName) + '&email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message)
 		})
@@ -54,33 +54,35 @@ export default function Contact(props){
 	}
 
 	return(
-		<form className="contact__form"  onSubmit={handleSubmit(onSubmit)}>
-				<Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
-				<div className="contact__contact--page">
-					<h1 className="contact__h1">Any questions ?</h1>
-					<p className="contact__text">Get in touch with our turist agency by completing the form down below. Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.
-					</p>
-				</div>
-
-				<div className="contact__page">
-					<label className="form__label--contact">Full name</label>
-					<input className="form__input--contact" name="fullname" placeholder="Enter your first name"
-						ref={register} onChange={ event => setClientName(event.target.value) } />
-					{errors.firstname && <p className="error__message--contact">Please enter minimum 2 characters.</p>}
-				</div>
-
-			<div className="contact__page">
-				<label className="form__label--contact">Email adress</label>
-				<input className="form__input--contact" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
-				{errors.emailadress && <p className="error__message--contact">Please enter in a valid email format.</p>}
+		<div className="contact">
+			<Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
+			<div className="contact__contact--page">
+				<h1 className="contact__h1">Any questions ?</h1>
+				<p className="contact__text">Get in touch with our turist agency by completing the form down below. Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.
+				</p>
 			</div>
 
-			<div className="contact__page">
-				<label className="form__label--contact">Message</label>
-				<input className="message__input--contact" as="textarea" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
-				{errors.message && <p className="error__message--contact">Please enter in minimum 10 characters.</p>}
-			</div>
-			<button className="contact__button" type="submit">Submit</button>
-		</form>
+			<form className="row contact__form"  onSubmit={handleSubmit(onSubmit)}>
+					<div className="col-6 col-m-12">
+						<label className="form__label--contact">Full name</label>
+						<input className="form__input--contact" name="fullname" placeholder="Enter your first name"
+							ref={register} onChange={ event => setClientName(event.target.value) } />
+						{errors.firstname && <p className="error__message--contact">Please enter minimum 2 characters.</p>}
+					</div>
+
+					<div className="col-6 col-m-12">
+						<label className="form__label--contact">Email adress</label>
+						<input className="form__input--contact" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
+						{errors.emailadress && <p className="error__message--contact">Please enter in a valid email format.</p>}
+					</div>
+
+					<div className="col-12">
+						<label className="form__label--contact">Message</label>
+						<input className="message__input--contact" as="textarea" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
+						{errors.message && <p className="error__message--contact">Please enter in minimum 10 characters.</p>}
+					</div>
+				<button className="contact__button" type="submit">Submit</button>
+			</form>
+		</div>
 	)
 }

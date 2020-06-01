@@ -2,9 +2,11 @@
     color: $secondarycolor;
     font-family: $fontfamily;
     text-align: center;
+    margin-top: 40px;
 }
 
 .form__label--login{
+    padding-bottom: 5px;
     color: $secondarycolor;
     font-size: $formfontsize;
     font-weight: $formlabelweight;
@@ -21,6 +23,12 @@
 
 .login__form-group{
     padding: 10px 0px;
+}
+
+.login__form{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: -45px;
 }
 
 input::placeholder {

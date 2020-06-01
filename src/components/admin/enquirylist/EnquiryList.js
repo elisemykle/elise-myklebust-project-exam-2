@@ -20,8 +20,8 @@ export default function EnquiryList() {
         <h1 className="enquirylist__h1">Enquiry from customers</h1>
         {
             enquiries.map((enquiry, index) =>
-            <h1 key={index}> {enquiry.establishment} {enquiry.clientName} {enquiry.email}
-            {enquiry.checkin} {enquiry.checkout}</h1>
+            <div key={index}> <p className="enquiry__list--text"> {enquiry.establishment} {enquiry.clientName} {enquiry.email}
+            {enquiry.checkin} {enquiry.checkout}</p></div>
         )
     }
     </div>

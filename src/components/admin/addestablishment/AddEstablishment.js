@@ -79,7 +79,7 @@ export default function AddEstablishment(props) {
             mode: 'cors',
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             /* Datane som skal sendes til PHP, å blir omgjort. */
-            body: 'establishmentName=' + encodeURIComponent(item.establishmentname) + '&fullname=' + encodeURIComponent(item.fullname) + '&email=' + encodeURIComponent(item.emailadress) + '&checkin=' + encodeURIComponent(item.date1) + '&checkout=' + encodeURIComponent(item.date2)
+            body: 'establishmentName=' + encodeURIComponent(item.establishmentname) + '&establismentemail=' + encodeURIComponent(item.establismentemail) + '&imageurl=' + encodeURIComponent(item.imageurl) + '&price=' + encodeURIComponent(item.price) + '&maxguests=' + encodeURIComponent(item.maxguests) + '&guests=' + encodeURIComponent(item.guests) + '&latitude=' + encodeURIComponent(item.latitude) + '&longitude=' + encodeURIComponent(item.longitude) + '&description=' + encodeURIComponent(item.description) + '&id=' + encodeURIComponent(item.id) + '&selfcateringtrue=' + encodeURIComponent(item.selfcateringtrue) + '&selfcateringfalse=' + encodeURIComponent(item.selfcateringfalse)
         })
         history.push("/Success");
     }

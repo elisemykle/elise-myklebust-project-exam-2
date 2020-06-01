@@ -43,7 +43,7 @@ export default function Enquiry(props){
 		var checkindate= ci.getFullYear()+"-"+ci.getMonth()+"-"+ci.getDay();
 		var co= new Date(item.date2);
 		var checkoutdate= co.getFullYear()+"-"+co.getMonth()+"-"+co.getDay();
-		
+
 		fetch(API_URL_ENQUIRY,{
 			method: 'POST',
 			mode: 'cors',
