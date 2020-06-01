@@ -5,6 +5,7 @@ import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
 import MessageList from "../message/MessageList.js";
 import EnquiryList from "../enquirylist/EnquiryList.js";
+import AddEstablishment from "../addestablishment/AddEstablishment.js";
 
 const schema = yup.object().shape({
 	establishmentname: yup
