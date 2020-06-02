@@ -48,13 +48,25 @@ body{
     border-bottom: 3px solid $primarycolor;
 }
 
-.nav__menuToggler{
-    display: none;
-}
-
 .nav__right{
     float: right;
     padding: 10px;
+}
+
+.navigation__icon{
+    font-family: $fontfamily;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: #99B5C7;
+    letter-spacing: 2px;
+}
+
+.nav__left{
+    float: left;
+    margin: 0;
+    padding: 10px 18px;
 }
 
 .hero{
@@ -66,23 +78,27 @@ body{
     position: relative;
 
     &--contact{
-        background: url("../image/heroimg2.png");
+        background: url("../image/bryggen.jpeg");
         background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &--login{
-        background: url("../image/heroimg2.png");
+        background: url("../image/bryggen.jpeg");
         background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &--hotels{
-        background: url("../image/heroimg2.png");
+        background: url("../image/bryggen.jpeg");
         background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &--enquiry{
-        background: url("../image/heroimg2.png");
+        background: url("../image/bryggen.jpeg");
         background-size: cover;
+        background-repeat: no-repeat;
     }
 }
 

@@ -1,17 +1,20 @@
-import React, {useState} from "react";
+import React from "react";
 import {NavLink} from "react-router-dom";
 
 export default function Navigation(props) {
-        return (
-            <nav className="nav">
-               <NavLink to="/" exact>
-               </NavLink>
-               <div className="nav__right">
-                   <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link">Home</NavLink>
-                   <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link">Hotels</NavLink>
-                   <NavLink to="/Contact" exact activeClassName="nav__link--active" className="nav__link">Contact</NavLink>
-                   <NavLink to="/Login" exact activeClassName="nav__link--active" className="nav__link">Login</NavLink>
-               </div>
-           </nav>
-        )
-    }
+    return (
+        <nav className="nav">
+            <div className="nav__left">
+                <a className="navigation__icon" href="/">Holidaze</a>
+            </div>
+            <NavLink to="/" exact>
+            </NavLink>
+            <div className="nav__right">
+                <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link">Home</NavLink>
+                <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link">Hotels</NavLink>
+                <NavLink to="/Contact" exact activeClassName="nav__link--active" className="nav__link">Contact</NavLink>
+                <NavLink to="/Login" exact activeClassName="nav__link--active" className="nav__link">Login</NavLink>
+            </div>
+        </nav>
+    )
+}
