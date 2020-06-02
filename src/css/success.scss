@@ -1,3 +1,4 @@
+/*------------------- HEADING --------------------*/
 .success__headline{
     color: $elementcolor;
     font-family: $fontfamily;
@@ -6,6 +7,7 @@
     margin-top: 40px;
 }
 
+/*------------------- SUCCESS TEXT --------------------*/
 .success__message{
     font-size: 16px;
     text-align: center;
@@ -13,6 +15,7 @@
     color: $secondarycolor;
 }
 
+/*------------------- SUCCESS BUTTON --------------------*/
 .success__button{
     background-color: $elementcolor;
     border: none;
@@ -24,30 +27,9 @@
     font-size: 16px;
     font-weight: bold;
     font-family: $fontfamily;
-}
 
-.success__button:hover{
+    &:hover{
     background-color: $secondarycolor;
-}
-
-.success__image{
-    width: 100px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.container {
-  height: 80px;
-  position: relative;
-}
-
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    color: white;
+    }
 }

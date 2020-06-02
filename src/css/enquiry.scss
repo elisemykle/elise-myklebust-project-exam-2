@@ -1,3 +1,4 @@
+/*------------------- HEADING --------------------*/
 .enquiry__h1{
     color: $secondarycolor;
     padding-bottom: 20px;
@@ -7,6 +8,7 @@
     padding-top: 40px;
 }
 
+/*------------------- ENQUIRY FORM --------------------*/
 .form__label--enquiry{
     padding-bottom: 5px;
     color: $secondarycolor;
@@ -34,19 +36,28 @@
     border-radius: 1px;
 }
 
+/*------------------- ENQUIRY FORM BUTTON --------------------*/
+.enquiry__button{
+    background-color: $elementcolor;
+    border: none;
+    color: white;
+    height: 34px;
+    width: 8%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover{
+    background-color: $secondarycolor;
+    color: white;
+    }
+}
+
+/*------------------- ENQUIRY GRID --------------------*/
 .enquiry__form{
     max-width: 900px;
     margin: 0 auto;
     margin-top: -45px;
-}
-
-.enquiry__button{
-    background-color: $elementcolor;
-    border: none;
-    font-weight: bold;
-    color: white;
-    height: 34px;
-    width: 8%;
-    text-decoration: none;
-    font-size: 14px;
 }

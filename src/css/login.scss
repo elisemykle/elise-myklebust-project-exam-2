@@ -1,3 +1,4 @@
+/*------------------- HEADING --------------------*/
 .login__h1{
     color: $secondarycolor;
     font-family: $fontfamily;
@@ -5,6 +6,7 @@
     margin-top: 40px;
 }
 
+/*------------------- LOGIN FORM --------------------*/
 .form__label--login{
     padding-bottom: 5px;
     color: $secondarycolor;
@@ -35,13 +37,7 @@ input::placeholder {
   font-size: 16px;
 }
 
-.error__message{
-    color: $secondarycolor;
-    font-size: $formfontsize;
-    font-style: italic;
-    font-family: $fontfamily;
-}
-
+/*------------------- LOGIN FORM BUTTON --------------------*/
 .login__button{
     background-color: $elementcolor;
     border: none;
@@ -53,15 +49,24 @@ input::placeholder {
     font-size: 16px;
     font-weight: bold;
     font-family: $fontfamily;
-}
 
-.login__button:hover{
+    &:hover{
     background-color: $secondarycolor;
+    color: white;
+    }
 }
 
+/*------------------- LOGIN FORM ERROR --------------------*/
 .login__error{
     font-size: 14px;
     font-family: $fontfamily;
     font-weight: bolder;
     color: $elementcolor;
+}
+
+.error__message{
+    color: $secondarycolor;
+    font-size: $formfontsize;
+    font-style: italic;
+    font-family: $fontfamily;
 }
