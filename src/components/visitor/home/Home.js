@@ -23,10 +23,12 @@ function Home() {
         .catch(error => console.log(error));
     }, []);
 
-    // Filterer listen med hoteller ut i fra hva man har søkt i søkeboksen
+    // Filterer listen med hoteller ut i fra hva man har søkt i søkeboksen(kan søke med både stor og små bokstaver)
     const typeAheadSearch = function(searchValue){
+        const lowercaseSearchValue = searchValue.toLowerCase();
         const filterArray = hotels.filter((hotel) => {
-            return new RegExp(searchValue, "i").test(hotel.establishmentName);
+            const lowercaseEstablishmentName = hotel.establishmentName.toLowerCase();
+            return lowercaseEstablishmentName.includes(lowercaseSearchValue);
         });
         updateFilterHotels(filterArray);
     }

@@ -53,8 +53,7 @@ export default function AddEstablishment(props) {
     const [longitude, setLongitude ] = useState([]);
     const [description, setDescription ] = useState([]);
     const [id, setId] = useState([]);
-    const [selfcateringtrue, setSelfcateringtrue] = useState([]);
-    const [selfcateringfalse, setSelfcateringfalse] = useState([]);
+    const [selfcatering, setSelfcatering] = useState([]);
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm({
         validationSchema: schema
@@ -95,49 +94,54 @@ export default function AddEstablishment(props) {
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Image URL</label>
-        <input className="form__input--enstablisment" name="imageurl" placeholder="https://images.unsplash.com/photo" ref={register} />
+        <input className="form__input--enstablisment" name="imageurl" placeholder="https://images.unsplash.com/photo" ref={register} onChange={ event => setImageurl (event.target.value) } />
         {errors.imageurl && <p className="error__message">Invalid URL</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Price per person per night ($)</label>
-        <input className="form__input--enstablisment" type="number" name="price" placeholder="0" ref={register}/>
+        <input className="form__input--enstablisment" type="number" name="price" placeholder="0"
+        ref={register} onChange={ event => setPrice (event.target.value) } />
         {errors.price && <p className="error__message">Required field</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Max guests</label>
-        <input className="form__input--enstablisment" type="number" name="maxguests" placeholder="0" ref={register}/>
+        <input className="form__input--enstablisment" type="number" name="maxguests" placeholder="0" ref={register} onChange={ event => setMaxguests (event.target.value) } />
         {errors.maxguests && <p className="error__message">Required field</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Google Coordinates Latitude:</label>
-        <input className="form__input--enstablisment" name="latitude" placeholder="60.4058" ref={register}/>
+        <input className="form__input--enstablisment" name="latitude" placeholder="60.4058"
+        ref={register} onChange={ event => setLatitude (event.target.value) } />
         {errors.latitude && <p className="error__message">Invalid Google Latitude</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Google Coordinates Longitude</label>
-        <input className="form__input--enstablisment" name="longitude" placeholder="87.5976" ref={register}/>
+        <input className="form__input--enstablisment" name="longitude" placeholder="87.5976"
+        ref={register} onChange={ event => setLongitude (event.target.value) } />
         {errors.longitude && <p className="error__message">Invalid Google Longitude</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Description</label>
-        <input className="form__input--enstablisment" name="description" placeholder="About the hotels" ref={register}/>
+        <input className="form__input--enstablisment" name="description" placeholder="About the hotels" ref={register} onChange={ event => setDescription (event.target.value) } />
         {errors.description && <p className="error__message">Required field</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">ID</label>
-        <input className="form__input--enstablisment" type="number" name="id" placeholder="0" ref={register}/>
+        <input className="form__input--enstablisment" type="number" name="id" placeholder="0"
+        ref={register} onChange={ event => setId (event.target.value) } />
         {errors.id && <p className="error__message">Required field</p>}
         </div>
 
         <div className="contact__page">
         <label className="form__label--enstablisment">Self-catering</label>
-        <input className="form__input--enstablisment" type="checkbox" name="selfcatering" ref={register}/>
+        <input className="form__input--enstablisment" type="checkbox" name="selfcatering"
+        ref={register} onChange={ event => setSelfcatering (event.target.value) } />
         {errors.selfcatering && <p className="error__message">Required field</p>}
         </div>
 
