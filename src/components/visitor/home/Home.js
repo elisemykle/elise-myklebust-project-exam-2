@@ -59,7 +59,6 @@ function Home() {
                             </div>
                         </div>
                     )}
-                    <button className="search--button" onClick={() => typeAheadSearch()}>Search</button>
                 </div>
             </Hero>
 
