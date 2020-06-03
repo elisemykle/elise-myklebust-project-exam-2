@@ -9,6 +9,11 @@
         align-items: center;
     }
 
+    &__line{
+        border: 1px solid $secondarycolor;
+        margin: 10px;
+    }
+
     &__establishmentName{
         text-align: center;
         margin: 20px;
@@ -31,6 +36,11 @@
         text-decoration: underline;
         font-size: 16px;
         margin: 20px;
+
+        &:hover{
+        color: $elementcolor;
+        }
+
     }
 
     &__price{
@@ -39,6 +49,12 @@
         font-family: $fontfamily;
         font-size: 18px;
         font-weight: bold;
+    }
+
+    &__questions{
+        text-align: center;
+        font-family: $fontfamily;
+        font-size: 16px;
     }
 
     &__button{

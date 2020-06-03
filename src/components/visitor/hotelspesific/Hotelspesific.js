@@ -24,6 +24,7 @@ export default function Hotelspesific(props) {
         <div className="hotelspesific">
             <h1 className="hotelspesific__establishmentName">{hotel.establishmentName}</h1>
             <img src={hotel.imageUrl} className="hotelspesific__image" alt="hotel" />
+            <hr className="hotelspesific__line"/>
             <p className="hotelspesific__description">{hotel.description}</p>
             <p className="hotelspesific__price">{hotel.price}$</p>
             <p className="hotelspesific__questions">Any questions? Reach out to us via email down below</p>
