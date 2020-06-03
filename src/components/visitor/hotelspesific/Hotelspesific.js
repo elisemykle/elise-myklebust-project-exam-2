@@ -34,6 +34,9 @@ export default function Hotelspesific(props) {
                 <a href="mailto:{this.props.email}" className="hotelspesific__email">{hotel.establishmentEmail}</a>
                 <Link to={"/Enquiry/" + hotel.id} className="hotelspesific__button">Make an enquiry</Link>
         </div>
+        <div className="col-12">
+        <iframe className="hotelspesific__map" title="google kart" frameBorder="0" src={"https://www.google.com/maps/embed/v1/place?q=" + hotel.googleLat+", "+hotel.googleLong + "&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"}></iframe>
     </div>
+</div>
     )
 }

@@ -5,12 +5,8 @@
 
 .hotelspesific{
     &__image{
-        // display: block;
         width: 100%;
         height: 100%;
-        // margin: 0 auto;
-        // object-fit: cover;
-        // align-items: center;
     }
 
     &__line{
@@ -78,5 +74,10 @@
         &:hover{
         background-color: $secondarycolor;
         }
+    }
+
+    &__map{
+        width: 100%;
+        height: 300px;
     }
 }
