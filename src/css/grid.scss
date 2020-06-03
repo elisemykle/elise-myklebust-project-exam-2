@@ -33,6 +33,14 @@ $spacingPrimary: 10px;
     clear: both;
     display: table;
   }
+
+  &--contact{
+       justify-content: initial;
+  }
+
+  &--login{
+
+  }
 }
 
 @mixin makeGrid ($cols-in-grid: 12, $prefix: "col-") {

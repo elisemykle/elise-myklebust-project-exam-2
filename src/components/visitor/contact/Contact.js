@@ -58,17 +58,17 @@ export default function Contact(props){
 		});
 	}
 
-    /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
+	/* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
 	return(
 		<div className="contact">
 			<Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
 			<div className="contact__contact--page">
 				<h1 className="contact__h1">Any questions ?</h1>
-				<p className="contact__text">Get in touch with our turist agency by completing the form down below. Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.
-				</p>
+					<p className="contact__text">Get in touch with our turist agency by completing the form down below. Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.
+					</p>
 			</div>
 
-			<form className="row contact__form"  onSubmit={handleSubmit(onSubmit)}>
+			<form className="row row--contact contact__form"  onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
 					<label className="form__label--contact">Full name</label>
 					<input className="form__input--contact" name="fullname" placeholder="Enter your first name"
@@ -87,7 +87,9 @@ export default function Contact(props){
 					<textarea className="message__input--contact" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
 					{errors.message && <p className="error__message--contact">Please enter in minimum 10 characters.</p>}
 				</div>
-				<button className="contact__button" type="submit">Submit</button>
+				<div className="col-12">
+					<button className="contact__button" type="submit">Submit</button>
+				</div>
 			</form>
 		</div>
 	)
