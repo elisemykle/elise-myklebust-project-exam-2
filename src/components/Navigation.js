@@ -5,10 +5,8 @@ export default function Navigation(props) {
     return (
         <nav className="nav">
             <div className="nav__left">
-                <a className="navigation__icon" href="/">Holidaze</a>
+                <NavLink to="/" className="navigation__icon">Holidaze</NavLink>
             </div>
-            <NavLink to="/" exact>
-            </NavLink>
             <div className="nav__right">
                 <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link">Home</NavLink>
                 <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link">Hotels</NavLink>

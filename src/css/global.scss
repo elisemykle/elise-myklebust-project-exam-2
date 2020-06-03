@@ -18,14 +18,10 @@ body{
     background-color: $primarycolor;
 }
 
-.page {
-    min-height: 100vh;
-}
-
 /*------------------- NAVIGATION --------------------*/
 .nav{
     background-color: $secondarycolor;
-    height: 40px;
+    min-height: 41px;
 }
 
 .nav__link{
