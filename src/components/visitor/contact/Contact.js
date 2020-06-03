@@ -62,11 +62,13 @@ export default function Contact(props){
 	return(
 		<div className="contact">
 			<Hero title="Contact us" text="" classes="hero hero--contact" showSearch={false}/>
-			<div className="contact__contact--page">
+			<div className="row contact__contact--page">
 				<h1 className="contact__h1">Any questions ?</h1>
+				<div className="col-12">
 					<p className="contact__text">Get in touch with our turist agency by completing the form down below. Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.
 					</p>
 			</div>
+		</div>
 
 			<form className="row row--contact contact__form"  onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
