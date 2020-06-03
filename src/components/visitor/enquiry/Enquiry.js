@@ -83,7 +83,7 @@ export default function Enquiry(props){
 					<h1 className="enquiry__h1">Make your reservation</h1>
 				</div>
 			</div>
-			<form className="row enquiry__form" onSubmit={handleSubmit(onSubmit)}>
+			<form className="row row--enquiry enquiry__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Establishment</label>
 						<select className="form__custom" name="establishmentname" ref={register}>
@@ -117,7 +117,9 @@ export default function Enquiry(props){
 					<input className="form__input--enquiry" type="date" name="date2" ref={register}/>
 					{errors.date2 && <p className="error__message">{errors.date2.message}</p>}
 				</div>
-				<button className="enquiry__button" type="submit">Submit</button>
+				<div className="col-12">
+				<button className="enquiry__button" type="submit">Send reservation</button>
+				</div>
 			</form>
 		</div>
 	)

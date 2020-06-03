@@ -90,7 +90,7 @@ export default function Contact(props){
 					{errors.message && <p className="error__message--contact">Please enter in minimum 10 characters.</p>}
 				</div>
 				<div className="col-12">
-					<button className="contact__button" type="submit">Submit</button>
+					<button className="contact__button" type="submit">Send message</button>
 				</div>
 			</form>
 		</div>

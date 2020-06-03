@@ -33,6 +33,14 @@
         margin: 20px;
     }
 
+    &__price{
+        text-align: center;
+        color: $secondarycolor;
+        font-family: $fontfamily;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
     &__button{
         background-color: $elementcolor;
         border: none;
