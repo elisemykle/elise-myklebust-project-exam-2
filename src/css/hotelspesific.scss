@@ -1,36 +1,36 @@
 /*------------------- HOTEL SPESIFIC --------------------*/
 .hotelspesific{
     &__image{
-        display: block;
-        width: 50%;
-        height: 400px;
-        margin: 0 auto;
-        object-fit: cover;
-        align-items: center;
+        // display: block;
+        width: 100%;
+        height: 100%;
+        // margin: 0 auto;
+        // object-fit: cover;
+        // align-items: center;
     }
 
     &__line{
         border: 1px solid $secondarycolor;
-        margin: 10px;
+        margin: 1px;
     }
 
     &__establishmentName{
-        text-align: center;
+        text-align: left;
         margin: 20px;
-        margin-top: 40px;
+        margin-top: -5px;
         color: $secondarycolor;
         font-family: $fontfamily;
     }
 
     &__description{
-        text-align: center;
+        text-align: left;
         font-family: $fontfamily;
         font-size: 16px;
         margin: 20px;
     }
 
     &__email{
-        text-align: center;
+        text-align: left;
         font-family: $fontfamily;
         color: $secondarycolor;
         text-decoration: underline;
@@ -44,17 +44,19 @@
     }
 
     &__price{
-        text-align: center;
+        text-align: left;
         color: $secondarycolor;
         font-family: $fontfamily;
         font-size: 18px;
         font-weight: bold;
+        margin: 20px;
     }
 
     &__questions{
-        text-align: center;
+        text-align: left;
         font-family: $fontfamily;
         font-size: 16px;
+        margin: 20px;
     }
 
     &__button{

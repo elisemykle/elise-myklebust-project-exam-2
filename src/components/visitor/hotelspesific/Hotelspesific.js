@@ -21,15 +21,19 @@ export default function Hotelspesific(props) {
 
     /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
-        <div className="hotelspesific">
-            <h1 className="hotelspesific__establishmentName">{hotel.establishmentName}</h1>
-            <img src={hotel.imageUrl} className="hotelspesific__image" alt="hotel" />
-            <hr className="hotelspesific__line"/>
-            <p className="hotelspesific__description">{hotel.description}</p>
-            <p className="hotelspesific__price">{hotel.price}$</p>
-            <p className="hotelspesific__questions">Any questions? Reach out to us via email down below</p>
-            <a href="mailto:{this.props.email}" className="hotelspesific__email">{hotel.establishmentEmail}</a>
-            <Link to={"/Enquiry/" + hotel.id} className="hotelspesific__button">Make an enquiry</Link>
+        <div className="row hotelspesific">
+            <div className="col-6">
+                <img src={hotel.imageUrl} className="hotelspesific__image" alt="hotel" />
+            </div>
+            <div className="col-6">
+                <h1 className="hotelspesific__establishmentName">{hotel.establishmentName}</h1>
+                <hr className="hotelspesific__line"/>
+                <p className="hotelspesific__description">{hotel.description}</p>
+                <p className="hotelspesific__price">{hotel.price}$</p>
+                <p className="hotelspesific__questions">Any questions? Reach out to us via email down below</p>
+                <a href="mailto:{this.props.email}" className="hotelspesific__email">{hotel.establishmentEmail}</a>
+                <Link to={"/Enquiry/" + hotel.id} className="hotelspesific__button">Make an enquiry</Link>
         </div>
+    </div>
     )
 }

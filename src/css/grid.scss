@@ -28,7 +28,7 @@ $spacingPrimary: 10px;
   justify-content: center;
   align-items: stretch;
   -webkit-align-items: stretch;
-  ::after {
+  &::after {
     content: "";
     clear: both;
     display: table;
