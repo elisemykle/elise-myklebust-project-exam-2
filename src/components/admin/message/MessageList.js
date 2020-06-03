@@ -19,7 +19,8 @@ export default function Message() {
     },[]);
     /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
-        <div className="messages">
+            <div className="messages">
+				<div className="messages__list">
         <h1 className="messages__h1">Messages from customers</h1>
         {
             messages.map((message, index) =>
@@ -27,5 +28,6 @@ export default function Message() {
         )
     }
     </div>
+</div>
 )
 }

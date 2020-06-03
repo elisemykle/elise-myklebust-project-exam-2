@@ -20,7 +20,8 @@ export default function EnquiryList() {
 
     /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
-        <div className="enquirylist">
+            <div className="enquiries">
+				<div className="enquiries__list">
         <h1 className="enquirylist__h1">Enquiry from customers</h1>
         {
             enquiries.map((enquiry, index) =>
@@ -29,5 +30,6 @@ export default function EnquiryList() {
         )
     }
     </div>
+</div>
 )
 }

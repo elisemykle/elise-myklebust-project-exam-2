@@ -76,6 +76,8 @@ export default function AddEstablishment(props) {
 
     /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
+        <div className="addestablishment">
+        <div className="establishment__list">
         <form className="contact__form" onSubmit={handleSubmit(onSubmit)}>
         <div className="contact__page">
         <div className="contact__contact--page">
@@ -147,5 +149,7 @@ export default function AddEstablishment(props) {
 
         <button className="contact__button" type="submit">Submit</button>
         </form>
+    </div>
+</div>
     )
 }
