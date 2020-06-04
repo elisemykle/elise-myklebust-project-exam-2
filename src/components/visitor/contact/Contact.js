@@ -31,18 +31,8 @@ export default function Contact(props){
 		validationSchema: schema
 	});
 
-	/* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
+	/* Onsubit funksjonen er en hendelse som oppstår når skjemaet validerer. Deretter blir dataene lastet opp til serveren. */
 	function onSubmit() {
-		if(uploadData(clientName, email, message)) {
-			/* Blir sendt videre til Success om skjemaet valideres riktig uten error */
-			history.push("/Success");
-		} else{
-			/* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
-			console.log("Noe gikk galt");
-		}
-	}
-
-	async function uploadData(clientName,email, message) {
 		fetch(API_URL,{
 			method: 'POST',
 			mode: 'cors',
@@ -51,11 +41,12 @@ export default function Contact(props){
 			body: 'clientName=' + encodeURIComponent(clientName) + '&email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message)
 		})
 		.then(() => {
-			return true;
+			/* Blir sendt videre til Success om skjemaet valideres riktig uten error */
+			history.push("/Success");
 		})
 		.catch((error) => {
-			console.log(error);
-			return false;
+			/* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
+			console.log("Noe gikk galt");
 		});
 	}
 
