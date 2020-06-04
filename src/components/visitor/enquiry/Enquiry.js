@@ -43,9 +43,9 @@ export default function Enquiry(){
 	/* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
 	function onSubmit() {
 		/* Laget en Date variabel for å kunne forkorte ned datoen til å kun vise år, måneder og dager.*/
-		var ci= new Date(item.date1);
+		var ci= new Date(checkindate);
 		var checkindate= ci.getFullYear()+"-"+ci.getMonth()+"-"+ci.getDay();
-		var co= new Date(item.date2);
+		var co= new Date(checkoutdate);
 		var checkoutdate= co.getFullYear()+"-"+co.getMonth()+"-"+co.getDay();
 
 		fetch(API_URL_ENQUIRY,{
