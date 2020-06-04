@@ -6,7 +6,7 @@ export default function Success(props) {
         <div className="success">
             <h1 className="success__headline">Thank you!</h1>
             <p className="success__message">We've received your submission and we'll get back to your within 24 hours.</p>
-            <div className="center">
+            <div className="col-12">
                 <Link to={"/"} className="success__button">Back to home</Link>
             </div>
         </div>

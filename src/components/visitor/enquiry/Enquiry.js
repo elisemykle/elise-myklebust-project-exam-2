@@ -32,7 +32,7 @@ export default function Enquiry(){
 	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 	const API_URL_ENQUIRY = "https://elisemdesign.no/project-exam-2-master/enquiry-success.php";
 	const history = useHistory();
-	const [establishmentname, setEstablishmentname] = useState("");
+	const [establishmentname, setEstablishmentname] = useState("Sunset Beach");
 	const [fullname, setFullname] = useState("");
 	const [emailadress, setEmailadress] = useState("");
 	const [checkindate, setCheckindate] = useState("");
@@ -46,16 +46,16 @@ export default function Enquiry(){
 	function onSubmit() {
 		/* Laget en Date variabel for å kunne forkorte ned datoen til å kun vise år, måneder og dager.*/
 		var ci= new Date(checkindate);
-		var checkindate= ci.getFullYear()+"-"+ci.getMonth()+"-"+ci.getDay();
+		var indate= ci.getFullYear()+"-"+ci.getMonth()+"-"+ci.getDay();
 		var co= new Date(checkoutdate);
-		var checkoutdate= co.getFullYear()+"-"+co.getMonth()+"-"+co.getDay();
+		var outdate= co.getFullYear()+"-"+co.getMonth()+"-"+co.getDay();
 
 		fetch(API_URL_ENQUIRY,{
 			method: 'POST',
 			mode: 'cors',
 			headers: {'Content-Type':'application/x-www-form-urlencoded'},
 			/* Datane som skal sendes til PHP, å blir omgjort. */
-			body: 'establishment=' + encodeURIComponent(establishmentname) + '&clientName=' + encodeURIComponent(fullname) + '&email=' + encodeURIComponent(emailadress) + '&checkin=' + encodeURIComponent(checkindate) + '&checkout=' + encodeURIComponent(checkoutdate)
+			body: 'establishment=' + encodeURIComponent(establishmentname) + '&clientName=' + encodeURIComponent(fullname) + '&email=' + encodeURIComponent(emailadress) + '&checkin=' + encodeURIComponent(indate) + '&checkout=' + encodeURIComponent(outdate)
 		})
 		.then(() => {
 			/* Blir sendt videre til Success om skjemaet valideres riktig uten error */
@@ -91,7 +91,7 @@ export default function Enquiry(){
 			<form className="row row--enquiry enquiry__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Establishment</label>
-					<select className="form__custom" name="establishmentname" ref={register}>
+					<select className="form__custom" name="establishmentname" onChange={ event => setEstablishmentname(event.target.value) } ref={register}>
 						{
 							hotels.map((hotel, index) => <option key={index}>
 							{hotel.establishmentName}</option>)
@@ -101,25 +101,25 @@ export default function Enquiry(){
 				</div>
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Full name</label>
-					<input className="form__input--enquiry" name="fullname" placeholder="Enter your full name" ref={register}/>
+					<input className="form__input--enquiry" name="fullname" placeholder="Enter your full name"  onChange={ event => setFullname(event.target.value) } ref={register}/>
 					{errors.fullname && <p className="error__message">{errors.fullname.message}</p>}
 				</div>
 
 				<div className="col-12">
 					<label className="form__label--enquiry">Email adress</label>
-					<input className="form__input--enquiry" name="emailadress" placeholder="Example@example.com" ref={register}/>
+					<input className="form__input--enquiry" name="emailadress" placeholder="Example@example.com" onChange={ event => setEmailadress(event.target.value) } ref={register}/>
 					{errors.emailadress && <p className="error__message">{errors.emailadress.message}</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Check-in</label>
-					<input className="form__input--enquiry" type="date" name="date1" ref={register}/>
+					<input className="form__input--enquiry" type="date" name="date1" onChange={ event => setCheckindate(event.target.value) } ref={register}/>
 					{errors.date1 && <p className="error__message">{errors.date1.message}</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Check-out</label>
-					<input className="form__input--enquiry" type="date" name="date2" ref={register}/>
+					<input className="form__input--enquiry" type="date" name="date2" onChange={ event => setCheckoutdate(event.target.value) } ref={register}/>
 					{errors.date2 && <p className="error__message">{errors.date2.message}</p>}
 				</div>
 				<div className="col-12">

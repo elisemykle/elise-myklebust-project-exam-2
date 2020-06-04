@@ -9,15 +9,14 @@ const schema = yup.object().shape({
 	fullname: yup
 	.string()
 	.required()
-	.min(2, "Required, minimum 2 characters"),
+	.min(2, "Must be minimum 2 characters"),
 	emailadress: yup
-	.string()
-	.required()
-	.min(5, "Required, must be in a valid email format"),
+	.string().email()
+	.required(),
 	message: yup
 	.string()
 	.required()
-	.min(10, "Required, minimum 10 characters"),
+	.min(2, "Must be minimum 2 characters"),
 });
 
 // Contact komponenten
@@ -77,19 +76,19 @@ export default function Contact(props){
 					<label className="form__label--contact">Full name</label>
 					<input className="form__input--contact" name="fullname" placeholder="Enter your first name"
 						ref={register} onChange={ event => setClientName(event.target.value) } />
-					{errors.firstname && <p className="error__message--contact">Please enter minimum 2 characters.</p>}
+					{errors.fullname && <p className="error__message--contact">{errors.fullname.message}</p>}
 				</div>
 
 				<div className="col-6 col-m-12">
 					<label className="form__label--contact">Email adress</label>
 					<input className="form__input--contact" name="emailadress" placeholder="Example@example.com" ref={register} onChange={ event => setEmail(event.target.value) } />
-					{errors.emailadress && <p className="error__message--contact">Please enter in a valid email format.</p>}
+					{errors.emailadress && <p className="error__message--contact">{errors.emailadress.message}</p>}
 				</div>
 
 				<div className="col-12">
 					<label className="form__label--contact">Message</label>
 					<textarea className="message__input--contact" name="message" placeholder="Please enter your message here..." ref={register} onChange={ event => setMessage(event.target.value) } />
-					{errors.message && <p className="error__message--contact">Please enter in minimum 10 characters.</p>}
+					{errors.message && <p className="error__message--contact">{errors.message.message}</p>}
 				</div>
 				<div className="col-12">
 					<button className="contact__button" type="submit">Send message</button>
