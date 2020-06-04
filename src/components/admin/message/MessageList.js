@@ -19,15 +19,20 @@ export default function Message() {
     },[]);
     /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return (
-            <div className="messages">
-				<div className="messages__list">
-        <h1 className="messages__h1">Messages from customers</h1>
-        {
-            messages.map((message, index) =>
-            <div key={index}> <p className="message__text">{message.message} {message.clientName}</p></div>
-        )
-    }
+        <div className="messages">
+            <div className="messages__list">
+                <h1 className="messages__h1">Messages from customers</h1>
+                {
+                    messages.map((message, index) =>
+                    <div key={index}>
+                        <p className="message__clientname">{message.clientName}</p>
+                        <a href="mailto:{this.props.email}" className="message__email">{message.email}</a>
+                        <p className="message__text">{message.message}</p>
+                        <hr className="message__line"/>
+                    </div>
+                )
+            }
+        </div>
     </div>
-</div>
 )
 }

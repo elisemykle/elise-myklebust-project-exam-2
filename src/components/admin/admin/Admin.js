@@ -11,8 +11,8 @@ export default function Admin(props){
 		<div className="admin">
 			<Hero title="Admin" text="" classes="hero hero--contact" showSearch={false}/>
 			<AddEstablishment/>
-			<MessageList/>
 			<EnquiryList/>
+			<MessageList/>
 		</div>
 	)
 }

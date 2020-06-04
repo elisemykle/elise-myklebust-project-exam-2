@@ -164,8 +164,9 @@ export default function AddEstablishment(props) {
                         {errors.selfcatering && <p className="error__message">{errors.selfcatering.message}</p>}
                     </div>
                 </div>
-
-                <button className="contact__button" type="submit">Submit</button>
+                <div className="col-12">
+                    <button className="addestablishment__button" type="submit">Submit</button>
+                </div>
             </form>
         </div>
     )
