@@ -87,3 +87,21 @@
         margin: 20px;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .hero--frontpage {
+        padding-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .search__bar {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero__heading{
+        font-size: 13px;
+    }
+}
