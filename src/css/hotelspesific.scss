@@ -11,7 +11,9 @@
 
     &__line{
         border: 1px solid $secondarycolor;
-        margin: 1px;
+        margin: 20px;
+        margin-top: -5px;
+
     }
 
     &__establishmentName{
@@ -80,4 +82,5 @@
         width: 100%;
         height: 300px;
     }
+
 }

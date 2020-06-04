@@ -29,8 +29,9 @@ export default function Hotelspesific() {
                 <h1 className="hotelspesific__establishmentName">{hotel.establishmentName}</h1>
                 <hr className="hotelspesific__line"/>
                 <p className="hotelspesific__description">{hotel.description}</p>
-                <p className="hotelspesific__price">{hotel.price}$</p>
-                <p className="hotelspesific__questions">Any questions? Reach out to us via email down below</p>
+                <p className="hotelspesific__price">Price per night/room:</p>
+                <p className="hotelspesific__price">{hotel.price} $ </p>
+                <p className="hotelspesific__questions">Any questions? Reach out to us via email down below:</p>
                 <a href="mailto:{this.props.email}" className="hotelspesific__email">{hotel.establishmentEmail}</a>
                 <Link to={"/Enquiry/" + hotel.id} className="hotelspesific__button">Make an enquiry</Link>
         </div>

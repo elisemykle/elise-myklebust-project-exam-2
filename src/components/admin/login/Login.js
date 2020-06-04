@@ -11,7 +11,7 @@ export default function Login(props){
     /* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
     function onSubmit(e) {
         e.preventDefault();/* e.preventDefault sjekker om passordet stemmer med en if/else statement. Om username og password er korrekt så vil man bli sendt videre til Admin. Visst det ikke stemmer så vil man ikke bli sendt videre. */
-        if(username === "Admin" && password === "Admin123"){
+        if(username === "Admin" && password === "Admin"){
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
             history.push("/Admin");
@@ -24,7 +24,7 @@ export default function Login(props){
     /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
     return(
         <div className="login__page">
-            <Hero title="login" text="" classes="hero hero--login" showSearch={false}/>
+            <Hero title="Login" text="" classes="hero hero--login" showSearch={false}/>
             <div className="login__form--page">
                 <h1 className="login__h1">Welcome back</h1>
             </div>
