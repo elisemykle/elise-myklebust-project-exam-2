@@ -1,11 +1,15 @@
+/*------------------- MESSAGE PAGE --------------------*/
+.messages{
+    padding-bottom: 40px;
+}
 
 /*------------------- HEADING --------------------*/
 .messages__h1{
     color: $secondarycolor;
-    padding-bottom: 20px;
     font-family: $fontfamily;
     font-weight: bold;
     margin: 20px;
+    text-decoration: underline;
 }
 
 /*------------------- ADMIN MESSAGE --------------------*/
@@ -13,32 +17,26 @@
     color: $secondarycolor;
     font-family: $fontfamily;
     font-weight: bold;
-    margin: 20px;
     font-size: 20px;
+    margin: 20px;
+    padding-top: 30px;
 }
 
 .message__email{
     color: $elementcolor;
     font-family: $fontfamily;
+    font-size: 16px;
+    font-weight: bold;
     text-decoration: none;
     margin: 20px;
-    font-size: 16px;
 
     &:hover{
-    color: $secondarycolor;
+        color: $secondarycolor;
     }
 }
 
 .message__text{
     font-family: $fontfamily;
-    margin: 20px;
     font-size: 16px;
-}
-
-
-/*------------------- MESSAGE LINE --------------------*/
-.message__line{
-    border: 1px solid $secondarycolor;
     margin: 20px;
-    max-width: 650px;
 }

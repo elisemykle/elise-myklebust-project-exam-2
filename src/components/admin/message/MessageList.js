@@ -28,7 +28,6 @@ export default function Message() {
                         <p className="message__clientname">{message.clientName}</p>
                         <a href="mailto:{this.props.email}" className="message__email">{message.email}</a>
                         <p className="message__text">{message.message}</p>
-                        <hr className="message__line"/>
                     </div>
                 )
             }

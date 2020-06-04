@@ -3,6 +3,8 @@
     color: $secondarycolor;
     font-family: $fontfamily;
     font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
     margin: 20px;
     padding-bottom: 20px;
 }
@@ -27,6 +29,7 @@
     &__email{
         color: $elementcolor;
         font-family: $fontfamily;
+        font-weight: bold;
         text-decoration: none;
         margin: 20px;
         font-size: 16px;
