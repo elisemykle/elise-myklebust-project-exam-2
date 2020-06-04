@@ -26,7 +26,9 @@ const schema = yup.object().shape({
 	.required()
 });
 
+// Enquiry komponenten
 export default function Enquiry(){
+	// States
 	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 	const API_URL_ENQUIRY = "https://elisemdesign.no/project-exam-2-master/enquiry-success.php";
 	const history = useHistory();
@@ -61,17 +63,19 @@ export default function Enquiry(){
 			return;
 		})
 		.catch(() => {
-			/* Console.log lar deg generere ut tilpassendes feilmeldinger om noe skulle gå galt*/
+			/* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
 			console.log("Noe gikk galt");
 		});
 	}
 
+	// Henter dataene fra API'et
 	useEffect(() => {
 		fetch(API_URL)
 		.then(response => response.json())
 		.then((json) => {
 			updateHotels(json);
 		})
+		/* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
 		.catch(error => console.log(error));
 	}, []);
 
@@ -87,12 +91,12 @@ export default function Enquiry(){
 			<form className="row row--enquiry enquiry__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Establishment</label>
-						<select className="form__custom" name="establishmentname" ref={register}>
-							{
-								hotels.map((hotel, index) => <option key={index}>
-								{hotel.establishmentName}</option>)
-							}
-						</select>
+					<select className="form__custom" name="establishmentname" ref={register}>
+						{
+							hotels.map((hotel, index) => <option key={index}>
+							{hotel.establishmentName}</option>)
+						}
+					</select>
 					{errors.establishmentname && <p className="error__message">{errors.establishmentname.message}</p>}
 				</div>
 				<div className="col-6 col-m-12">
@@ -119,7 +123,7 @@ export default function Enquiry(){
 					{errors.date2 && <p className="error__message">{errors.date2.message}</p>}
 				</div>
 				<div className="col-12">
-				<button className="enquiry__button" type="submit">Send reservation</button>
+					<button className="enquiry__button" type="submit">Send reservation</button>
 				</div>
 			</form>
 		</div>

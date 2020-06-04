@@ -10,5 +10,5 @@ export default function Success(props) {
                 <Link to={"/"} className="success__button">Back to home</Link>
             </div>
         </div>
-)
+    )
 }

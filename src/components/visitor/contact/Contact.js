@@ -20,7 +20,9 @@ const schema = yup.object().shape({
 	.min(10, "Required, minimum 10 characters"),
 });
 
+// Contact komponenten
 export default function Contact(props){
+	// States
 	const API_URL = "http://elisemdesign.no/project-exam-2-master/contact-success.php";
 	const history = useHistory();
 	const [clientName, setClientName] = useState("");
@@ -36,7 +38,7 @@ export default function Contact(props){
 			/* Blir sendt videre til Success om skjemaet valideres riktig uten error */
 			history.push("/Success");
 		} else{
-			/* Console.log lar deg generere ut tilpassendes feilmeldinger om noe skulle gå galt*/
+			/* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
 			console.log("Noe gikk galt");
 		}
 	}
@@ -67,8 +69,8 @@ export default function Contact(props){
 				<div className="col-12">
 					<p className="contact__text">Get in touch with our turist agency by completing the form down below. Providing you have any questions don’t hesitate to contact our team. We are always here to answer your questions.
 					</p>
+				</div>
 			</div>
-		</div>
 
 			<form className="row row--contact contact__form"  onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-6 col-m-12">

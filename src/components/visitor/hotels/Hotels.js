@@ -5,16 +5,19 @@ import Hero from "../../Hero.js";
 /* link til listen av hoteller og innhold */
 const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 
+// Hotels komponenten
 function Hotels() {
+    // States
     const [hotels, updateHotels] = useState([]);
 
+    // Henter dataene fra API'et
     useEffect(() => {
         fetch(API_URL)
         .then(response => response.json())
         .then((json) => {
             updateHotels(json);
         })
-        /* Console.log lar deg generere ut tilpassendes feilmeldinger om noe skulle gå galt*/
+        /* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
         .catch(error => console.log(error));
     }, []);
 

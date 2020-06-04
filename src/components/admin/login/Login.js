@@ -2,7 +2,9 @@ import React, { useState} from 'react';
 import Hero from "../../Hero.js";
 import { useHistory } from 'react-router-dom';
 
+// Login komponenten
 export default function Login(props){
+    // States
     const history = useHistory();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -29,33 +31,33 @@ export default function Login(props){
                 <h1 className="login__h1">Welcome back</h1>
             </div>
             <form className="row row--login login__form" onSubmit={(event) => onSubmit(event)}>
-            	<div className="col-12">
-                <div className="login__form-group">
-                    <label className="form__label--login">Username</label>
-                    <input className="form__input--login" name="emailaddress" placeholder="Please enter your username" onChange={event =>
-                            {
-                                setUsername(event.target.value);
-                                setError(false);
-                            }
-
-                        } />
-                    </div>
-                </div>
-
-				<div className="col-12">
+                <div className="col-12">
                     <div className="login__form-group">
-                        <label className="form__label--login">Password</label>
-                        <input className="form__input--login" type="password" name="pwd" placeholder="Please enter your password" onChange={event =>
+                        <label className="form__label--login">Username</label>
+                        <input className="form__input--login" name="emailaddress" placeholder="Please enter your username" onChange={event =>
                                 {
-                                    setPassword(event.target.value);
+                                    setUsername(event.target.value);
                                     setError(false);
                                 }
 
                             } />
                         </div>
                     </div>
+
                     <div className="col-12">
-                        <button className="login__button" type="submit">Login</button>
+                        <div className="login__form-group">
+                            <label className="form__label--login">Password</label>
+                            <input className="form__input--login" type="password" name="pwd" placeholder="Please enter your password" onChange={event =>
+                                    {
+                                        setPassword(event.target.value);
+                                        setError(false);
+                                    }
+
+                                } />
+                            </div>
+                        </div>
+                        <div className="col-12">
+                            <button className="login__button" type="submit">Login</button>
                         </div>
                         {
                             (error) &&

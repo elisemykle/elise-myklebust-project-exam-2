@@ -40,7 +40,9 @@ const schema = yup.object().shape({
     .required()
 });
 
+// addestablishment komponenten
 export default function AddEstablishment(props) {
+    // States
     const API_URL = "http://elisemdesign.no/project-exam-2-master/add-establishments-success.php";
     const [establishmentname, setEstablishmentname ] = useState("");
     const [establishmentemail, setEstablishmentemail ] = useState("");
@@ -67,9 +69,11 @@ export default function AddEstablishment(props) {
             body: 'establishmentName=' + encodeURIComponent(establishmentname) + '&establishmentEmail=' + encodeURIComponent(establishmentemail) + '&imageUrl=' + encodeURIComponent(imageurl) + '&price=' + encodeURIComponent(price) + '&maxGuests=' + encodeURIComponent(maxguests) + '&googleLat=' + encodeURIComponent(latitude) + '&googleLong=' + encodeURIComponent(longitude) + '&description=' +
             encodeURIComponent(description) + '&id=' + encodeURIComponent(id) + '&selfCatering=' + encodeURIComponent(selfcatering)
         })
+        /* Blir sendt videre til Success om skjemaet valideres riktig uten error */
         .then(()=>{
             history.push("/Success");
         })
+        /* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
         .catch(()=>{
             console.log("Noe gikk galt");
         });

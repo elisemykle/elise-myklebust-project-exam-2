@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 /* API call som henter informasjonen fra en url-kobling */
 const API_URL = "http://elisemdesign.no/project-exam-2-master/get-contacts.php";
 
-
+// Message komponenten
 export default function Message() {
+    // States
     const [messages, setMessages] = useState([]);
     useEffect(() => {
         fetch(API_URL)
@@ -12,7 +13,7 @@ export default function Message() {
         .then((json) => {
             setMessages(json);
         })
-        /* Catch funksjonen lar deg generere tilpassendes feilmeldinger om noe skulle gå galt*/
+        /* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
         .catch(() => {
             console.log("Noe gikk galt");
         })

@@ -20,6 +20,7 @@ function Home() {
             updateHotels(json);
             updateFilterHotels(json);
         })
+        /* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
         .catch(error => console.log(error));
     }, []);
 
@@ -39,7 +40,7 @@ function Home() {
             <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero hero--frontpage">
                 <div className="search__bar row">
                     <input className="search__input col-auto" type="text" placeholder="Search for hotels here..."
-                    onInput={() => setShowResults(true)}
+                        onInput={() => setShowResults(true)}
                         onChange={(e) => {
                             typeAheadSearch(e.target.value);
                         }

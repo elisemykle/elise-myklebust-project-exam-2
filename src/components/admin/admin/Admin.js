@@ -4,7 +4,7 @@ import MessageList from "../message/MessageList.js";
 import EnquiryList from "../enquirylist/EnquiryList.js";
 import AddEstablishment from "../addestablishment/AddEstablishment.js";
 
-
+// Admin komponenten
 export default function Admin(props){
 	/* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
 	return(

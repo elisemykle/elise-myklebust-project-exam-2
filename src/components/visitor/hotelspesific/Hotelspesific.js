@@ -5,17 +5,20 @@ import { Link } from 'react-router-dom';
 /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
 const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishment.php?id=";
 
+// Hotelspesific komponenten
 export default function Hotelspesific() {
+    // States
     const {id}=useParams();
     const [hotel, updateHotel] = useState([]);
 
+    // Henter dataene fra API'et
     useEffect(() => {
         fetch(API_URL+id)
         .then(response => response.json())
         .then((json) => {
             updateHotel(json);
         })
-        /* Console.log lar deg generere ut tilpassendes feilmeldinger om noe skulle gå galt*/
+        /* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
         .catch(error => console.log(error));
     }, [id]);
 

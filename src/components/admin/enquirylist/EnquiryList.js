@@ -3,16 +3,18 @@ import React, { useState, useEffect } from 'react';
 /* API call som henter informasjonen fra en url-kobling */
 const API_URL = "http://elisemdesign.no/project-exam-2-master/get-enquiries.php";
 
-
+// Enquirylist komponenten
 export default function EnquiryList() {
+    // States
     const [enquiries, setEnquiries] = useState([]);
+    // Henter dataene fra API'et
     useEffect(() => {
         fetch(API_URL)
         .then(response => response.json())
         .then((json) => {
             setEnquiries(json);
         })
-        /* Catch funksjonen lar deg generere tilpassendes feilmeldinger om noe skulle gå galt*/
+        /* Console.log lar deg se feilmeldinger i console om noe skulle gå galt*/
         .catch(() => {
             console.log("Noe gikk galt");
         })
