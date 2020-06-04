@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 /* Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden */
 const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishment.php?id=";
 
-export default function Hotelspesific(props) {
+export default function Hotelspesific() {
     const {id}=useParams();
     const [hotel, updateHotel] = useState([]);
 

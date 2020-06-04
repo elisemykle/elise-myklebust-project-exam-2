@@ -11,11 +11,7 @@ const schema = yup.object().shape({
 	.required(),
 	fullname: yup
 	.string()
-	.required()
-	// Sjekker at navnet bare inneholder bokstaver og ikke tall
-	.matches(/\w+\s\w+/, {
-		message: "Not a valid name"
-	}),
+	.required(),
 	emailadress: yup
 	.string()
 	.email()
@@ -30,17 +26,22 @@ const schema = yup.object().shape({
 	.required()
 });
 
-export default function Enquiry(props){
+export default function Enquiry(){
 	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
 	const API_URL_ENQUIRY = "https://elisemdesign.no/project-exam-2-master/enquiry-success.php";
 	const history = useHistory();
+	const [establishmentname, setEstablishmentname] = useState("");
+	const [fullname, setFullname] = useState("");
+	const [emailadress, setEmailadress] = useState("");
+	const [checkindate, setCheckindate] = useState("");
+	const [checkoutdate, setCheckoutdate] = useState("");
 	const [hotels ,updateHotels] = useState([]);
 	const { register, handleSubmit, errors } = useForm({
 		validationSchema: schema
 	});
 
 	/* Onsubit funksjonen er en hendelse som oppstår når man prøver å sende inn et skjema. Hvis funksjonen returnerer riktig, blir skjemaet sendt inn, ellers sender den ikke dataene. */
-	function onSubmit(item) {
+	function onSubmit() {
 		/* Laget en Date variabel for å kunne forkorte ned datoen til å kun vise år, måneder og dager.*/
 		var ci= new Date(item.date1);
 		var checkindate= ci.getFullYear()+"-"+ci.getMonth()+"-"+ci.getDay();
@@ -52,7 +53,7 @@ export default function Enquiry(props){
 			mode: 'cors',
 			headers: {'Content-Type':'application/x-www-form-urlencoded'},
 			/* Datane som skal sendes til PHP, å blir omgjort. */
-			body: 'establishment=' + encodeURIComponent(item.establishmentname) + '&clientName=' + encodeURIComponent(item.fullname) + '&email=' + encodeURIComponent(item.emailadress) + '&checkin=' + encodeURIComponent(checkindate) + '&checkout=' + encodeURIComponent(checkoutdate)
+			body: 'establishment=' + encodeURIComponent(establishmentname) + '&clientName=' + encodeURIComponent(fullname) + '&email=' + encodeURIComponent(emailadress) + '&checkin=' + encodeURIComponent(checkindate) + '&checkout=' + encodeURIComponent(checkoutdate)
 		})
 		.then(() => {
 			/* Blir sendt videre til Success om skjemaet valideres riktig uten error */
@@ -92,7 +93,7 @@ export default function Enquiry(props){
 								{hotel.establishmentName}</option>)
 							}
 						</select>
-					{errors.establishmentname && <p className="error__message">Required field</p>}
+					{errors.establishmentname && <p className="error__message">{errors.establishmentname.message}</p>}
 				</div>
 				<div className="col-6 col-m-12">
 					<label className="form__label--enquiry">Full name</label>

@@ -36,7 +36,7 @@ function Home() {
     // Alt inn i return er "designet" som forteller hva som skal displaye på nettsiden
     return (
         <div className="home">
-            <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero">
+            <Hero title="Stop paying more than other hotel guests" text="Find the best hotels, b&b’s and guesthouses in Bergen city." classes="hero hero--frontpage">
                 <div className="search__bar row">
                     <input className="search__input col-auto" type="text" placeholder="Search for hotels here..."
                     onInput={() => setShowResults(true)}
