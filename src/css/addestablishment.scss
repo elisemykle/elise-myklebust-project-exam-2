@@ -4,21 +4,21 @@
     font-family: $fontfamily;
     font-weight: bold;
     text-align: center;
+    margin-top: -5px;
 }
 
-/*------------------- ADD ESTABLISHMENT FORM --------------------*/
+/*------------------- ADDESTABLISHMENT FORM --------------------*/
 .addestablishment__formgroup{
     padding: 16px;
 }
-
 
 .form__label--admin{
     color: $secondarycolor;
     font-size: $formfontsize;
     font-weight: $formlabelweight;
     font-family: $fontfamily;
-
 }
+
 .form__input--admin{
     width: 100%;
     height: 35px;
@@ -45,4 +45,10 @@
     background-color: $secondarycolor;
     color: white;
     }
+}
+
+/*------------------- ADDESTABLISHMENT GRID --------------------*/
+.addestablishment__form{
+    max-width: 900px;
+    margin: 0 auto;
 }

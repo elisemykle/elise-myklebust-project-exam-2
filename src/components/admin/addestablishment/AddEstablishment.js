@@ -147,7 +147,7 @@ export default function AddEstablishment(props) {
                     </div>
                 </div>
 
-                <div className="col-12">
+                <div className="col-6 col-m-12">
                     <div className="addestablishment__formgroup">
                         <label className="form__label--admin">ID</label>
                         <input className="form__input--admin" type="number" name="id" placeholder="0"
@@ -156,9 +156,9 @@ export default function AddEstablishment(props) {
                     </div>
                 </div>
 
-                <div className="col-12">
+                <div className="col-6 col-m-12">
                     <div className="addestablishment__formgroup">
-                        <label className="form__label--admin">Self-catering</label>
+                        <label className="form__label--admin">Self-catering:</label>
                         <input className="form__input--admin" type="checkbox" name="selfcatering"
                             ref={register} onChange={ event => setSelfcatering (event.target.value) } />
                         {errors.selfcatering && <p className="error__message">{errors.selfcatering.message}</p>}
