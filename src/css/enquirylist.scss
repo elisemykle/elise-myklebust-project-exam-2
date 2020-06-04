@@ -10,45 +10,45 @@
 /*------------------- ENQUIRY LIST --------------------*/
 .enquirylist{
 
-&__establishment{
-    color: $secondarycolor;
-    font-family: $fontfamily;
-    font-weight: bold;
-    margin: 20px;
-    font-size: 20px;
-}
+    &__establishment{
+        color: $secondarycolor;
+        font-family: $fontfamily;
+        font-weight: bold;
+        margin: 20px;
+        font-size: 20px;
+    }
 
     &__clientname{
-    font-family: $fontfamily;
-    margin: 20px;
-    font-size: 16px;
+        font-family: $fontfamily;
+        margin: 20px;
+        font-size: 16px;
     }
 
     &__email{
-    color: $elementcolor;
-    font-family: $fontfamily;
-    text-decoration: none;
-    margin: 20px;
-    font-size: 16px;
+        color: $elementcolor;
+        font-family: $fontfamily;
+        text-decoration: none;
+        margin: 20px;
+        font-size: 16px;
 
-    &:hover{
-    color: $secondarycolor;
+        &:hover{
+            color: $secondarycolor;
+        }
     }
-}
     &__boldtext{
-    color: $secondarycolor;
+        color: $secondarycolor;
     }
 
 
     &__checkin{
-    font-family: $fontfamily;
-    margin: 20px;
-    font-size: 16px;
+        font-family: $fontfamily;
+        margin: 20px;
+        font-size: 16px;
     }
 
     &__checkout{
-    font-family: $fontfamily;
-    margin: 20px;
-    font-size: 16px;
+        font-family: $fontfamily;
+        margin: 20px;
+        font-size: 16px;
     }
 }
