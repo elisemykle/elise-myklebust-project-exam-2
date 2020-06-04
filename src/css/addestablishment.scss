@@ -5,6 +5,7 @@
     font-weight: bold;
     text-align: center;
     margin-top: -5px;
+    padding-bottom: 10px;
 }
 
 /*------------------- ADDESTABLISHMENT FORM --------------------*/
@@ -35,7 +36,6 @@
     display: inline-block;
     font-size: 14px;
     font-weight: bold;
-    margin: 15px;
 
     &:hover{
     background-color: $secondarycolor;

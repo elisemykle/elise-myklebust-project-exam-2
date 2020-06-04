@@ -142,7 +142,7 @@ export default function AddEstablishment(props) {
                 <div className="col-12">
                     <div className="addestablishment__formgroup">
                         <label className="form__label--admin">Description</label>
-                        <input className="form__input--admin" name="description" placeholder="About the hotels" ref={register} onChange={ event => setDescription (event.target.value) } />
+                        <input className="form__input--admin" name="description" placeholder="Write about the hotel..." ref={register} onChange={ event => setDescription (event.target.value) } />
                         {errors.description && <p className="error__message">{errors.description.message}</p>}
                     </div>
                 </div>
