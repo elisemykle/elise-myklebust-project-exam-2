@@ -7,8 +7,6 @@
     color: $elementcolor;
     font-family: $fontfamily;
     font-size: 40px;
-    text-align: center;
-    margin-top: 40px;
 }
 
 /*------------------- SUCCESS TEXT --------------------*/
@@ -17,6 +15,7 @@
     text-align: center;
     font-family: $fontfamily;
     color: $secondarycolor;
+    margin-top: -30px;
 }
 
 /*------------------- SUCCESS BUTTON --------------------*/
@@ -25,7 +24,7 @@
     border: none;
     color: white;
     padding: 10px 10px;
-    width: 15%;
+    width: 13%;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -36,4 +35,24 @@
     background-color: $secondarycolor;
     color: white;
     }
+}
+
+/*------------------- SUCCESS GRID --------------------*/
+.success__headline{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+/*------------------- MOBILE --------------------*/
+@media only screen and (max-width: 600px) {
+    .success__button {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+    .success__button {
+    width: 30%;
+  }
 }
