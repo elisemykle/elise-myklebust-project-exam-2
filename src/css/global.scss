@@ -18,53 +18,6 @@ body{
     background-color: $primarycolor;
 }
 
-/*------------------- NAVIGATION --------------------*/
-.nav{
-    background-color: $secondarycolor;
-    min-height: 41px;
-}
-
-.nav__link{
-    font-family: $fontfamily;
-    font-style: normal;
-    color: $navlinkcolor;
-    text-decoration: none;
-    padding: 10px;
-    letter-spacing: 2px;
-    font-size: 14px;
-}
-
-.nav__link:hover{
-    color: $primarycolor;
-}
-
-.nav__link--active{
-    font-weight: bold;
-    color: $primarycolor;
-    border-bottom: 3px solid $primarycolor;
-}
-
-.nav__right{
-    float: right;
-    padding: 10px;
-}
-
-.navigation__icon{
-    font-family: $fontfamily;
-    font-size: 18px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    color: #99B5C7;
-    letter-spacing: 2px;
-}
-
-.nav__left{
-    float: left;
-    margin: 0;
-    padding: 10px 18px;
-}
-
 /*------------------- HERO IMAGE --------------------*/
 .hero{
     background: url("../image/bryggen.jpeg");
