@@ -29,8 +29,8 @@ const schema = yup.object().shape({
 // Enquiry komponenten
 export default function Enquiry(){
 	// States
-	const API_URL = "http://elisemdesign.no/project-exam-2-master/get-establishments.php";
-	const API_URL_ENQUIRY = "http://elisemdesign.no/project-exam-2-master/enquiry-success.php";
+	const API_URL = "https://elisemdesign.no/project-exam-2-master/get-establishments.php";
+	const API_URL_ENQUIRY = "https://elisemdesign.no/project-exam-2-master/enquiry-success.php";
 	const history = useHistory();
 	const [establishmentname, setEstablishmentname] = useState("Sunset Beach");
 	const [fullname, setFullname] = useState("");

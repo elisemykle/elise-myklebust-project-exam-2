@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 /* API call som henter informasjonen fra en url-kobling */
-const API_URL = "http://elisemdesign.no/project-exam-2-master/get-contacts.php";
+const API_URL = "https://elisemdesign.no/project-exam-2-master/get-contacts.php";
 
 // Message komponenten
 export default function Message() {

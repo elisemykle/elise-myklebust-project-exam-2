@@ -22,7 +22,7 @@ const schema = yup.object().shape({
 // Contact komponenten
 export default function Contact(props){
 	// States
-	const API_URL = "http://elisemdesign.no/project-exam-2-master/contact-success.php";
+	const API_URL = "https://elisemdesign.no/project-exam-2-master/contact-success.php";
 	const history = useHistory();
 	const [clientName, setClientName] = useState("");
 	const [email, setEmail] = useState("");

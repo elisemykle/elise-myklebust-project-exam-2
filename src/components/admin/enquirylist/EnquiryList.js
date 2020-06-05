@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 /* API call som henter informasjonen fra en url-kobling */
-const API_URL = "http://elisemdesign.no/project-exam-2-master/get-enquiries.php";
+const API_URL = "https://elisemdesign.no/project-exam-2-master/get-enquiries.php";
 
 // Enquirylist komponenten
 export default function EnquiryList() {

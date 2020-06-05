@@ -43,7 +43,7 @@ const schema = yup.object().shape({
 // addestablishment komponenten
 export default function AddEstablishment(props) {
     // States
-    const API_URL = "http://elisemdesign.no/project-exam-2-master/add-establishments-success.php";
+    const API_URL = "https://elisemdesign.no/project-exam-2-master/add-establishments-success.php";
     const [establishmentname, setEstablishmentname ] = useState("");
     const [establishmentemail, setEstablishmentemail ] = useState("");
     const [imageurl, setImageurl ] = useState("");
