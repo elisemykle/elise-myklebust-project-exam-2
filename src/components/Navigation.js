@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {NavLink} from "react-router-dom";
+import toogleicon from '../image/toggleicon.png';
 
 // Navigation komponenten
 export default function Navigation(props) {
@@ -12,7 +13,8 @@ export default function Navigation(props) {
                     <NavLink to="/" className="navigation__icon">Holidaze</NavLink>
                 </div>
                 <div className="nav__right nav__right--show">
-                    <i className="nav__menuToggle" onClick={() => setShowMenu(true)}>[=]</i>
+                    {/* Fikk hjelp av Christian Gunnvaldsen til å få toogle ikonet til å fungere */}
+                    <button className="nav__menuToggle" onClick={() => setShowMenu(false)}><img className="nav__hamburgericon" alt="hamburgericon" src={toogleicon}/></button>
                     <div className="nav__links nav__links--show">
                         <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link nav__link--mobile">Home</NavLink>
                         <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link nav__link--mobile">Hotels</NavLink>
@@ -29,7 +31,8 @@ export default function Navigation(props) {
                     <NavLink to="/" className="navigation__icon">Holidaze</NavLink>
                 </div>
                 <div className="nav__right">
-                    <i className="nav__menuToggle" onClick={() => setShowMenu(true)}></i>
+                    {/* Fikk hjelp av Christian Gunnvaldsen til å få toogle ikonet til å fungere */}
+                    <button className="nav__menuToggle" onClick={() => setShowMenu(true)}><img className="nav__hamburgericon" alt="hamburgericon" src={toogleicon}/></button>
                     <div className="nav__links">
                         <NavLink to="/" exact activeClassName="nav__link--active" className="nav__link">Home</NavLink>
                         <NavLink to="/Hotels" exact activeClassName="nav__link--active" className="nav__link">Hotels</NavLink>

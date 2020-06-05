@@ -12,10 +12,10 @@
     padding: 10px;
     letter-spacing: 2px;
     font-size: 14px;
-}
 
-.nav__link:hover{
-    color: $primarycolor;
+    &:hover{
+        color: $primarycolor;
+    }
 }
 
 .nav__link--active{
@@ -39,8 +39,59 @@
     letter-spacing: 2px;
 }
 
+.nav__hamburgericon{
+    width: 30px;
+}
+
 .nav__left{
     float: left;
     margin: 0;
     padding: 10px 18px;
+}
+
+
+.nav__menuToggle{
+    background: none;
+    border: none;
+    outline: 0;
+}
+
+/*------------------- MOBILE --------------------*/
+@media only screen and (min-width: 600px) {
+    .nav__menuToggle{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .nav__links{
+        display: none;
+    }
+    .nav__links--show{
+        display: block;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background-color: #99B5C7;
+        padding: 10px 0;
+    }
+    .nav__link--mobile{
+        display: block;
+        width: 100%;
+        color: $secondarycolor;
+    }
+
+    .nav__link--mobile.nav__link--active{
+        text-decoration: underline;
+        border-bottom: none;
+    }
+
+    .nav__link:hover{
+        color: $elementcolor;
+        font-weight: bold;
+    }
+
+
 }
